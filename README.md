@@ -1,1 +1,2 @@
-![bc1q4hsvvc5nlql4cq2z8fhla7sk5ykjchvu2cw3nq](https://i.imgur.com/QTUma4A.png)
+If you appreciate my work, feel free to [donate some ₿TC](https://imgur.com/a/Sran6aW) or check out my [sponsors page!](https://github.com/sponsors/quiquelhappy/)
+
