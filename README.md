@@ -13,7 +13,7 @@ I'm always looking for new job offers. Contact me: quiquelhappy at gmail dot com
  - Langs: Go, JS (& TS), Java, PHP, C, C#, C++, Swift, Kotlin
  - Managment and tools: General linux managment, Docker, Nginx, Apache, MySQL, Stripe, PayPal, Mixpanel, Google Analytics, Google Adsense, Google Admob
  - Frameworks: all the basics, plus Vue
- - Deployment: AWS and private VPS/dedicated machines mainly hosted on hetzner (https://hetzner.cloud/?ref=MQOXjHdKUP9r)
+ - Deployment: AWS and private VPS/dedicated machines mainly hosted on hetzner (use this link for free 20€ in credits: https://hetzner.cloud/?ref=MQOXjHdKUP9r)
 
 ### Achived milestones
  - Built my own ecommerce platform (similar to shopify, but for digital goods) used on the @purecoreio project
