@@ -2,7 +2,7 @@
  - grifpkg: a package manager for java plugins, server software and other general purpose code used mainly on the spigotmc community
  - purecore: an ecommerce platform for digital goods and analytic tool for online communities
 
-## Coding stats (last week only)
+## Coding stats
 [![👋](https://github-readme-stats.vercel.app/api/wakatime?username=quiquelhappy&hide_border=true&hide_title=true&theme=github_dark)](https://i.imgur.com/ytVx70n.gif)
 
 ## Job and studies
