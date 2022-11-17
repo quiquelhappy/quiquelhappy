@@ -25,3 +25,6 @@ I'm always looking for new job offers. Contact me: quiquelhappy at gmail dot com
 
 ## Donations
  - https://www.buymeacoffee.com/happy
+
+-----
+![](https://komarev.com/ghpvc/?username=quiquelhappy)
