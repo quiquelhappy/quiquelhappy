@@ -3,7 +3,7 @@
  - purecore: an ecommerce platform for digital goods and analytic tool for online communities
 
 ## Coding stats
-[![👋](https://github-readme-stats.vercel.app/api/wakatime?username=quiquelhappy&hide_border=true&hide_title=true&theme=github_dark)](https://i.imgur.com/ytVx70n.gif)
+[![👋](https://github-readme-stats.vercel.app/api/wakatime?username=quiquelhappy&hide_border=true&hide_title=true&theme=github_dark&range=all_time)](https://i.imgur.com/ytVx70n.gif)
 
 ## Job and studies
 Currently working at a robotics company, specially oriented for industrial automation mostly on the automotive industry. Been coding since I was a 9-year-old.
