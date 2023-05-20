@@ -31,3 +31,4 @@ I'm always looking for new job offers. Contact me: quiquelhappy at gmail dot com
 
 -----
 ![](https://komarev.com/ghpvc/?username=quiquelhappy)
+![](https://hit.yhype.me/github/profile?user_id=12534357)
