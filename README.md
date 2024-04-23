@@ -1,34 +1,38 @@
-## Projects
- - grifpkg: a package manager for java plugins, server software and other general purpose code used mainly on the spigotmc community
- - purecore: an ecommerce platform for digital goods and analytic tool for online communities
+# create-svelte
 
-## Coding stats [![👋](https://wakatime.com/badge/user/adba4819-987e-4c28-8d50-f7c2c6a7171f.svg?style=social)](https://i.imgur.com/ytVx70n.gif)
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
 
-> since September 2021
+## Creating a project
 
-[![👋](https://github-readme-stats.vercel.app/api/wakatime?username=quiquelhappy&hide_border=true&hide_title=true&theme=github_dark&range=all_time)](https://i.imgur.com/ytVx70n.gif)
+If you're seeing this, you've probably already done this step. Congrats!
 
-## Job and studies
-Currently working at a robotics company, specially oriented for industrial automation mostly on the automotive industry. Been coding since I was a 9-year-old.
-I'm always looking for new job offers. Contact me: quiquelhappy at gmail dot com
+```bash
+# create a new project in the current directory
+npm create svelte@latest
 
-## Knowledge
- - Langs: Go, JS (& TS), Java, PHP, C, C#, C++, Swift, Kotlin
- - Managment and tools: General linux managment, Docker, Nginx, Apache, MySQL, Stripe, PayPal, Mixpanel, Google Analytics, Google Adsense, Google Admob
- - Frameworks: all the basics, plus Vue
- - Deployment: AWS and private VPS/dedicated machines mainly hosted on hetzner (use this link for free 20€ in credits: https://hetzner.cloud/?ref=MQOXjHdKUP9r)
+# create a new project in my-app
+npm create svelte@latest my-app
+```
 
-### Achived milestones
- - Built my own ecommerce platform (similar to shopify, but for digital goods) used on the @purecoreio project
- - Built my own hosting system, based on docker, used on the @purecoreio project
- - Built my own package manager logic, cache layers, distribution layer, etc, used on the @grifpkg project
- - Built my own analytic platform, socket-based, with high security standards for session linking based on solely connection data without being able to potentially identify the device thru fingerprinting, used on the @purecoreio project
- - Graduated with A+ on most of my robotics and industrial automation degree
- - Learned the hard way many things
+## Developing
 
-## Donations
- - https://www.buymeacoffee.com/happy
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
------
-![](https://komarev.com/ghpvc/?username=quiquelhappy)
-![](https://hit.yhype.me/github/profile?user_id=12534357)
+```bash
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
+
+## Building
+
+To create a production version of your app:
+
+```bash
+npm run build
+```
+
+You can preview the production build with `npm run preview`.
+
+> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
