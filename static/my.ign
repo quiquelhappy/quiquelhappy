@@ -5,7 +5,7 @@
   "passwd": {
     "users": [
       {
-        "name": "core",
+        "name": "quique",
         "sshAuthorizedKeys": [
           "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC8sFalZv0VheE6iK1WSKskjphrkV34s4GDsNXxXzgN4/aJbqBXtn0HlencGTOpzEttlPEY14xcsd6BoObAAfvaWWBLeSTxGAuEun9V0AEZpA74oaUD7Rz8+CEVLr5VDdaQCL66zd7JAg4NhNZP2VbZXXHffpAFV/8pYYtpIdejaipYpsOvGLG6f+DlecrVpPYXV/SUQO6q+eXyvzT+gO9ABnx0+xjm7GxubJi49fZwZWw27qAGwwg4+yfa0bKTiv8JRo5I15Edyh2ytghth+dcl3V6FHgKdM+LGnWXlAFrjsJVBnWArz0AoIdgkjTRJvuW/TjH0MMhHe4buWT5fLET17filyAlyGC5qgGa5UGsp9bAAc48gAZbL61WAY6lQSZeCaEAAcVP0j5PyS0O4zFWEV/dDnuaej+ZwcEN4IF4HkfFu0H6s7mHZGjThgnJXUNtmEV0Y3b3sJ098TgmLMhmIZ2WlTWJEjrOYWwhUGvRsgx1lop2cX6gSKyLhxPYBRk= quique@DESKTOP-QF39Q3H"
         ]
