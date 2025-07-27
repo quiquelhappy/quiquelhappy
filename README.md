@@ -3,6 +3,7 @@
  - serverbench: an ecommerce platform for digital goods and analytic tool for online communities
 
 ## Coding stats [![👋](https://wakatime.com/badge/user/adba4819-987e-4c28-8d50-f7c2c6a7171f.svg?style=social)](https://i.imgur.com/ytVx70n.gif)
+> this year
 [![👋](https://github-readme-stats.vercel.app/api/wakatime?username=quiquelhappy&hide_border=true&hide_title=true&theme=github_dark&range=all_time)](https://i.imgur.com/ytVx70n.gif)
 
 ## Job and studies
