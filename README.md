@@ -1,6 +1,6 @@
 ## Projects
  - grifpkg: a package manager for java plugins, server software and other general purpose code used mainly on the spigotmc community
- - serverbench: an ecommerce platform for digital goods and analytic tool for online communities
+ - serverbench: an ecommerce platform for digital goods, analytic tool for online communities and hosting (byod) orchestrator
 
 ## Coding stats [![👋](https://wakatime.com/badge/user/adba4819-987e-4c28-8d50-f7c2c6a7171f.svg?style=social)](https://i.imgur.com/ytVx70n.gif)
 > this year
