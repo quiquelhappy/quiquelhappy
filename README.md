@@ -4,7 +4,11 @@ I'm Quique, also known as Happy online. I've been coding since I can remember to
 
 ![Awesome](https://awesome.re/badge.svg) ![](https://komarev.com/ghpvc/?username=quiquelhappy)
 
-## Coding stats [![👋](https://wakatime.com/badge/user/adba4819-987e-4c28-8d50-f7c2c6a7171f.svg?style=social)](https://i.imgur.com/ytVx70n.gif)
+## Stats
+
+Roughly 12 years of coding experience B.C. (before ChatGPT)
+
+### Coding hours (not lifetime) [![👋](https://wakatime.com/badge/user/adba4819-987e-4c28-8d50-f7c2c6a7171f.svg?style=social)](https://i.imgur.com/ytVx70n.gif)
 
 <a href="https://heatmap.shymike.dev?id=51592&standalone=true" title="Click to view detailed data for each day!">
     <picture>
@@ -12,6 +16,8 @@ I'm Quique, also known as Happy online. I've been coding since I can remember to
         <img alt="Hackatime activity heatmap" src="https://heatmap.shymike.dev?id=51592&theme=light">
     </picture>
 </a>
+
+### Languages (not lifetime)
 
 ![stats](https://github-readme-stats.hackclub.dev/api/wakatime?username=51592&api_domain=hackatime.hackclub.com&theme=default&custom_title=Hackatime+Stats&layout=compact&cache_seconds=0&langs_count=32)
 
