@@ -1,8 +1,8 @@
-## Who am I ![Static Badge](https://img.shields.io/badge/AI-not_used_on_bio-white?style=social) 
+## Who am I
 
 I'm Quique, also known as Happy online. I've been coding since I can remember touching a computer, and I currently live near Barcelona. I have a bunch of side projects that didn't make it into this bio, but at heart I'm a problem solver — trying to fix things that can make life a little better, for others and for myself. I also have a dog named Gandalf.
 
-![Awesome](https://awesome.re/badge.svg) ![](https://komarev.com/ghpvc/?username=quiquelhappy)
+![Awesome](https://awesome.re/badge.svg)  ![Static Badge](https://img.shields.io/badge/AI-not_used_on_bio-white)  ![](https://komarev.com/ghpvc/?username=quiquelhappy)
 
 ## Stats
 
