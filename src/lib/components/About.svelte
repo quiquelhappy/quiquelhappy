@@ -109,7 +109,7 @@
 				<div><dt>alias</dt><dd>Happy</dd></div>
 				<div><dt>base</dt><dd>near Barcelona</dd></div>
 				<div><dt>coding since</dt><dd>age 9 (April 2010)</dd></div>
-				<div class="deg"><dt>degrees</dt><dd>Software Eng. (UAB)<br />Robotics &amp; Automation<br /><span>Salesians Sarri&agrave;</span></dd></div>
+				<div class="deg"><dt>degrees</dt><dd>Software Eng. (UAB)<br />Robotics &amp; Automation (Salesians Sarri&agrave;)</dd></div>
 				<div><dt>status</dt><dd class="open">open to job offers</dd></div>
 				<div><dt>fuel</dt><dd><a href={COFFEE} rel="noopener"><Icon name="coffee" scale={1.5} /> coffee</a></dd></div>
 			</dl>
@@ -229,11 +229,6 @@
 	}
 	dt {
 		color: var(--ink-3);
-	}
-	dd span {
-		font-weight: 400;
-		color: var(--ink-3);
-		font-size: 12.5px;
 	}
 	dd {
 		margin: 0;

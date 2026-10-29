@@ -12,49 +12,48 @@
 	const RING: Corner[] = ['bl', 'br', 'tr', 'tl'];
 	const XY: Record<Corner, [number, number]> = { bl: [0, 1], br: [1, 1], tr: [1, 0], tl: [0, 0] };
 
-	// 24x24 blue merle Australian Shepherd, sitting, chibi proportions (big head, big eyes).
-	// o outline, B merle, M darker merle patch, D speckle, W white, S paw shade,
-	// T tan, P blush, N nose. Eyes, mouth and tail are drawn dynamically.
+	// 24x24 blue merle Australian Shepherd, adult proportions, sitting.
+	// o outline, B merle, M darker merle patch, D speckle, W white, S paw shade, T tan, N nose.
+	// Eyes, mouth and tail are drawn dynamically.
 	const ART = [
 		'........................',
-		'........................',
-		'...oo..............oo...',
-		'..oMBo............oBMo..',
-		'..oBBMo.oooooooo.oMBBo..',
-		'..oMBMooDBBWWBDDooMBMo..',
-		'...oooMMBBBWWBBMMMooo...',
-		'....oMTMMBWWWWBMMTMo....',
-		'...oBMMMMBWWWWBBMMMBo...',
-		'..oBBBMMBBWWWWBBBBBBBo..',
-		'..oMMBBBBBBBBBBBBBBMMo..',
-		'..oMMBBBBBWWWWBBBBBBMo..',
-		'...oMBBBWWWWWWWWBBBBo...',
-		'...oPBBWWWWNNWWWWBBPo...',
-		'....oBBWWWWWWWWWWBBo....',
-		'.....oBWWWWWWWWWWBo.....',
-		'......ooWWWWWWWWoo......',
-		'......oWWWWWWWWWWo......',
-		'.....oMWWWWWWWWWWMo.....',
-		'.....oMMWWWWWWWWMMo.....',
-		'.....oMBWWTWWTWWWBMo....',
-		'.....oBWWWTooTWWWBo.....',
-		'.....oSSSSSooSSSSSo.....',
+		'....oo............oo....',
+		'...oMMo..........oMMo...',
+		'..oMMMMooooooooooMMMMo..',
+		'..oMMMMBBBBBBBBBBMMMMo..',
+		'...oMMBBBDBWWBDBBBMMo...',
+		'...oBBBBTBBWWBBTBBMBo...',
+		'...oBMBBBBBWWBBDBBMBo...',
+		'...oBMMBBBBWWBBBBMBBo...',
+		'...oBBBBBBWWWWBBMBBBo...',
+		'....oBBBBWWWWWWBBBBo....',
+		'.....oBBWWWNNWWWBBo.....',
+		'......oBWWWWWWWWBo......',
+		'.......oWWWWWWWWo.......',
+		'......oSMWWWWWWMSo......',
+		'.....oMMMWWWWWWMMMo.....',
+		'.....oMMBWWWWWWBMMo.....',
+		'....oMDMBWWWWWWBMMMo....',
+		'....oMMBBWWWWWWBBMMo....',
+		'....oMBBTWWWWWWTBBMo....',
+		'....oBBBTWWooWWTBBBo....',
+		'....oDBBTWWooWWTBBBo....',
+		'....oBSSSSSooSSSSSBo....',
 		'.....oooooooooooooo.....'
 	];
 
-	const C = { o: '#262c40', B: '#9aaabf', M: '#6f7d95', D: '#4a5368', W: '#fbfaf6', S: '#dfe3ec', T: '#d9a066', P: '#ff9fb8', N: '#232838' };
-	const EYE = '#1c2b57';
-	const IRIS = '#58b6ff';
+	const C = { o: '#262c40', B: '#9aaabf', M: '#6f7d95', D: '#4a5368', W: '#fbfaf6', S: '#dfe3ec', T: '#d9a066', N: '#232838' };
+	const EYE = '#10131c';
 	const TONGUE = '#ff7aa2';
 	const SPARK = '#ffffff';
 	const base = toRects(ART, C);
 	const rect = (x: number, y: number, w: number, h: number, c: string): Rect => ({ x, y, w, h, c });
 
 	// tail, two wag frames, drawn behind the body on the right hand side
-	const shift = (r: Rect): Rect => ({ ...r, x: r.x + 18, y: r.y + 15 });
+	const shift = (r: Rect): Rect => ({ ...r, x: r.x + 20, y: r.y + 15 });
 	const TAIL = [
-		toRects(['...oo', '..oWo', '..oBo', '.oBBo', '.oBo.', 'oBo..', 'oo...'], C).map(shift),
-		toRects(['......', '......', '....oo', '..ooWWo', '.oBBBWo', 'oBBBoo.', 'ooo...'].map((r) => r.slice(0, 6)), C).map(shift)
+		toRects(['..oo', '.oWo', '.oBo', 'oBBo', 'oBo.', 'oo..'], C).map(shift),
+		toRects(['....', '....', '..oo', 'oBWo', 'oBBo', 'ooo.'], C).map(shift)
 	];
 	let tailFrame = $state(0);
 
@@ -68,7 +67,6 @@
 	type Edge = 'b' | 't' | 'l' | 'r';
 	type Trail = { id: number; from: Corner; to: Corner; edge: Edge; dur: number; a: string; b: string };
 	let trail = $state<Trail | null>(null);
-	let spray = $state<{ id: number; corner: Corner } | null>(null);
 	let reduced = $state(false);
 	let winEl: HTMLButtonElement;
 
@@ -77,29 +75,25 @@
 	const rects = $derived.by(() => {
 		const out = [...TAIL[tailFrame], ...base];
 		const lx = look.x, ly = look.y;
-		for (const ex of [5, 15]) {
+		// eyes are always black. looking around moves the eyes inside the face, plus a glossy sparkle.
+		const dx = lx < 0 ? -1 : lx > 0 ? 1 : 0;
+		const dy = ly > 0 && dx === 0 ? 1 : ly < 0 ? -1 : 0;
+		for (const side of [0, 1]) {
+			const ex = (side === 0 ? 7 : 15) + dx;
 			if (blink) {
-				out.push(rect(ex, 11, 4, 1, EYE));
+				out.push(rect(ex, 8, 2, 1, EYE));
 			} else if (expr === 'happy') {
 				// happy closed eyes: ^ ^
-				out.push(rect(ex, 11, 1, 1, EYE), rect(ex + 1, 10, 2, 1, EYE), rect(ex + 3, 11, 1, 1, EYE));
+				out.push(side === 0 ? rect(7, 8, 1, 1, EYE) : rect(16, 8, 1, 1, EYE), rect(side === 0 ? 8 : 15, 7, 1, 1, EYE));
 			} else {
-				// big round eye: dark rim, bright iris that looks where you look, glossy sparkle
-				out.push(rect(ex + 1, 9, 2, 1, EYE), rect(ex, 10, 4, 2, EYE), rect(ex + 1, 12, 2, 1, EYE));
-				if (expr === 'scared' || expr === 'wow') {
-					out.push(rect(ex + 1, 10, 1, 1, SPARK));
-				} else {
-					const vertical = ly !== 0;
-					const ix = vertical ? ex + 1 : ex + 1 + (lx < 0 ? -1 : lx > 0 ? 1 : 0);
-					const iy = ly < 0 ? 9 : ly > 0 ? 11 : 10;
-					out.push(rect(ix, iy, 2, 2, IRIS), rect(ix, iy, 1, 1, SPARK));
-				}
+				out.push(rect(ex, 7 + dy, 2, 3, EYE));
+				if (expr !== 'scared') out.push(rect(side === 0 ? ex : ex, 7 + dy, 1, 1, SPARK));
 			}
 		}
-		// mouth: little w-smile with a tongue peeking out
-		if (expr === 'smile') out.push(rect(10, 14, 1, 1, C.N), rect(13, 14, 1, 1, C.N), rect(11, 15, 2, 1, C.N), rect(11, 16, 2, 1, TONGUE));
-		else if (expr === 'happy') out.push(rect(10, 14, 4, 1, C.N), rect(11, 15, 2, 2, TONGUE));
-		else out.push(rect(11, 14, 2, 2, C.N));
+		// mouth: calm smile. open mouth and tongue only when happy
+		if (expr === 'smile') out.push(rect(10, 12, 1, 1, C.N), rect(13, 12, 1, 1, C.N), rect(11, 13, 2, 1, C.N));
+		else if (expr === 'happy') out.push(rect(10, 12, 4, 1, C.N), rect(11, 13, 2, 2, TONGUE));
+		else out.push(rect(11, 12, 2, 2, C.N));
 		return out;
 	});
 
@@ -159,7 +153,7 @@
 		}, 3400);
 	}
 
-	const DIRT = ['#b98a55', '#8a5a2b', '#6b4423', '#5e3b1c'];
+	// the move animation is just one small dot of earth travelling along the screen edge
 	const INSET_X = 70;
 	const INSET_Y = 34;
 
@@ -171,13 +165,7 @@
 		const inset = horizontal ? INSET_X : INSET_Y;
 		const start = `${inset}px`, end = `calc(100% - ${inset}px)`;
 		const forward = horizontal ? tx > fx : ty > fy;
-		return { id: Date.now(), from, to, edge, dur: horizontal ? 2200 : 1600, a: forward ? start : end, b: forward ? end : start };
-	}
-
-	function burst(corner: Corner) {
-		const run = { id: Date.now() + Math.random(), corner };
-		spray = run;
-		setTimeout(() => spray === run && (spray = null), 1100);
+		return { id: Date.now(), from, to, edge, dur: horizontal ? 1300 : 950, a: forward ? start : end, b: forward ? end : start };
 	}
 
 	function adjacent(c: Corner): Corner {
@@ -193,15 +181,13 @@
 				const next = adjacent(at);
 				const run = makeTrail(at, next);
 				phase = 'trail';
-				burst(at); // dirt flies as the hole we are leaving gets filled in
-				await nap(450);
+				await nap(250);
 				trail = run;
-				setTimeout(() => trail === run && (trail = null), run.dur + 650);
 				await nap(run.dur);
+				trail = null; // the dot is gone before Gandalf comes out
 				at = next;
 				await tick();
-				burst(at); // and again where we are about to pop up
-				await nap(500);
+				await nap(250);
 			}
 			first = false;
 			if (!alive) break;
@@ -323,46 +309,6 @@
 		});
 	});
 
-	// ----- tunnel: the ridge of earth the digger leaves behind, and the clods it flings
-	const r = (a: number, b: number) => Math.round(a + Math.random() * (b - a));
-	const clodVec = (edge: Edge, lateral: number, h: number) =>
-		edge === 'b' ? [lateral, -h, lateral * 1.5, -2]
-		: edge === 't' ? [lateral, h, lateral * 1.5, 2]
-		: edge === 'l' ? [h, lateral, 2, lateral * 1.5]
-		: [-h, lateral, -2, lateral * 1.5];
-
-	const dots = $derived.by(() => {
-		if (!trail) return [];
-		const [fx, fy] = XY[trail.from];
-		const [tx, ty] = XY[trail.to];
-		const horizontal = fy === ty;
-		const n = horizontal ? 22 : 14;
-		const inset = horizontal ? INSET_X : INSET_Y;
-		return Array.from({ length: n }, (_, i) => {
-			const t = (i + 0.5) / n;
-			const pos = horizontal ? fx + (tx - fx) * t : fy + (ty - fy) * t;
-			const style = horizontal
-				? `left: calc(${inset}px + ${pos} * (100% - ${2 * inset}px));`
-				: `top: calc(${inset}px + ${pos} * (100% - ${2 * inset}px));`;
-			const clods = Array.from({ length: 3 }, () => {
-				const [x1, y1, x2, y2] = clodVec(trail!.edge, r(-18, 18), r(14, 34));
-				return { v: `--x1:${x1}px;--y1:${y1}px;--x2:${x2}px;--y2:${y2}px;background:${DIRT[r(0, 3)]};--cd:${r(0, 120)}ms;`, s: r(0, 1) ? 4 : 6 };
-			});
-			return { i, edge: trail!.edge, style: `${style}--dl:${Math.round(t * trail!.dur * 0.92)}ms;`, clods };
-		});
-	});
-
-	const SPRAY = Array.from({ length: 12 }, () => ({
-		v: `--x1:${r(-54, 54)}px;--y1:${-r(26, 74)}px;--x2:${r(-80, 80)}px;--y2:-2px;background:${DIRT[r(0, 3)]};--cd:${r(0, 90)}ms;`,
-		s: r(0, 1) ? 4 : 6
-	}));
-
-	// the digger: a tiny mound of earth with two merle ears sticking out of it
-	const MOUND = toRects(
-		['...DD....DD...', '..DDDo..oDDD..', '....llllll....', '...llllllll...', '..llmmmmmmll..', '.llmmmmmmmmll.', '.mmmmmmmmmmmm.', 'dddddddddddddd'],
-		{ D: '#3b4254', o: '#1b2030', l: '#b98a55', m: '#8a5a2b', d: '#5e3b1c' }
-	);
-
 	onMount(() => {
 		reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 		addEventListener('pointermove', onMove, { passive: true });
@@ -394,29 +340,13 @@
 	});
 </script>
 
-<div class="trail" aria-hidden="true" style:--px="4px">
+<div class="trail" aria-hidden="true">
 	{#if trail}
 		{#key trail.id}
-			<div class="digger {trail.edge}" style="--dur:{trail.dur}ms;--a:{trail.a};--b:{trail.b};--steps:{Math.round(trail.dur / 55)}">
-				<span class="bob"><PixelSprite rects={MOUND} width={14} height={8} scale={2} /></span>
-			</div>
-			{#each dots as d}
-				<span class="dot {d.edge}" style={d.style}>
-					<i></i>
-					{#each d.clods as c}<b class="clod" style="{c.v}width:{c.s}px;height:{c.s}px"></b>{/each}
-				</span>
-			{/each}
+			<span class="pip {trail.edge}" style="--dur:{trail.dur}ms;--a:{trail.a};--b:{trail.b};--steps:{Math.round(trail.dur / 70)}"></span>
 		{/key}
 	{/if}
 </div>
-
-{#if spray}
-	{#key spray.id}
-		<div class="spray {spray.corner}" aria-hidden="true">
-			{#each SPRAY as c}<b class="clod" style="{c.v}width:{c.s}px;height:{c.s}px"></b>{/each}
-		</div>
-	{/key}
-{/if}
 
 <div class="mascot {at}" class:top class:vis={pose !== 'hidden'}>
 	{#if speech}
@@ -583,243 +513,58 @@
 		top: calc(var(--px) * 24 + 8px);
 	}
 
-	/* ------------------------------------------------ tunnel along the screen edges */
+	/* ------------------------------------------------ the move: one dot, hole to hole */
 	.trail {
 		inset: var(--nav-h) 0 0 0;
 		z-index: 45;
 	}
-
-	/* the digger: a mound with ears, travelling along the edge */
-	.digger {
+	.pip {
 		position: absolute;
-		width: 0;
-		height: 0;
+		width: 12px;
+		height: 12px;
+		background: #8a5a2b;
+		box-shadow: inset -3px -3px 0 #5e3b1c, inset 3px 3px 0 #b98a55;
 		animation-duration: var(--dur);
 		animation-timing-function: steps(var(--steps));
-		animation-fill-mode: forwards;
+		animation-fill-mode: both;
 	}
-	.digger.b,
-	.digger.t {
-		animation-name: runX;
+	.pip.b,
+	.pip.t {
+		animation-name: slideX;
+		margin-left: -6px;
 	}
-	.digger.l,
-	.digger.r {
-		animation-name: runY;
+	.pip.l,
+	.pip.r {
+		animation-name: slideY;
+		margin-top: -6px;
 	}
-	.digger.b {
+	.pip.b {
 		bottom: 0;
-		--n: 0 -2px;
 	}
-	.digger.t {
+	.pip.t {
 		top: 0;
-		--n: 0 2px;
 	}
-	.digger.l {
+	.pip.l {
 		left: 0;
-		--n: 2px 0;
 	}
-	.digger.r {
+	.pip.r {
 		right: 0;
-		--n: -2px 0;
 	}
-	/* the digger sinks out of sight at the end of the run, it never lingers once Gandalf is out */
-	@keyframes runX {
+	@keyframes slideX {
 		from {
 			left: var(--a);
-			opacity: 1;
-		}
-		92% {
-			opacity: 1;
 		}
 		to {
 			left: var(--b);
-			opacity: 0;
 		}
 	}
-	@keyframes runY {
+	@keyframes slideY {
 		from {
 			top: var(--a);
-			opacity: 1;
-		}
-		92% {
-			opacity: 1;
 		}
 		to {
 			top: var(--b);
-			opacity: 0;
 		}
-	}
-	.bob {
-		position: absolute;
-		animation: wob 0.28s steps(1) infinite;
-	}
-	.bob :global(svg) {
-		position: absolute;
-		left: 50%;
-		top: 50%;
-	}
-	.digger.b .bob {
-		left: -14px;
-		bottom: 0;
-		width: 28px;
-		height: 16px;
-	}
-	.digger.t .bob {
-		left: -14px;
-		top: 0;
-		width: 28px;
-		height: 16px;
-	}
-	.digger.l .bob {
-		left: 0;
-		top: -14px;
-		width: 16px;
-		height: 28px;
-	}
-	.digger.r .bob {
-		right: 0;
-		top: -14px;
-		width: 16px;
-		height: 28px;
-	}
-	.digger.b .bob :global(svg) {
-		transform: translate(-50%, -50%);
-	}
-	.digger.t .bob :global(svg) {
-		transform: translate(-50%, -50%) rotate(180deg);
-	}
-	.digger.l .bob :global(svg) {
-		transform: translate(-50%, -50%) rotate(90deg);
-	}
-	.digger.r .bob :global(svg) {
-		transform: translate(-50%, -50%) rotate(-90deg);
-	}
-	@keyframes wob {
-		50% {
-			translate: var(--n);
-		}
-	}
-
-	/* the ridge of earth left behind: pops up as the digger passes, then settles away */
-	.dot {
-		position: absolute;
-		opacity: 0;
-		animation: ridge 0.7s steps(7) both;
-		animation-delay: var(--dl);
-	}
-	.dot i {
-		position: absolute;
-		display: block;
-		width: 18px;
-		height: 9px;
-		left: 50%;
-		top: 50%;
-		background: linear-gradient(#a8794a 0 50%, #6e4624 50% 100%);
-		clip-path: polygon(0 100%, 0 60%, 20% 60%, 20% 30%, 35% 30%, 35% 0, 65% 0, 65% 30%, 80% 30%, 80% 60%, 100% 60%, 100% 100%);
-	}
-	.dot.b {
-		bottom: 0;
-		width: 18px;
-		height: 9px;
-	}
-	.dot.b i {
-		transform: translate(-50%, -50%);
-	}
-	.dot.t {
-		top: 0;
-		width: 18px;
-		height: 9px;
-	}
-	.dot.t i {
-		transform: translate(-50%, -50%) rotate(180deg);
-	}
-	.dot.l {
-		left: 0;
-		width: 9px;
-		height: 18px;
-	}
-	.dot.l i {
-		transform: translate(-50%, -50%) rotate(90deg);
-	}
-	.dot.r {
-		right: 0;
-		width: 9px;
-		height: 18px;
-	}
-	.dot.r i {
-		transform: translate(-50%, -50%) rotate(-90deg);
-	}
-	@keyframes ridge {
-		0% {
-			opacity: 0;
-		}
-		12%,
-		60% {
-			opacity: 1;
-		}
-		100% {
-			opacity: 0;
-		}
-	}
-
-	/* flying clods of dirt, used by the digger and by the hole sprays */
-	.clod {
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		opacity: 0;
-		animation: fling 0.7s steps(8) both;
-		animation-delay: calc(var(--dl, 0ms) + var(--cd, 0ms));
-	}
-	@keyframes fling {
-		0% {
-			opacity: 1;
-			translate: 0 0;
-		}
-		50% {
-			opacity: 1;
-			translate: var(--x1) var(--y1);
-		}
-		100% {
-			opacity: 0;
-			translate: var(--x2) var(--y2);
-		}
-	}
-
-	.spray {
-		position: fixed;
-		z-index: 61;
-		pointer-events: none;
-		width: calc(var(--px, 4px) * 24);
-		height: 0;
-		--px: 4px;
-	}
-	@media (max-width: 640px) {
-		.spray {
-			--px: 3px;
-		}
-	}
-	.spray.bl {
-		left: 22px;
-		bottom: 0;
-	}
-	.spray.br {
-		right: 22px;
-		bottom: 0;
-	}
-	.spray.tl {
-		left: 22px;
-		top: var(--nav-h);
-		transform: rotate(180deg);
-	}
-	.spray.tr {
-		right: 22px;
-		top: var(--nav-h);
-		transform: rotate(180deg);
-	}
-	.spray .clod {
-		top: 0;
-		animation-duration: 1s;
 	}
 	@media print {
 		.mascot,

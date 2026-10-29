@@ -417,12 +417,12 @@ export const entries: Entry[] = [
 	{
 		id: 'degree',
 		area: 'robotics',
-		title: 'Robotics and industrial automation degree',
+		title: 'Robotics and industrial automation (Grado Superior)',
 		context: 'education',
-		source: 'University',
-		summary: 'Graduated with an A+ in most of my robotics and industrial automation degree.',
+		source: 'Salesians Sarri\u00e0',
+		summary: 'A higher vocational degree (Grado Superior) in robotics and industrial automation, finished with an A+ in most subjects.',
 		detail:
-			'Control theory, sensors, actuators and automation systems gave me a physical intuition for software. It is why I think about failure modes and latency before I write code.',
+			'Studied at Salesians Sarri\u00e0 in Barcelona. Sensors, actuators, control and automation systems gave me a physical intuition for software. It is why I think about failure modes and latency before I write code, and why industrial automation feels like home.',
 		highlights: ['A+ in most subjects', 'Control, sensing and automation', 'Hardware intuition for software'],
 		stack: ['C', 'C++']
 	},
