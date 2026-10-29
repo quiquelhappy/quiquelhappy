@@ -114,7 +114,7 @@
 										href={langPath(l.code)}
 										hreflang={l.code}
 										lang={l.code}
-										data-sveltekit-noscroll
+										data-sveltekit-reset="false"
 										class:on={ui.lang === l.code}
 										onclick={() => {
 											ui.rememberLang(l.code);

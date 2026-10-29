@@ -18,10 +18,10 @@
 					<div class="panel">
 						<header>
 							<strong>{p.name}</strong>
-							<span class="kind">{L.content.projects[p.id].kind}</span>
+							<span class="kind">{L.content.projects[p.id as keyof typeof L.content.projects].kind}</span>
 						</header>
 						<ul>
-							{#each L.content.projects[p.id].points as pt}
+							{#each L.content.projects[p.id as keyof typeof L.content.projects].points as pt}
 								<li><Icon name="check" scale={1.5} />{pt}</li>
 							{/each}
 						</ul>
@@ -29,7 +29,7 @@
 				</div>
 				<div class="body pad">
 					<h3>{p.name}</h3>
-					<p class="blurb">{L.content.projects[p.id].blurb}</p>
+					<p class="blurb">{L.content.projects[p.id as keyof typeof L.content.projects].blurb}</p>
 					<div class="stack">
 						{#each p.stack as t}<span>{t}</span>{/each}
 					</div>

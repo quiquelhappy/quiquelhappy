@@ -26,7 +26,7 @@
 		<ul role="listbox" aria-label={L.ui.nav.language}>
 			{#each LANGS as l}
 				<li role="option" aria-selected={l.code === ui.lang}>
-					<a href={langPath(l.code)} hreflang={l.code} lang={l.code} data-sveltekit-noscroll onclick={() => pick(l.code)} class:on={l.code === ui.lang}>
+					<a href={langPath(l.code)} hreflang={l.code} lang={l.code} data-sveltekit-reset="false" onclick={() => pick(l.code)} class:on={l.code === ui.lang}>
 						<b>{l.code.toUpperCase()}</b>{l.native}
 					</a>
 				</li>

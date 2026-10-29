@@ -1,10 +1,10 @@
 <script lang="ts">
 	import '../../app.css';
 	import favicon from '#lib/assets/favicon.svg';
-	import { onMount } from 'svelte';
+	import { onMount, untrack } from 'svelte';
 	import { goto } from '$app/navigation';
 	import { ui } from '#lib/state/ui.svelte.ts';
-	import { DEFAULT_LANG, detectLang, langPath } from '#lib/i18n/locales.ts';
+	import { DEFAULT_LANG, detectLang, isLang, langPath } from '#lib/i18n/locales.ts';
 	import { L } from '#lib/i18n/index.svelte.ts';
 	import Mascot from '#lib/components/Mascot.svelte';
 	import Toasts from '#lib/components/Toasts.svelte';
@@ -16,7 +16,7 @@
 	let { children, data }: LayoutProps = $props();
 
 	// the URL decides the language. set it before first render so SSR and hydration agree.
-	ui.lang = data.lang;
+	ui.lang = untrack(() => data.lang);
 	$effect.pre(() => {
 		ui.lang = data.lang;
 	});
@@ -28,8 +28,8 @@
 		} else {
 			// plain "/": follow the saved choice, else the browser language
 			const saved = ui.savedLang();
-			const pref = saved && saved !== DEFAULT_LANG ? (saved as typeof data.lang) : saved ? DEFAULT_LANG : detectLang(navigator.languages ?? [navigator.language]);
-			if (pref !== DEFAULT_LANG) goto(langPath(pref) + location.hash, { replaceState: true, noScroll: true, keepFocus: true });
+			const pref = isLang(saved) ? saved : detectLang(navigator.languages ?? [navigator.language]);
+			if (pref !== DEFAULT_LANG) goto(langPath(pref) + location.hash, { replace: true, reset: false });
 		}
 	});
 	$effect(() => {

@@ -19,7 +19,7 @@
 	// text comes from the current language, structure (area, stack, context) from the data file
 	const areas = $derived(rawAreas.map((a) => ({ ...a, ...L.content.areas[a.id] })));
 	const entries = $derived(
-		rawEntries.map((e) => ({ ...e, ...L.content.entries[e.id], source: L.content.sources[e.source as keyof typeof L.content.sources] ?? e.source }))
+		rawEntries.map((e) => ({ ...e, ...L.content.entries[e.id as keyof typeof L.content.entries], source: L.content.sources[e.source as keyof typeof L.content.sources] ?? e.source }))
 	);
 	const usedTech = new Set(rawEntries.flatMap((e) => e.stack));
 
@@ -399,9 +399,6 @@
 		font-family: var(--font-mono);
 		font-size: 13px;
 		color: var(--ink-2);
-	}
-	.status b {
-		color: var(--green);
 	}
 	.small {
 		height: 32px;

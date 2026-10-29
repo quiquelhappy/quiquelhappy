@@ -48,7 +48,7 @@
 				run: () => {
 					close();
 					ui.rememberLang(l.code);
-					goto(langPath(l.code) + location.hash, { noScroll: true });
+					goto(langPath(l.code) + location.hash, { reset: false });
 				}
 			})),
 			{ group: fun, label: P.dark, run: () => (close(), ui.toggleTheme()), words: 'light theme dark' },

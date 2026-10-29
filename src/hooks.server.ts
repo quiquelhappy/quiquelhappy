@@ -1,4 +1,4 @@
-import type { Handle } from '@sveltejs/kit';
+import type { Handle } from '@sveltejs/kit/hooks';
 import { DEFAULT_LANG, isLang } from '#lib/i18n/locales.ts';
 
 // Put the right <html lang> into every prerendered page.

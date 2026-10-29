@@ -362,7 +362,7 @@ export const en = {
 			"Woof. Don't mind me. I live in your viewport now.",
 			"I herd things. Mostly deadlines.",
 			"You shall not pass... without checking the hire button.",
-			"Quique drew me in 20x20 pixels. I think he is proud.",
+			"Quique drew me in 24x24 pixels. I think he is proud.",
 			"Good boy count: 1. Treat count: 0. Please advise.",
 			"I know three tunnels. Do not ask me about the fourth.",
 			"psst. the hire button works.",
