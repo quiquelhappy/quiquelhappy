@@ -1,0 +1,619 @@
+import type { Messages } from './en.ts';
+
+export const ca: Messages = {
+	ui: {
+		meta: {
+			title: 'Quique Osuna | Enginyer de programari, disponible per contractar',
+			description:
+				"Quique (Happy) construeix programari que ha de funcionar: aeroespacial, robòtica, salut, hosting, comerç i eines per a desenvolupadors. Programa des dels 9 anys, viu a prop de Barcelona i està obert a nova feina.",
+			og: "Programari per a l'espai, els robots i els racons més estranys d'internet. Obert a nova feina: quique@osuna.dev"
+		},
+		nav: {
+			top: 'Hola',
+			about: 'Sobre mi',
+			experience: 'Experiència',
+			projects: 'Projectes',
+			hire: 'Contracta’m',
+			sections: 'Seccions',
+			home: 'quique, torna a dalt',
+			palette: 'Obre la paleta d’ordres',
+			dark: 'Canvia al mode fosc',
+			darkTitle: 'Fosc / clar',
+			y2kTitle: 'Viatja a l’any 2000',
+			language: 'Llengua'
+		},
+		hero: {
+			eyebrow: 'Hola, sóc el Quique',
+			h1a: 'Construeixo programari',
+			h1b: 'que ha de ',
+			h1em: 'funcionar',
+			h1c: '.',
+			retro: 'Benvingut a la pàgina del Quique!!',
+			ledeA:
+				"Vaig començar a programar als nou anys i no he parat mai del tot. Avui construeixo programari per a l'espai, els robots i la salut, a més d'alguns productes propis, estranys i meravellosos. Visc a prop de Barcelona, a internet em diuen ",
+			ledeBold: 'Happy',
+			ledeB: ' i estic obert a nova feina.',
+			rightNow: 'ara mateix sóc',
+			cta: 'Contracta’m',
+			copied: 'Copiat',
+			copyAria: 'Copia l’adreça de correu',
+			toastCopied: 'Correu copiat. Ara ves a escriure alguna cosa maca.',
+			years: (n: number) => `${n}+ anys programant`,
+			pressA: 'prem',
+			pressB: 'per explorar',
+			speaks: 'parlo',
+			profileAria: 'Perfil ràpid',
+			open: 'Obert',
+			onBranch: 'a la branca',
+			availableNow: 'disponible ara',
+			codeAria: 'Perfil en forma de codi',
+			recommended: 'Recomanat',
+			alertTitle: 'Possible gran col·laboració',
+			alertText: 'Revisió suggerida: saluda abans que ho faci algú altre.',
+			hireQL: 'Hire QL',
+			workingOn: 'Treballant en',
+			sideQuests: 'Missions secundàries',
+			currentBranch: 'Branca actual',
+			b1: 'missió crítica, navegació per satèl·lit',
+			b2: 'automatització industrial, automoció',
+			b3: 'serverbench, grifpkg, purecore',
+			construction: 'EN CONSTRUCCIÓ',
+			mosaic: 'passa el cursor per pintar. fes clic per fixar un bloc.'
+		},
+		about: {
+			eyebrow: 'Sobre mi',
+			h2a: 'Solucionador de problemes,',
+			h2b: 'per costum.',
+			p1a: 'Sóc el Quique, ',
+			p1bold: 'Happy',
+			p1b: " a internet. Programo des que tinc memòria de tocar un ordinador i visc a prop de Barcelona. Tinc un munt de projectes personals que mai van arribar a cap biografia, però en el fons intento arreglar coses que facin la vida una mica millor, per als altres i per a mi.",
+			p2: "De dia treballo en una empresa que construeix sistemes aeroespacials, de defensa i seguretat, amb arrels profundes en navegació per satèl·lit i programari de missió crítica, i en una empresa de robòtica que fa automatització industrial, sobretot en automoció. De nit construeixo eines per a comunitats: una botiga, un hosting, un gestor de paquets i un motor d'analítica, gairebé tot des de zero.",
+			p3: "Tinc dues titulacions: Enginyeria del Programari (Informàtica) a la UAB, i un Cicle Formatiu de Grau Superior (Grado Superior) en Robòtica i Automatització Industrial a Salesians Sarrià. Es nota. Penso en modes de fallada, latència i el món físic abans de pensar en frameworks.",
+			facts: 'Dades ràpides',
+			alias: 'àlies',
+			base: 'base',
+			baseV: 'a prop de Barcelona',
+			since: 'programant des dels',
+			sinceV: '9 anys (abril de 2010)',
+			degrees: 'titulacions',
+			deg1: 'Eng. del Programari (UAB)',
+			deg2: 'Robòtica i Automatització (Salesians Sarrià)',
+			speaks: 'parlo',
+			status: 'estat',
+			statusV: 'obert a ofertes de feina',
+			fuel: 'combustible',
+			fuelV: 'cafè',
+			carouselAria: 'Coses en les quals crec',
+			prev: 'Anterior',
+			next: 'Següent',
+			goTo: (n: number) => `Ves a la cita ${n}`,
+			statYears: (bc: number) => `anys programant, ${bc} d'ells a. C. (abans de ChatGPT)`,
+			statAge: "anys tenia quan vaig començar a escriure codi",
+			achEyebrow: 'Assoliments',
+			achH2: 'Desbloquejats fins ara.',
+			xp: 'XP',
+			clickToClaim: 'fes clic per reclamar',
+			claimed: 'RECLAMAT +10 XP',
+			unlocked: 'ASSOLIMENT DESBLOQUEJAT',
+			toastXp: (title: string) => `+10 XP: ${title}`,
+			toastAll: '100 % completat. L’únic assoliment que queda és contractar-me.',
+			sayHalf: 'Ja som a la meitat. Au, aconsegueix-los tots.'
+		},
+		marquee: { aria: 'Amb què treballo', play: 'Reprèn el desplaçament', pause: 'Pausa el desplaçament' },
+		exp: {
+			eyebrow: 'Experiència',
+			h2a: 'El que de debò',
+			h2b: 'he construït i operat.',
+			lede: (areas: number, entries: number) =>
+				`${areas} àrees d'habilitat, ${entries} entrades, zero farciment de paraules de moda. Filtra per habilitat, tecnologia o context. Cada targeta s'obre i cada etiqueta de tecnologia és un filtre.`,
+			filters: 'Filtres',
+			searchPh: 'Cerca: docker, comerç, go...',
+			searchLabel: 'Cerca en l’experiència',
+			skillArea: 'Àrea d’habilitat',
+			everything: 'Tot',
+			context: 'Context',
+			tech: 'Tecnologia',
+			matchMode: 'Mode de coincidència',
+			any: 'alguna',
+			all: 'totes',
+			gLang: 'Llenguatges',
+			gFrame: 'Frameworks',
+			gTools: 'Eines i plataformes',
+			reset: 'Restableix els filtres',
+			showing: (n: number, total: number) => `Mostrant ${n} de ${total}`,
+			filtered: 'filtrat',
+			expandAll: 'Expandeix-ho tot',
+			collapseAll: 'Contreu-ho tot',
+			details: 'Detalls',
+			less: 'Menys',
+			filterBy: (t: string) => `Filtra per ${t}`,
+			emptyTitle: 'Res coincideix amb això.',
+			emptyText: 'Ni tan sols el Gandalf ho ha pogut ensumar. Prova amb menys filtres o pregunta-m’ho directament.',
+			emptySay: 'Res coincideix. Ni jo ho he trobat.'
+		},
+		projects: {
+			eyebrow: 'Projectes',
+			h2a: 'Coses que vaig fer',
+			h2b: 'perquè no hi havia més remei.',
+			lede: 'Res del que hi havia encaixava, així que vaig construir una botiga, un hosting, un gestor de paquets i un motor d’analítica.',
+			visit: (d: string) => `Visita ${d}`,
+			none: 'Sense web pública'
+		},
+		hire: {
+			eyebrow: 'Disponible per contractar',
+			h2: 'Tens alguna cosa difícil de construir? Parlem-ne.',
+			small:
+				"Estic obert a noves ofertes de feina. M'agraden els problemes amb arestes: sistemes distribuïts, hosting, eines per a desenvolupadors i programari que ha de sortir bé a la primera.",
+			ledeA: "Explica'm què estàs construint i què hi ha pel mig. Amb unes poques línies n'hi ha prou. Ho llegeixo tot i et respondré des de ",
+			ledeB: '.',
+			langs: 'Pots escriure’m en català, castellà, anglès, alemany o francès.',
+			emailLabel: 'El teu correu',
+			emailPh: 'tu@correu.com',
+			buildLabel: 'Què estem construint?',
+			buildPh: 'Què estem construint?',
+			send: 'Escriu al Quique',
+			sending: 'Obrint el correu...',
+			copy: (e: string) => `Copia ${e}`,
+			copied: 'Copiat',
+			mosaic: 'cada bloc és una idea de projecte. fixa la teva.',
+			subject: 'Treballem junts',
+			defaultBody: 'Hola Quique, m’agradaria parlar d’un projecte.',
+			replyTo: 'Respon a: ',
+			toastSent: "L'aplicació de correu s'hauria d'estar obrint. Si no, copia l'adreça de sota.",
+			say: 'Ho has fet! Li encantarà.',
+			toastCopied: 'Copiat! Enganxa-ho on vulguis.'
+		},
+		retro: {
+			company: 'Una empresa Happy',
+			shortcuts: 'Accessos del web',
+			home: 'Inici',
+			skills: 'Habilitats',
+			hireLink: 'Contractar',
+			go2000: 'Anar al 2000 del tot',
+			back2026: 'Tornar al 2026',
+			quickLinks: 'Enllaços ràpids',
+			myGithub: 'El meu GitHub',
+			service: 'Atenció al client',
+			contact247: 'Contacta amb el Quique 24/7',
+			notReally: '(no literalment 24/7, dorm)',
+			guarantee: 'Garantia de seguretat',
+			memberOf: 'Membre de',
+			b1: 'Fet amb Svelte 5',
+			b2: 'Millor vist a 800x600',
+			b3: 'Amb tecnologia Docker',
+			b4: 'HTML 4.01 vàlid (jeje)',
+			finder: 'Cercador Ràpid d’Enginyer',
+			showMe: 'Mostra’m el millor enginyer per a:',
+			anyEng: 'qualsevol enginyer',
+			onlyMe: 'específicament el Quique',
+			iNeed: 'Necessito:',
+			needs: ['Una plataforma web', 'Un backend d’hosting', 'Un gestor de paquets', 'Programari de missió crítica', 'Automatització / robòtica', 'Alguna cosa estranya'],
+			starting: 'Començant:',
+			whens: ['Com més aviat millor', 'El mes que ve', 'El proper trimestre', 'Quan arribi el Y3K'],
+			size: 'Mida:',
+			sizes: ['Petit', 'Mitjà', 'Gran', 'De la mida de la Lluna'],
+			go: 'Endavant!',
+			news: 'Ofertes i notícies',
+			newsItems: [
+				'Estalvia un 40 % en reescriptures. Contracta el Quique abans que el codi heretat et trobi!',
+				'Novetat: desplegaments sense caigudes ja disponibles en terminals participants',
+				'Rep 50 o 100 € de reemborsament pel teu primer bug corregit (no és una oferta real)',
+				'Contenidors Docker: ara amb un 30 % més de balena',
+				'Viu una gran aventura al teu propi backlog'
+			],
+			corner: 'El racó del webmàster',
+			visitor: 'Ets el visitant número',
+			visitorNote: '(comptat només al teu navegador, com un llibre de visites molt petit i honest)',
+			fineA: 'Tots els drets reservats. Cap GIF animat va resultar ferit en la creació d’aquesta secció.',
+			guestbook: 'Signa el meu llibre de visites!',
+			mailSubject: 'Sol·licitud del Cercador Ràpid d’Enginyer',
+			mailBody: (project: string, start: string, size: string, mode: string) =>
+				`Hola Quique,\n\nHe fet servir el teu Cercador Ràpid d'Enginyer.\n\nTipus de projecte: ${project}\nInici: ${start}\nMida: ${size}\nMode de cerca: ${mode}\n\n`,
+			modeAny: 'qualsevol enginyer',
+			modeMe: 'específicament tu',
+			toastDial: 'Marcant... *screeeeeeee-kshhhhh*'
+		},
+		footer: {
+			made: 'Fet a prop de Barcelona amb Svelte 5, una quantitat irracional de cafè i un pastor australià blue merle anomenat Gandalf.',
+			elsewhere: 'En altres llocs',
+			coffee: 'Convida’m a un cafè'
+		},
+		palette: {
+			aria: 'Paleta d’ordres',
+			placeholder: 'Escriu una ordre o cerca...',
+			label: 'Ordre',
+			none: 'No s’ha trobat cap ordre. Prova amb «contractar».',
+			navigate: 'navegar',
+			run: 'executar',
+			go: 'Ves a',
+			actions: 'Accions',
+			fun: 'Diversió',
+			retro: 'El racó dels 2000',
+			email: 'Escriu al Quique',
+			copy: 'Copia l’adreça de correu',
+			github: 'Obre GitHub',
+			dark: 'Canvia al mode fosc',
+			y2kOn: 'Viatja a l’any 2000',
+			y2kOff: 'Surt de l’any 2000',
+			summon: 'Invoca el Gandalf',
+			summonSay: 'Bup! Em cridaves?',
+			trick: 'Fes que el Gandalf faci un truc',
+			confetti: 'Confeti',
+			sudoHint: 'permís concedit',
+			toastCopied: 'Correu copiat. Au, escriu alguna cosa.',
+			sudo1: '[sudo] contrasenya per al reclutador: ********',
+			sudo2: 'Accés concedit. Obrint la secció de contractar...',
+			language: 'Canvia de llengua'
+		},
+		mosaic: {
+			t12: '12 blocs fixats. Això és un gràfic de contribucions o un Picasso?',
+			say12: 'Ooh, estem pintant? M’encanta pintar.',
+			t36: '36 blocs. Això ja és oficialment una galeria.'
+		},
+		mascot: {
+			aria: 'Gandalf, un pastor australià blue merle. Fes clic per a una sorpresa.',
+			away: '(._.) El Gandalf et troba a faltar. Torna',
+			startle: ['Bup!', 'Ei!', 'Massa a prop!', 'Nop. Adéu.'],
+			confettiSay: 'Vale, vale! Qui és un bon noi? Jo. Pren el confeti!',
+			clickToast: (n: number) => `Has fet clic al Gandalf ${n} cops. Això és dedicació. Contracta el Quique amb ella.`
+		},
+		eggs: {
+			sudo1: 'quique no és al fitxer sudoers. Aquest incident serà reportat.',
+			sudo2: 'Reportat a: ningú. No tenim a qui reportar.',
+			hire: 'Bona decisió. Molt bona decisió.',
+			gandalf: 'Has dit el meu nom! Bup!',
+			woof: 'BUP! Algú ha dit passejada?',
+			happy: 'Aquest és el meu nom, no el gastis.',
+			matrix: 'No hi ha cullera. Només hi ha TypeScript.',
+			rm: 'rm: no es pot eliminar el futur: permís denegat',
+			konami: 'CODI KONAMI ACCEPTAT. +30 vides. El Quique aprova la teva infantesa.'
+		},
+		y2k: {
+			on: 'Benvingut a l’any 2000. El teu mòdem està marcant...',
+			off: 'Tornada al futur. Benvingut a casa.',
+			sayOn: 'Ostres. Ara tot és beix.',
+			sayOff: 'Uf! Antialiasing!'
+		}
+	},
+	content: {
+		roles: [
+			'un solucionador de problemes',
+			'un enginyer gairebé de coets',
+			'un xiuxiuejador de Docker',
+			'un domador de robots',
+			'un desenvolupador de PHP reformat',
+			'un inventor de gestors de paquets',
+			'una persona que llegeix els logs',
+			'disponible per contractar'
+		],
+		principles: [
+			{ quote: 'Vaig aprendre moltes coses a les dures.', by: 'jo, al meu propi README' },
+			{
+				quote: 'En el fons sóc un solucionador de problemes. Intento arreglar coses que facin la vida una mica millor, per als altres i per a mi.',
+				by: 'també jo'
+			},
+			{
+				quote: 'Quan res del que hi havia era prou bo, ho vaig construir des de zero: una botiga, un hosting, un gestor de paquets.',
+				by: 'el git log'
+			},
+			{
+				quote: 'La privadesa és una restricció de disseny. Vaig vincular sessions només amb dades de la connexió, sense empremta digital del dispositiu.',
+				by: 'un socket, probablement'
+			},
+			{ quote: '{bc} anys d’experiència a. C. Això vol dir abans de ChatGPT.', by: 'el meu calendari' }
+		],
+		achievements: [
+			{ title: 'Botiguer', text: 'Vaig construir la meva pròpia plataforma de comerç per a béns digitals, com Shopify però per a col·leccionables dins de jocs.' },
+			{ title: 'Propietari', text: 'Vaig construir el meu propi sistema d’hosting amb Docker. Els servidors de jocs són els llogaters més afamats.' },
+			{ title: 'Xiuxiuejador de dependències', text: 'Vaig construir des de zero la lògica d’un gestor de paquets, amb capes de memòria cau i distribució.' },
+			{ title: 'Sense empremtes, si us plau', text: 'Vaig construir una plataforma d’analítica amb sockets i vinculació estricta de sessions, sense empremta digital del dispositiu.' },
+			{ title: 'Control de missió', text: 'Vaig treballar en projectes espacials crítics que empenyen la propera frontera de l’exploració humana.' },
+			{ title: 'Primer, no fer mal', text: 'Vaig treballar en aplicacions de salut que milloren com s’entenen i es gestionen els assaigs clínics.' },
+			{ title: 'Doble titulació', text: 'Enginyeria del Programari (Informàtica) a la UAB, més un Grau Superior en Robòtica i Automatització Industrial a Salesians Sarrià, amb A+ en la majoria.' },
+			{ title: 'Cicatrius', text: 'Vaig aprendre moltes coses a les dures. Aquesta no té categoria.' }
+		],
+		marquee: [
+			'TypeScript', 'Go', 'Svelte', 'Docker', 'Linux', 'PHP', 'C / C++', 'WebSockets', 'AWS',
+			'Vue', 'Maven / Gradle', 'CSS', 'Sistemes distribuïts', 'Gestors de paquets', 'Programari de missió crítica'
+		],
+		quips: {
+			general: [
+				'Bup. No em facis cas. Ara visc a la teva pantalla.',
+				'Jo pastoro coses. Sobretot terminis.',
+				'No passaràs... sense mirar el botó de contractar.',
+				'El Quique em va dibuixar en 24x24 píxels. Crec que n’està orgullós.',
+				'Bons nois: 1. Premis: 0. Si us plau, aconselleu.',
+				'Conec tres túnels. No em preguntis pel quart.',
+				'psst. el botó de contractar funciona.',
+				'Un merle mai arriba tard. Ni d’hora. Arriba just quan es proposa.',
+				'Prova Ctrl+K. O Cmd+K. No sóc exigent.',
+				'Hi ha un codi Konami per aquí. Jo no he dit res.'
+			],
+			top: ['Bup! Sóc el Gandalf. El Quique és una mica tímid, així que parlo jo.', 'Baixa. El millor no és a la portada.'],
+			about: ['Aquests assoliments són reals. El confeti és extra.', 'Ell va començar a programar als nou. Jo, en arrencar.'],
+			experience: ['Prova els filtres. Són molt satisfactoris.', 'Filtra per Go. Després porta la pilota. Espera, això no és un filtre.', 'Totes les targetes s’obren. Totes.'],
+			projects: ['Va fer tot això. Sí, el gestor de paquets també.', 'serverbench és una pila sencera, no un sol projecte.'],
+			hire: ['Aquí és on li escrius un correu.', 'Saluda’l. Respon. Ho he vist.', 'quique@osuna.dev. Esperaré aquí. Els bons nois esperen.']
+		},
+		clickLines: ['Bup!', 'Guau!', 'Tinc hitbox, saps?', 'Les carícies a la panxa són extra.', 'Fes clic 10 cops. T’ho repto.', 'Set. Vas de debò.', 'Nou. El deu serà genial.'],
+		areas: {
+			backend: { label: 'Backend i sistemes distribuïts', blurb: 'Serveis que es mantenen drets, escalen i no desperten ningú a les 3 de la matinada.' },
+			infra: { label: 'Infraestructura i hosting', blurb: 'Contenidors, orquestració i executar amb seguretat les càrregues d’altres persones.' },
+			frontend: { label: 'Frontend i producte', blurb: 'Interfícies que a la gent li agrada fer servir: panells, constructors i botigues.' },
+			commerce: { label: 'Comerç, anuncis i creixement', blurb: 'Vendre béns digitals, monetitzar comunitats i fer-se trobar.' },
+			data: { label: 'Dades, analítica i estadística', blurb: 'Convertir fluxos d’esdeveniments en decisions, previsions i moderació.' },
+			security: { label: 'Seguretat i confiança', blurb: 'Sessions que respecten la privadesa, detecció de vulnerabilitats i valors segurs per defecte.' },
+			devtools: { label: 'Eines per a desenvolupadors', blurb: 'Gestors de paquets, pipelines de compilació i eines per a altres enginyers.' },
+			foundations: { label: 'Fonaments d’informàtica', blurb: 'Formació reglada: la teoria i la disciplina d’enginyeria que hi ha sota tota la resta.' },
+			aerospace: { label: 'Aeroespacial i missió crítica', blurb: 'Programari on fallar no és una opció i el que està en joc és orbital.' },
+			robotics: { label: 'Robòtica i automatització', blurb: 'Automatització industrial, sobretot automoció, on el programari es troba amb l’acer.' },
+			health: { label: 'Salut i assaigs clínics', blurb: 'Aplicacions que ajuden a entendre i gestionar la recerca clínica.' }
+		},
+		contexts: { product: 'Els meus propis productes', industry: 'Feina a la indústria', education: 'Formació' },
+		sources: {
+			serverbench: 'serverbench',
+			purecore: 'purecore',
+			grifpkg: 'grifpkg',
+			'all of the above': 'tot l’anterior',
+			various: 'diversos',
+			UAB: 'UAB',
+			'Aerospace, defense and security company': 'Empresa aeroespacial, de defensa i seguretat',
+			'Robotics company': 'Empresa de robòtica',
+			'Salesians Sarrià': 'Salesians Sarrià',
+			'Health technology': 'Tecnologia sanitària'
+		},
+		entries: {
+			'game-hosting': {
+				title: 'Hosting d’alt consum de còmput',
+				summary: 'Un servei d’hosting per a servidors de jocs, de les càrregues més voraces i difícils de gestionar bé.',
+				detail:
+					'Els servidors de jocs no perdonen: devoren CPU i memòria, són sensibles a la latència i els jugadors noten qualsevol entrebanc. El servei havia de repartir aquestes càrregues amb justícia, aïllar-les entre si i recuperar-se ràpid quan alguna cosa fallava. Es va construir amb Go, JavaScript, TypeScript i PHP, amb els contenidors com a unitat d’aïllament.',
+				highlights: ['Aïllament de càrregues per servidor', 'Planificació segons recursos', 'Pla de control en Go, panells en TypeScript']
+			},
+			permissions: {
+				title: 'Permisos basats en rols',
+				summary: 'Permisos d’alta granularitat perquè els equips separin màrqueting, comerç, suport i moderació.',
+				detail:
+					'Les comunitats són equips i els equips tenen rols. El sistema de permisos deixa que cada comunitat defineixi qui pot tocar què, de manera que l’equip de moderació mai necessita accés a la botiga ni el de màrqueting veure els tiquets de suport. Havia de ser ràpid en comprovar, perquè cada petició fa la mateixa pregunta.',
+				highlights: ['Rols granulars per comunitat', 'Es comprova a cada petició', 'Dissenyat a partir d’estructures d’equip reals']
+			},
+			tracking: {
+				title: 'Seguiment de clients entre mitjans',
+				summary: 'Segueix un client entre jocs, navegadors i Discord per construir un únic perfil d’interessos fiable.',
+				detail:
+					'Una mateixa persona apareix com a compte de joc, sessió de navegador i membre de Discord. Unir aquestes identitats en un sol perfil és el que fa que les recomanacions siguin rellevants en lloc de molestes. Alimenta la botiga i l’estudi de creadors perquè el contingut adequat arribi a la persona adequada.',
+				highlights: ['Unió d’identitats entre tres mitjans', 'Alimenta recomanacions de botiga i creadors', 'Construït amb les lliçons de privadesa de purecore']
+			},
+			'realtime-ingest': {
+				title: 'Ingesta en temps real per sockets',
+				summary: 'Un backend d’analítica basat en sockets que manté connexions llargues i les converteix en sessions.',
+				detail:
+					'purecore manté les connexions obertes i llegeix la sessió directament de la connexió, en lloc de galetes o identificadors de dispositiu. Això manté el model de dades simple i honest: si el socket és el mateix, la sessió és la mateixa.',
+				highlights: ['Connexions WebSocket de llarga durada', 'Identitat de sessió a partir de la connexió', 'Poc cost per esdeveniment']
+			},
+			'docker-hosting': {
+				title: 'Sistema d’hosting basat en Docker',
+				summary: 'El meu propi sistema d’hosting de contenidors, construït des de zero perquè res d’existent encaixava.',
+				detail:
+					'La capa d’hosting embolcalla Docker amb la lògica de producte que necessita un negoci d’hosting: aprovisionament, límits, cicle de vida, ganxos de facturació i un panell per al client. És la base de serverbench i em va ensenyar més sobre Linux, cgroups i xarxes que qualsevol curs.',
+				highlights: ['Aprovisionament i gestió del cicle de vida', 'Límits per contenidor', 'Panell de client a sobre']
+			},
+			byod: {
+				title: 'Orquestrador «porta el teu propi dispositiu»',
+				summary: 'Permet als clients connectar les seves pròpies màquines i tenir la mateixa experiència gestionada en elles.',
+				detail:
+					'No tothom vol llogar capacitat. L’orquestrador BYOD deixa que un client connecti el seu propi maquinari i obtingui els mateixos desplegaments, monitoratge i controls, cosa que implica tractar cada màquina com a no fiable, remota i de vegades desconnectada.',
+				highlights: ['Màquines del client com a nodes de primera classe', 'Les mateixes eines que l’hosting gestionat', 'Pensat per a connexions inestables']
+			},
+			'cdn-edge': {
+				title: 'Lliurament a la vora i memòria cau d’arxius',
+				summary: 'Descàrregues en memòria cau i servides des de la vora perquè les dependències es resolguin ràpid allà on sigui el servidor.',
+				detail:
+					'Un gestor de paquets viu o mor per la velocitat de descàrrega. grifpkg desa arxius en memòria cau amb metadades riques i els serveix des de la vora, així les instal·lacions són ràpides i no es maltracta els llocs d’origen.',
+				highlights: ['Memòria cau d’arxius amb metadades', 'Lliurament a la vora', 'Amable amb els hosts d’origen']
+			},
+			'linux-ops': {
+				title: 'Operacions Linux',
+				summary: 'Anys gestionant servidors reals per a comunitats reals, on una caiguda té el seu propi canal de Discord.',
+				detail:
+					'Gestionar PureVanilla i serverbench significava mantenir màquines Linux sanes per a gent que nota a l’instant quan no ho estan. Monitoratge, còpies de seguretat i resposta a incidents formaven part de la rutina diària, no d’un equip a part.',
+				highlights: ['Monitoratge i còpies de seguretat', 'Resposta a incidents amb públic', 'Depurar en producció amb cura']
+			},
+			'creator-studio': {
+				title: 'Estudi de creadors',
+				summary: 'Un panell de màrqueting per a creadors que fan vídeos i publicacions sobre les comunitats que estimen.',
+				detail:
+					'L’estudi connecta comptes de YouTube, TikTok i Twitch, permet monetitzar publicacions i mostra als creadors com rendeix la seva feina. Havia de semblar una eina de creadors, no una consola empresarial.',
+				highlights: ['Autenticació amb YouTube, TikTok i Twitch', 'Monetització de publicacions', 'Analítica per a creadors']
+			},
+			cms: {
+				title: 'CMS i constructor de llocs web',
+				summary: 'Un CRM i constructor web amb motor de plantilles i un mercat de plantilles.',
+				detail:
+					'Les comunitats construeixen els seus propis llocs sense tocar codi. Les pàgines es componen amb mòduls reutilitzables, les plantilles es poden compartir o vendre en un mercat i el motor ho renderitza tot amb un rendiment predictible.',
+				highlights: ['Llocs de diverses pàgines', 'Mòduls reutilitzables', 'Mercat de plantilles integrat']
+			},
+			storefronts: {
+				title: 'Botigues web personalitzables',
+				summary: 'Cada comunitat té una botiga que pot fer seva.',
+				detail:
+					'La botiga ha de semblar-se a la comunitat que la posseeix, així que el tema arriba fons mentre el pagament es manté coherent i de confiança. És la meitat de cara al client de la plataforma de comerç.',
+				highlights: ['Temes per comunitat', 'Pagament coherent i fiable', 'Col·leccionables, insígnies i potenciadors']
+			},
+			'modern-ui': {
+				title: 'Interfícies modernes per components',
+				summary: 'Interfícies per components en Svelte i Vue, amb Tailwind o CSS a mà.',
+				detail:
+					'M’agraden les interfícies petites i ràpides. Svelte és la meva opció per defecte, Vue quan l’equip ja hi viu, i Tailwind o CSS escrit a mà segons el projecte. Aquesta web n’és un exemple.',
+				highlights: ['Primer Svelte, Vue quan encaixa', 'Tailwind o CSS a mà', 'Accessible per defecte']
+			},
+			'commerce-platform': {
+				title: 'Plataforma de comerç per a béns digitals',
+				summary: 'La meva pròpia plataforma estil Shopify, feta per a col·leccionables, insígnies i potenciadors dins de jocs.',
+				detail:
+					'Els béns digitals tenen regles diferents de les dels físics: lliurament instantani, frau, devolucions de rebuts i integracions per joc. La plataforma gestiona catàlegs, pagament i lliurament dins del joc, i dona a cada comunitat la seva pròpia botiga web.',
+				highlights: ['Lliurament instantani dins dels jocs', 'Botigues web per comunitat', 'Construïda des de zero']
+			},
+			'paid-plugins': {
+				title: 'Plugins de pagament i verificació de compres',
+				summary: 'Ven dependències o autentica compres fetes en altres llocs per autoritzar descàrregues.',
+				detail:
+					'Els desenvolupadors poden vendre la seva feina a través del gestor de paquets, i qui ja posseeix un plugin en un altre lloc pot demostrar-ho i descarregar-lo. Autoritzar descàrregues sense trencar el flux d’instal·lació va ser el difícil.',
+				highlights: ['Venda de dependències', 'Verificació de compres entre llocs', 'Descàrregues autoritzades des de la CLI']
+			},
+			ads: {
+				title: 'Pàgines de descàrrega allotjades amb anuncis',
+				summary: 'Els desenvolupadors de codi obert obtenen ingressos de pàgines de descàrrega allotjades, amb anuncis del nostre propi fons.',
+				detail:
+					'El codi obert hauria de poder pagar-se sol. Els desenvolupadors activen pàgines de descàrrega allotjades i guanyen amb publicitat servida des del fons d’anuncis de la plataforma, cosa que va mantenir la qualitat alta i el seguiment limitat.',
+				highlights: ['Ingressos per a desenvolupadors de codi obert', 'Fons d’anuncis propi', 'Opcional per projecte']
+			},
+			promoted: {
+				title: 'Programari promocionat',
+				summary: 'Els desenvolupadors anuncien plugins de pagament al web i mitjançant recomanacions de text a la CLI.',
+				detail:
+					'Descobrir és el difícil quan es ven programari. Les promocions apareixen al web i com a suggeriments discrets de text a la línia d’ordres, on els desenvolupadors ja busquen una solució.',
+				highlights: ['Promoció al web', 'Recomanacions de text a la CLI', 'Ubicació respectuosa i poc intrusiva']
+			},
+			'seo-studio': {
+				title: 'Estudi SEO i votacions',
+				summary: 'Un panell SEO amb sistema de vots que suggereix els llocs on cada vot d’un membre rendeix més.',
+				detail:
+					'Les comunitats llisten els seus llocs i els membres hi voten. L’estudi suggereix quins llocs de votació de tercers fer servir perquè cada vot arribi tan lluny com sigui possible, convertint una tasca solta en un cicle de creixement mesurat.',
+				highlights: ['Sistema de votació integrat', 'Suggeriments intel·ligents de llocs', 'Maximitza l’abast per vot']
+			},
+			'community-analytics': {
+				title: 'Analítica de comunitats',
+				summary: 'Tot el que una comunitat necessita saber sobre el seu creixement, més predicció de festius.',
+				detail:
+					'Més enllà dels recomptes i gràfiques habituals, l’analítica prediu els efectes dels festius i combina senyals dels sistemes de SEO i creadors, perquè una comunitat vegi d’on ve realment el seu creixement.',
+				highlights: ['Mètriques de creixement estàndard', 'Predicció de festius', 'Senyals de les eines de SEO i creadors']
+			},
+			automod: {
+				title: 'Automoderació estadística',
+				summary: 'Moderació d’alt volum amb Perspective API que manté fora de la conversa els membres tòxics recurrents.',
+				detail:
+					'En lloc de jutjar cada missatge per separat, el sistema pren una visió estadística de cada membre al llarg del temps. Els reincidents s’aniran allunyant de la conversa, mentre que un mal dia puntual no envia ningú al bàn.',
+				highlights: ['Puntuació amb Perspective API', 'Historial estadístic per membre', 'Pensat per a alt volum d’ingesta']
+			},
+			'interest-profiles': {
+				title: 'Perfils d’interessos i recomanacions',
+				summary: 'Construeix un perfil d’interessos per client per recomanar contingut de la botiga o mitjans de creadors.',
+				detail:
+					'Senyals de jocs, navegadors i Discord es fusionen en un perfil que decideix què recomanar. L’objectiu era la rellevància: menys suggeriments, però millors.',
+				highlights: ['Perfils a partir de diverses fonts', 'Recomanacions de botiga i creadors', 'Ajustat per a rellevància abans que volum']
+			},
+			'fingerprint-free': {
+				title: 'Vinculació de sessions sense empremta digital',
+				summary: 'Vinculació de sessions d’alta seguretat basada només en dades de la connexió, sense empremta digital del dispositiu.',
+				detail:
+					'La manera fàcil de seguir visitants és prendre l’empremta dels seus dispositius. Jo no volia això. La plataforma lliga les sessions a propietats de la mateixa connexió, cosa que manté útil l’analítica i els visitants sense identificar.',
+				highlights: ['Sense empremta digital del dispositiu', 'Identitat basada en la connexió', 'Alts estàndards de seguretat']
+			},
+			'vuln-detection': {
+				title: 'Detecció de vulnerabilitats',
+				summary: 'Les dependències s’identifiquen per empremta i es poden marcar com a vulnerables, avisant els desenvolupadors de l’ús de codi insegur.',
+				detail:
+					'Un cop identificats els arxius per empremta, una versió coneguda com a dolenta es pot marcar, i qui en depengui rep un avís. Converteix un gestor de paquets en un sistema d’alerta primerenca per a l’ecosistema.',
+				highlights: ['Empremta digital d’artefactes', 'Marcatge de versions vulnerables', 'Avisos als desenvolupadors afectats']
+			},
+			'jar-pm': {
+				title: 'Gestor de paquets JAR',
+				summary: 'Un gestor de paquets que importa, actualitza i gestiona dependències de programari Java.',
+				detail:
+					'Els ecosistemes de plugins Java sovint depenen de descàrregues manuals. grifpkg resol, desa en memòria cau i actualitza dependències automàticament, amb el seu propi registre, CLI i capa de distribució. L’utilitza sobretot la comunitat de SpigotMC.',
+				highlights: ['Registre, CLI i capes de distribució', 'Actualitzacions automàtiques', 'Utilitzat a la comunitat de SpigotMC']
+			},
+			'auto-index': {
+				title: 'Indexació automàtica',
+				summary: 'Biblioteques i programari s’indexen automàticament, amb metadades riques i memòria cau d’arxius.',
+				detail:
+					'Un registre és tan bo com la seva cobertura. La indexació automàtica troba noves versions, extreu metadades i desa els arxius en memòria cau, així el catàleg es manté al dia sense que els mantenidors facin el paperam.',
+				highlights: ['Rastreig i indexació de noves versions', 'Extracció de metadades riques', 'Memòria cau d’arxius']
+			},
+			'dep-compile': {
+				title: 'Compilació de dependències',
+				summary: 'Alguns projectes no publiquen .jar. grifpkg s’enganxa als seus repositoris git i els compila amb Maven o Gradle.',
+				detail:
+					'Quan no hi ha un artefacte precompilat, la plataforma obté el repositori i el compila en un entorn aïllat amb Maven o Gradle, i serveix el resultat com qualsevol altre paquet.',
+				highlights: ['Compilacions guiades per git', 'Suport per a Maven i Gradle', 'Entorn de compilació aïllat']
+			},
+			'local-import': {
+				title: 'Importació local automàtica',
+				summary: 'Detecta dependències en un projecte existent i les associa amb entrades del registre automàticament.',
+				detail:
+					'Adoptar un gestor de paquets no hauria de significar refer el teu projecte a mà. L’importador escaneja el que ja hi ha, ho emparella amb identificadors del registre i ho deixa tot configurat.',
+				highlights: ['Escaneja projectes existents', 'Emparella identificadors del registre', 'Una sola ordre per adoptar-lo']
+			},
+			'se-degree': {
+				title: 'Grau en Enginyeria del Programari (Informàtica)',
+				summary: 'Un grau en enginyeria del programari, amb la informàtica al nucli, a la Universitat Autònoma de Barcelona.',
+				detail:
+					'Anys programant abans del grau van fer que arribés d’una altra manera: va posar noms, teoria i disciplina a coses que havia après trencant-les. Conviu amb els meus estudis de robòtica, així que tinc formació formal tant del costat programari com del maquinari de l’automatització.',
+				highlights: ['Fonaments d’informàtica', 'Pràctica d’enginyeria del programari', 'Contrapunt formal a anys de construir pel meu compte']
+			},
+			space: {
+				title: 'Projectes espacials crítics',
+				summary: 'Programari per a feina que empeny la propera frontera de l’exploració humana.',
+				detail:
+					'Treballo en una empresa de tecnologia i enginyeria especialitzada en sistemes aeroespacials, de defensa i seguretat, amb profunda experiència en navegació per satèl·lit i programari de missió crítica. Els detalls no em correspon compartir-los, però l’estàndard és clar: rigorós, traçable i correcte a la primera.',
+				highlights: ['Estàndards de missió crítica', 'Context de navegació per satèl·lit', 'Correcció i traçabilitat primer']
+			},
+			'robotics-work': {
+				title: 'Automatització industrial',
+				summary: 'Programari per a una empresa de robòtica centrada en automatització industrial, sobretot al sector de l’automòbil.',
+				detail:
+					'El programari de planta és un altre esport: la sortida mou màquines reals, el temps d’activitat és diners i el temps de cicle ho és tot. És on es troben la meva formació en robòtica i els meus hàbits de programari.',
+				highlights: ['Indústria de l’automòbil', 'Programari que mou màquines', 'Importen el temps de cicle i la disponibilitat']
+			},
+			degree: {
+				title: 'Robòtica i automatització industrial (Grau Superior)',
+				summary: 'Un cicle formatiu de grau superior en robòtica i automatització industrial, acabat amb A+ en la majoria d’assignatures.',
+				detail:
+					'Estudiat a Salesians Sarrià, a Barcelona. Sensors, actuadors, control i sistemes d’automatització em van donar una intuïció física per al programari. Per això penso en modes de fallada i latència abans d’escriure codi, i per això l’automatització industrial em fa sentir a casa.',
+				highlights: ['A+ en la majoria d’assignatures', 'Control, sensors i automatització', 'Intuïció de maquinari per al programari']
+			},
+			clinical: {
+				title: 'Aplicacions per a assaigs clínics',
+				summary: 'Aplicacions de salut que milloren com entenem i gestionem els assaigs clínics.',
+				detail:
+					'La recerca clínica depèn de dades precises de persones reals. Les aplicacions faciliten recollir, entendre i actuar sobre aquestes dades, on la privadesa i la correcció no són negociables.',
+				highlights: ['Millors dades d’assaigs', 'Privadesa i correcció primer', 'Programari que ajuda que la medicina avanci més ràpid']
+			}
+		},
+		projects: {
+			serverbench: {
+				kind: 'E-commerce, analítica i hosting',
+				blurb:
+					'Una plataforma completa per a comunitats en línia, especialment servidors de jocs: una plataforma de comerç per a béns digitals, una eina d’analítica per a comunitats i un orquestrador d’hosting «porta el teu propi dispositiu».',
+				points: [
+					'Botiga: les comunitats venen col·leccionables, insígnies i potenciadors, amb una botiga web personalitzable per a cadascuna',
+					'Hosting: un orquestrador basat en Docker per a servidors de jocs molt exigents',
+					'Estudis: eines de creadors, SEO i CMS que comparteixen dades amb un únic nucli d’analítica'
+				]
+			},
+			grifpkg: {
+				kind: 'Gestor de paquets',
+				blurb:
+					'Un gestor de paquets per a plugins de Java, programari de servidor i codi de propòsit general, utilitzat sobretot per la comunitat de SpigotMC. Importa, actualitza i gestiona dependències automàticament.',
+				points: [
+					'Capes pròpies de memòria cau i distribució per a lliurament ràpid a la vora',
+					'Indexa biblioteques automàticament i compila des del codi font quan no existeix .jar',
+					'Plugins de pagament, detecció de vulnerabilitats i monetització per a desenvolupadors integrats'
+				]
+			},
+			purecore: {
+				kind: 'Analítica en temps real',
+				blurb:
+					'Una plataforma d’analítica basada en sockets amb alts estàndards de seguretat. Les sessions es vinculen només a partir de dades de la connexió, sense empremta digital del dispositiu.',
+				points: ['Vinculació de sessions basada en la mateixa connexió', 'Privadesa per disseny, sense dreceres d’empremta digital', 'Ingesta en temps real mitjançant WebSockets']
+			},
+			purevanilla: {
+				kind: 'Servidor de comunitat',
+				blurb:
+					'Un projecte de servidor de Minecraft vanilla centrat en una experiència neta i fidel a l’original. Gestionat com un producte, amb infraestructura real darrere d’un joc.',
+				points: ['Filosofia vanilla primer: menys mods, més cura', 'Una comunitat viva que necessita disponibilitat', 'On van començar moltes de les lliçons d’hosting']
+			}
+		}
+	}
+};
