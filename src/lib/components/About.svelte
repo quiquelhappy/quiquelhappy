@@ -107,23 +107,21 @@
 				<div class="spk">
 					<dt>{L.ui.about.speaks}</dt>
 					<dd>
-						<ul class="langs">
+						<span class="langs">
 							{#each LANGS as l}
-								<li>
-									<a
-										href={langPath(l.code)}
-										hreflang={l.code}
-										lang={l.code}
-										data-sveltekit-reset="false"
-										class:on={ui.lang === l.code}
-										onclick={() => {
-											ui.rememberLang(l.code);
-											ui.say(l.hello + '!');
-										}}>{l.native}</a
-									>
-								</li>
+								<a
+									href={langPath(l.code)}
+									hreflang={l.code}
+									lang={l.code}
+									data-sveltekit-reset="false"
+									class:on={ui.lang === l.code}
+									onclick={() => {
+										ui.rememberLang(l.code);
+										ui.say(l.hello + '!');
+									}}>{l.native}</a
+								>
 							{/each}
-						</ul>
+						</span>
 					</dd>
 				</div>
 				<div><dt>{L.ui.about.status}</dt><dd class="open">{L.ui.about.statusV}</dd></div>
@@ -263,9 +261,6 @@
 		text-align: right;
 	}
 	.langs {
-		list-style: none;
-		margin: 0;
-		padding: 0;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: flex-end;
