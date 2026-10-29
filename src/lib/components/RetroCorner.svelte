@@ -154,8 +154,9 @@
 	}
 	.topbar {
 		display: flex;
+		flex-wrap: wrap;
 		align-items: center;
-		gap: 14px;
+		gap: 6px 14px;
 		padding: 8px 10px;
 		background: #000066;
 		color: #fff;
@@ -169,7 +170,12 @@
 	.sp {
 		flex: 1;
 	}
+	.topbar label {
+		min-width: 0;
+		max-width: 100%;
+	}
 	select {
+		min-width: 0;
 		font: 12px Arial, sans-serif;
 		border: 2px inset #aaa;
 		background: #fff;

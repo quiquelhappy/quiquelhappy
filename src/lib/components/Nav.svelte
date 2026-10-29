@@ -215,6 +215,23 @@
 		.logo {
 			font-size: 21px;
 		}
+		.tools {
+			gap: 6px;
+		}
+	}
+	/* longer translations ("Embauchez-moi") need the room: keep just the logo mark on phones */
+	@media (max-width: 440px) {
+		.word,
+		.dot {
+			display: none;
+		}
+		.bar {
+			gap: 10px;
+		}
+		.hire {
+			padding: 0 12px;
+			font-size: 13px;
+		}
 	}
 	:global([data-era='y2k']) .nav {
 		background: #000066;
