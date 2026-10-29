@@ -1,56 +1,33 @@
-<script>
-	import { projects } from "$lib/data";
-	import Snippet from "./Snippet.svelte";
-	import { Button } from "$lib/components/ui/button";
-	import { onMount } from "svelte";
-	let email = "@osuna.dev";
-	onMount(() => {
-		setTimeout(() => {
-			if (email.length != "@osuna.dev".length) return;
-			email = "quique" + email;
-		}, 10);
-	});
+<script lang="ts">
+	import Nav from '#lib/components/Nav.svelte';
+	import Hero from '#lib/components/Hero.svelte';
+	import About from '#lib/components/About.svelte';
+	import Experience from '#lib/components/Experience.svelte';
+	import Projects from '#lib/components/Projects.svelte';
+	import RetroCorner from '#lib/components/RetroCorner.svelte';
+	import Hire from '#lib/components/Hire.svelte';
+	import Footer from '#lib/components/Footer.svelte';
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>Quique Osuna | Software engineer, open to hire</title>
+	<meta
+		name="description"
+		content="Quique (Happy) builds software that has to work: aerospace, robotics, health, hosting, commerce and developer tooling. Coding since age 9, based near Barcelona, open to new work."
+	/>
+	<meta property="og:title" content="Quique Osuna | Software engineer, open to hire" />
+	<meta property="og:description" content="Software for space, robots and the internet's weirder corners. Open to new work: quique@osuna.dev" />
+	<meta property="og:type" content="website" />
+	<meta name="twitter:card" content="summary" />
 </svelte:head>
 
-<div class="text-4xl text-center py-20">
-	<span class="font-bold"> Enrique </span>
-	Osuna García
-	<div>
-		<Button class="mt-7" variant="outline" href="mailto:{email}"
-			>Contact Me</Button
-		>
-	</div>
-</div>
-<div class="max-w-md w-full mx-auto flex flex-col gap-5 mb-20 text-center">
-	<div class="relative max-h-56 overflow-hidden">
-		<div>
-			<!-- svelte-ignore a11y-missing-attribute -->
-			<img
-				src="https://github-readme-stats.vercel.app/api/wakatime?username=quiquelhappy&hide_border=true&hide_title=true&theme=github_light&range=all_time"
-			/>
-		</div>
-	</div>
-	<span class="text-xs opacity-60">
-		Since January {new Date().getFullYear()}
-	</span>
-</div>
-<div class="max-w-2xl w-full mx-auto flex flex-col gap-10 mb-20">
-	{#each projects as project, j}
-		<div>
-			<h1 class="font-bold text-xl">
-				{project.name}
-			</h1>
-			<hr class="my-2" />
-			<div class="grid grid-cols-3 gap-3">
-				{#each project.snippets as snippet, i}
-					<Snippet {snippet} i={i + j * 7} />
-				{/each}
-			</div>
-		</div>
-	{/each}
-</div>
+<Nav />
+<main class="frame">
+	<Hero />
+	<About />
+	<Experience />
+	<Projects />
+	<RetroCorner />
+	<Hire />
+	<Footer />
+</main>
