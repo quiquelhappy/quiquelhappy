@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { ui } from '#lib/state/ui.svelte.ts';
+	import { L } from '#lib/i18n/index.svelte.ts';
 
 	let {
 		height = 340,
@@ -197,11 +198,11 @@
 			}
 		kick();
 		if (pinnedCount === 12) {
-			ui.toast('12 blocks pinned. Is that a contribution graph or a Picasso?');
-			ui.say('Ooh, are we painting? I love painting.');
+			ui.toast(L.ui.mosaic.t12);
+			ui.say(L.ui.mosaic.say12);
 		}
 		if (pinnedCount === 36) {
-			ui.toast('36 blocks. This is officially a gallery.');
+			ui.toast(L.ui.mosaic.t36);
 			ui.confetti(e.clientX, e.clientY);
 			ui.dance();
 		}

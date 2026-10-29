@@ -1,13 +1,14 @@
 <script lang="ts">
 	import { projects } from '#lib/data/projects.ts';
+	import { L } from '#lib/i18n/index.svelte.ts';
 	import Icon from './Icon.svelte';
 </script>
 
 <section id="projects" class="section">
 	<header class="head pad">
-		<p class="eyebrow">Projects</p>
-		<h2 class="h2">Things I made<br />because I had to.</h2>
-		<p class="lede">Nothing off the shelf fit, so I built a store, a host, a package manager and an analytics engine.</p>
+		<p class="eyebrow">{L.ui.projects.eyebrow}</p>
+		<h2 class="h2">{L.ui.projects.h2a}<br />{L.ui.projects.h2b}</h2>
+		<p class="lede">{L.ui.projects.lede}</p>
 	</header>
 
 	<div class="grid">
@@ -17,10 +18,10 @@
 					<div class="panel">
 						<header>
 							<strong>{p.name}</strong>
-							<span class="kind">{p.kind}</span>
+							<span class="kind">{L.content.projects[p.id].kind}</span>
 						</header>
 						<ul>
-							{#each p.points as pt}
+							{#each L.content.projects[p.id].points as pt}
 								<li><Icon name="check" scale={1.5} />{pt}</li>
 							{/each}
 						</ul>
@@ -28,14 +29,14 @@
 				</div>
 				<div class="body pad">
 					<h3>{p.name}</h3>
-					<p class="blurb">{p.blurb}</p>
+					<p class="blurb">{L.content.projects[p.id].blurb}</p>
 					<div class="stack">
 						{#each p.stack as t}<span>{t}</span>{/each}
 					</div>
 					{#if p.url}
-						<a class="btn" href={p.url} rel="noopener" target="_blank">Visit {p.url.replace('https://', '')} <Icon name="arrow" scale={2} /></a>
+						<a class="btn" href={p.url} rel="noopener" target="_blank">{L.ui.projects.visit(p.url.replace('https://', ''))} <Icon name="arrow" scale={2} /></a>
 					{:else}
-						<span class="btn ghost">No public site</span>
+						<span class="btn ghost">{L.ui.projects.none}</span>
 					{/if}
 				</div>
 			</article>

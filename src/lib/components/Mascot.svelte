@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount, tick, untrack } from 'svelte';
 	import { ui } from '#lib/state/ui.svelte.ts';
-	import { quips, clickLines } from '#lib/data/site.ts';
+	import { L } from '#lib/i18n/index.svelte.ts';
 	import { toRects, type Rect } from '#lib/pixel.ts';
 	import PixelSprite from './PixelSprite.svelte';
 
@@ -135,8 +135,9 @@
 	}
 
 	function quip() {
-		const pool = quips[ui.section] ?? [];
-		const from = pool.length && Math.random() < 0.6 ? pool : quips.general;
+		const q_ = L.content.quips as Record<string, string[]>;
+		const pool = q_[ui.section] ?? [];
+		const from = pool.length && Math.random() < 0.6 ? pool : q_.general;
 		let q = from[Math.floor(Math.random() * from.length)];
 		if (q === lastQuip) q = from[(from.indexOf(q) + 1) % from.length];
 		lastQuip = q;
@@ -263,7 +264,8 @@
 	function startle() {
 		scaredNow = true;
 		expr = 'scared';
-		say(['Woof!', 'Whoa!', 'Too close!', 'Nope. Bye.'][Math.floor(Math.random() * 4)]);
+		const st = L.ui.mascot.startle;
+		say(st[Math.floor(Math.random() * st.length)]);
 		wake?.();
 	}
 
@@ -275,11 +277,11 @@
 		expr = 'happy';
 		setTimeout(() => expr === 'happy' && !dancing && (expr = 'smile'), 900);
 		if (clicks % 10 === 0) {
-			say('Okay, okay! Who is a good boy? Me. Take the confetti!');
+			say(L.ui.mascot.confettiSay);
 			ui.confetti(winEl.getBoundingClientRect().left + 40, winEl.getBoundingClientRect().top);
 			doDance();
-			ui.toast(`You clicked Gandalf ${clicks} times. That's dedication. Hire Quique with it.`);
-		} else say(clickLines[Math.min(clicks - 1, clickLines.length - 1)] ?? quip());
+			ui.toast(L.ui.mascot.clickToast(clicks));
+		} else say(L.content.clickLines[Math.min(clicks - 1, L.content.clickLines.length - 1)] ?? quip());
 	}
 
 	// ----- cues from the rest of the site
@@ -325,8 +327,13 @@
 			at = 'br';
 		} else loop();
 
-		const title = document.title;
-		const vis = () => (document.title = document.hidden ? '(._.) come back, I’m lonely' : title);
+		let title = document.title;
+		const vis = () => {
+			if (document.hidden) {
+				title = document.title;
+				document.title = L.ui.mascot.away;
+			} else document.title = title;
+		};
 		document.addEventListener('visibilitychange', vis);
 
 		return () => {
@@ -358,7 +365,7 @@
 		class:flip={top}
 		disabled={pose === 'hidden'}
 		onclick={clicked}
-		aria-label="Gandalf, a blue merle Australian Shepherd. Click for a surprise."
+		aria-label={L.ui.mascot.aria}
 		tabindex={pose === 'hidden' ? -1 : 0}
 	>
 		<span class="sprite {pose}" class:dancing class:wiggle={pose === 'out' && !dancing}>

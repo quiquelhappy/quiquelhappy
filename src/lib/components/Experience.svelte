@@ -2,7 +2,8 @@
 	import { flip } from 'svelte/animate';
 	import { fade, slide } from 'svelte/transition';
 	import { SvelteSet } from 'svelte/reactivity';
-	import { areas, contexts, entries, techGroups, type AreaId, type Context, type Entry } from '#lib/data/experience.ts';
+	import { areas as rawAreas, contexts, entries as rawEntries, techGroups, type AreaId, type Context, type Entry } from '#lib/data/experience.ts';
+	import { L } from '#lib/i18n/index.svelte.ts';
 	import { ui } from '#lib/state/ui.svelte.ts';
 	import Icon from './Icon.svelte';
 	import type { IconName } from '#lib/icons.ts';
@@ -15,7 +16,12 @@
 	const open = new SvelteSet<string>();
 	let mobileFilters = $state(false);
 
-	const usedTech = new Set(entries.flatMap((e) => e.stack));
+	// text comes from the current language, structure (area, stack, context) from the data file
+	const areas = $derived(rawAreas.map((a) => ({ ...a, ...L.content.areas[a.id] })));
+	const entries = $derived(
+		rawEntries.map((e) => ({ ...e, ...L.content.entries[e.id], source: L.content.sources[e.source as keyof typeof L.content.sources] ?? e.source }))
+	);
+	const usedTech = new Set(rawEntries.flatMap((e) => e.stack));
 
 	function matches(e: Entry, skip?: 'area') {
 		if (skip !== 'area' && area !== 'all' && e.area !== area) return false;
@@ -68,7 +74,7 @@
 	$effect(() => {
 		if (visible.length === 0 && !emptyQuipped) {
 			emptyQuipped = true;
-			ui.say("Nothing matches. Even I couldn't find that one.");
+			ui.say(L.ui.exp.emptySay);
 		}
 		if (visible.length > 0) emptyQuipped = false;
 	});
@@ -76,18 +82,15 @@
 
 <section id="experience" class="section">
 	<header class="head pad">
-		<p class="eyebrow">Experience</p>
-		<h2 class="h2">What I've actually<br />built and run.</h2>
-		<p class="lede">
-			{areas.length} skill areas, {entries.length} entries, zero buzzword padding. Slice it by skill, tech or context. Every card opens, and
-			every tech tag is a filter.
-		</p>
+		<p class="eyebrow">{L.ui.exp.eyebrow}</p>
+		<h2 class="h2">{L.ui.exp.h2a}<br />{L.ui.exp.h2b}</h2>
+		<p class="lede">{L.ui.exp.lede(areas.length, entries.length)}</p>
 	</header>
 
 	<div class="layout">
-		<aside class="filters" class:open={mobileFilters} aria-label="Filters">
+		<aside class="filters" class:open={mobileFilters} aria-label={L.ui.exp.filters}>
 			<button class="mtoggle" onclick={() => (mobileFilters = !mobileFilters)} aria-expanded={mobileFilters}>
-				<Icon name="search" scale={2} /> Filters
+				<Icon name="search" scale={2} /> {L.ui.exp.filters}
 				{#if filtered}<span class="dot"></span>{/if}
 				<span class="count">{visible.length}/{entries.length}</span>
 			</button>
@@ -95,17 +98,17 @@
 			<div class="inner">
 				<label class="search">
 					<Icon name="search" scale={2} />
-					<span class="sr-only">Search experience</span>
-					<input type="search" placeholder="Search: docker, commerce, go..." bind:value={q} />
+					<span class="sr-only">{L.ui.exp.searchLabel}</span>
+					<input type="search" placeholder={L.ui.exp.searchPh} bind:value={q} />
 				</label>
 
 				<fieldset>
-					<legend>Skill area</legend>
+					<legend>{L.ui.exp.skillArea}</legend>
 					<ul class="areas">
 						<li>
 							<button class:on={area === 'all'} aria-pressed={area === 'all'} onclick={() => (area = 'all')}>
 								<span class="ic"><Icon name="star" scale={2} /></span>
-								<span class="nm">Everything</span>
+								<span class="nm">{L.ui.exp.everything}</span>
 								<span class="n">{allCount}</span>
 							</button>
 						</li>
@@ -123,24 +126,24 @@
 				</fieldset>
 
 				<fieldset>
-					<legend>Context</legend>
+					<legend>{L.ui.exp.context}</legend>
 					<div class="chips">
 						{#each contexts as c}
-							<button class="chip" aria-pressed={ctxs.has(c.id)} onclick={() => toggle(ctxs, c.id)}>{c.label}</button>
+							<button class="chip" aria-pressed={ctxs.has(c.id)} onclick={() => toggle(ctxs, c.id)}>{L.content.contexts[c.id]}</button>
 						{/each}
 					</div>
 				</fieldset>
 
 				<fieldset>
 					<legend>
-						Tech
-						<span class="seg" role="group" aria-label="Match mode">
-							<button aria-pressed={mode === 'any'} onclick={() => (mode = 'any')}>any</button>
-							<button aria-pressed={mode === 'all'} onclick={() => (mode = 'all')}>all</button>
+						{L.ui.exp.tech}
+						<span class="seg" role="group" aria-label={L.ui.exp.matchMode}>
+							<button aria-pressed={mode === 'any'} onclick={() => (mode = 'any')}>{L.ui.exp.any}</button>
+							<button aria-pressed={mode === 'all'} onclick={() => (mode = 'all')}>{L.ui.exp.all}</button>
 						</span>
 					</legend>
-					{#each techGroups as g}
-						<p class="gl">{g.label}</p>
+					{#each techGroups as g, gi}
+						<p class="gl">{[L.ui.exp.gLang, L.ui.exp.gFrame, L.ui.exp.gTools][gi]}</p>
 						<div class="chips">
 							{#each g.items.filter((t) => usedTech.has(t)) as t}
 								<button class="chip" aria-pressed={techs.has(t)} onclick={() => toggle(techs, t)}>
@@ -151,17 +154,17 @@
 					{/each}
 				</fieldset>
 
-				<button class="btn reset" onclick={reset} disabled={!filtered}>Reset filters</button>
+				<button class="btn reset" onclick={reset} disabled={!filtered}>{L.ui.exp.reset}</button>
 			</div>
 		</aside>
 
 		<div class="results">
 			<div class="bar">
 				<p class="status" aria-live="polite">
-					Showing <b>{visible.length}</b> of {entries.length}
-					{#if filtered}<span>&middot; filtered</span>{/if}
+					{L.ui.exp.showing(visible.length, entries.length)}
+					{#if filtered}<span>&middot; {L.ui.exp.filtered}</span>{/if}
 				</p>
-				<button class="btn small" onclick={toggleAll} disabled={!visible.length}>{allOpen ? 'Collapse all' : 'Expand all'}</button>
+				<button class="btn small" onclick={toggleAll} disabled={!visible.length}>{allOpen ? L.ui.exp.collapseAll : L.ui.exp.expandAll}</button>
 			</div>
 
 			{#each groups as g (g.area.id)}
@@ -183,7 +186,7 @@
 									<span class="src"><i class={e.context}></i>{e.source}</span>
 									<strong>{e.title}</strong>
 									<span class="sum">{e.summary}</span>
-									<span class="more">{isOpen ? 'Less' : 'Details'} <Icon name={isOpen ? 'x' : 'arrow'} scale={1.5} /></span>
+									<span class="more">{isOpen ? L.ui.exp.less : L.ui.exp.details} <Icon name={isOpen ? 'x' : 'arrow'} scale={1.5} /></span>
 								</button>
 
 								{#if isOpen}
@@ -198,7 +201,7 @@
 								{#if e.stack.length}
 									<div class="stack">
 										{#each e.stack as t}
-											<button class="tag" class:on={techs.has(t)} onclick={() => toggle(techs, t)} aria-pressed={techs.has(t)} title="Filter by {t}">{t}</button>
+											<button class="tag" class:on={techs.has(t)} onclick={() => toggle(techs, t)} aria-pressed={techs.has(t)} title={L.ui.exp.filterBy(t)}>{t}</button>
 										{/each}
 									</div>
 								{/if}
@@ -211,9 +214,9 @@
 			{#if !visible.length}
 				<div class="empty" in:fade>
 					<div class="ghost" aria-hidden="true"><Icon name="search" scale={6} /></div>
-					<h3>Nothing matches that.</h3>
-					<p>Not even Gandalf could sniff that one out. Try fewer filters, or ask me directly.</p>
-					<button class="btn btn-primary" onclick={reset}>Reset filters</button>
+					<h3>{L.ui.exp.emptyTitle}</h3>
+					<p>{L.ui.exp.emptyText}</p>
+					<button class="btn btn-primary" onclick={reset}>{L.ui.exp.reset}</button>
 				</div>
 			{/if}
 		</div>

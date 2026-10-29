@@ -1,18 +1,18 @@
 <script lang="ts">
 	import { COFFEE, EMAIL, GITHUB } from '#lib/data/site.ts';
 	import { ui } from '#lib/state/ui.svelte.ts';
+	import { L } from '#lib/i18n/index.svelte.ts';
 </script>
 
 <footer class="section pad">
 	<div class="row">
 		<p>
-			&copy; {new Date().getFullYear()} Enrique Osuna Garc&iacute;a. Made near Barcelona with Svelte 5, an unreasonable amount of
-			coffee and a blue merle Aussie called Gandalf.
+			&copy; {new Date().getFullYear()} Enrique Osuna Garc&iacute;a. {L.ui.footer.made}
 		</p>
-		<nav aria-label="Elsewhere">
+		<nav aria-label={L.ui.footer.elsewhere}>
 			<a href="mailto:{EMAIL}">{EMAIL}</a>
 			<a href={GITHUB} rel="noopener">GitHub</a>
-			<a href={COFFEE} rel="noopener">Buy me a coffee</a>
+			<a href={COFFEE} rel="noopener">{L.ui.footer.coffee}</a>
 			<button onclick={() => (ui.paletteOpen = true)}>&#8984;K</button>
 		</nav>
 	</div>

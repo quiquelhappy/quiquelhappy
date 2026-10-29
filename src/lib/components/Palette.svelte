@@ -2,6 +2,9 @@
 	import { tick } from 'svelte';
 	import { EMAIL, GITHUB } from '#lib/data/site.ts';
 	import { ui } from '#lib/state/ui.svelte.ts';
+	import { L } from '#lib/i18n/index.svelte.ts';
+	import { LANGS, langPath } from '#lib/i18n/locales.ts';
+	import { goto } from '$app/navigation';
 	import Icon from './Icon.svelte';
 
 	type Cmd = { label: string; group: string; hint?: string; words?: string; run: () => void };
@@ -18,39 +21,54 @@
 		close();
 		try {
 			await navigator.clipboard.writeText(EMAIL);
-			ui.toast('Email copied. Go on, write something.');
+			ui.toast(L.ui.palette.toastCopied);
 		} catch {
 			location.href = `mailto:${EMAIL}`;
 		}
 	}
 
-	const cmds: Cmd[] = [
-		{ group: 'Go to', label: 'Hello', run: jump('top'), words: 'home top hero' },
-		{ group: 'Go to', label: 'About', run: jump('about'), words: 'story achievements' },
-		{ group: 'Go to', label: 'Experience', run: jump('experience'), words: 'skills filters work' },
-		{ group: 'Go to', label: 'Projects', run: jump('projects'), words: 'serverbench grifpkg' },
-		{ group: 'Go to', label: 'The 2000s corner', run: jump('retro'), words: 'retro y2k webmaster' },
-		{ group: 'Go to', label: 'Hire me', run: jump('hire'), words: 'contact email job' },
-		{ group: 'Actions', label: 'Email Quique', hint: EMAIL, run: () => (close(), (location.href = `mailto:${EMAIL}`)), words: 'contact mail hire' },
-		{ group: 'Actions', label: 'Copy email address', hint: EMAIL, run: copyEmail },
-		{ group: 'Actions', label: 'Open GitHub', run: () => (close(), window.open(GITHUB, '_blank', 'noopener')) },
-		{ group: 'Fun', label: 'Toggle dark mode', run: () => (close(), ui.toggleTheme()), words: 'light theme' },
-		{ group: 'Fun', label: ui.y2k ? 'Leave the year 2000' : 'Travel to the year 2000', run: () => (close(), ui.toggleY2k()), words: 'y2k retro time machine' },
-		{ group: 'Fun', label: 'Summon Gandalf', run: () => (close(), ui.summon('Woof! You rang?')), words: 'mascot dog aussie buddy pix' },
-		{ group: 'Fun', label: 'Make Gandalf do a trick', run: () => (close(), ui.dance()) },
-		{ group: 'Fun', label: 'Confetti', run: () => (close(), ui.confetti()) },
-		{
-			group: 'Fun',
-			label: 'sudo hire quique',
-			hint: 'permission granted',
-			run: () => {
-				close();
-				ui.toast('[sudo] password for recruiter: ********');
-				setTimeout(() => ui.toast('Access granted. Opening the hire section...'), 900);
-				setTimeout(() => (ui.go('hire'), ui.confetti(), ui.flashHire()), 1700);
+	const cmds: Cmd[] = $derived.by(() => {
+		const P = L.ui.palette;
+		const go = P.go, act = P.actions, fun = P.fun;
+		return [
+			{ group: go, label: L.ui.nav.top, run: jump('top'), words: 'home top hero' },
+			{ group: go, label: L.ui.nav.about, run: jump('about'), words: 'story achievements about' },
+			{ group: go, label: L.ui.nav.experience, run: jump('experience'), words: 'skills filters work experience' },
+			{ group: go, label: L.ui.nav.projects, run: jump('projects'), words: 'serverbench grifpkg projects' },
+			{ group: go, label: P.retro, run: jump('retro'), words: 'retro y2k webmaster' },
+			{ group: go, label: L.ui.nav.hire, run: jump('hire'), words: 'contact email job hire' },
+			{ group: act, label: P.email, hint: EMAIL, run: () => (close(), (location.href = `mailto:${EMAIL}`)), words: 'contact mail hire email' },
+			{ group: act, label: P.copy, hint: EMAIL, run: copyEmail, words: 'copy email' },
+			{ group: act, label: P.github, run: () => (close(), window.open(GITHUB, '_blank', 'noopener')), words: 'github code' },
+			...LANGS.map((l) => ({
+				group: act,
+				label: `${P.language}: ${l.native}`,
+				hint: l.code.toUpperCase(),
+				words: `language idioma llengua sprache langue ${l.code} ${l.native}`,
+				run: () => {
+					close();
+					ui.rememberLang(l.code);
+					goto(langPath(l.code) + location.hash, { noScroll: true });
+				}
+			})),
+			{ group: fun, label: P.dark, run: () => (close(), ui.toggleTheme()), words: 'light theme dark' },
+			{ group: fun, label: ui.y2k ? P.y2kOff : P.y2kOn, run: () => (close(), ui.toggleY2k()), words: 'y2k retro time machine 2000' },
+			{ group: fun, label: P.summon, run: () => (close(), ui.summon(P.summonSay)), words: 'mascot dog aussie buddy gandalf' },
+			{ group: fun, label: P.trick, run: () => (close(), ui.dance()), words: 'dance trick gandalf' },
+			{ group: fun, label: P.confetti, run: () => (close(), ui.confetti()), words: 'confetti party' },
+			{
+				group: fun,
+				label: 'sudo hire quique',
+				hint: P.sudoHint,
+				run: () => {
+					close();
+					ui.toast(P.sudo1);
+					setTimeout(() => ui.toast(P.sudo2), 900);
+					setTimeout(() => (ui.go('hire'), ui.confetti(), ui.flashHire()), 1700);
+				}
 			}
-		}
-	];
+		];
+	});
 
 	const results = $derived.by(() => {
 		const s = q.trim().toLowerCase();
@@ -82,17 +100,17 @@
 
 {#if ui.paletteOpen}
 	<div class="backdrop" onclick={close} role="presentation">
-		<div class="dialog" role="dialog" aria-modal="true" aria-label="Command palette" onclick={(e) => e.stopPropagation()} onkeydown={key} tabindex="-1">
+		<div class="dialog" role="dialog" aria-modal="true" aria-label={L.ui.palette.aria} onclick={(e) => e.stopPropagation()} onkeydown={key} tabindex="-1">
 			<div class="in">
 				<Icon name="search" scale={2} />
 				<input
 					bind:this={input}
 					bind:value={q}
-					placeholder="Type a command or search..."
+					placeholder={L.ui.palette.placeholder}
 					role="combobox"
 					aria-expanded="true"
 					aria-controls="cmd-list"
-					aria-label="Command"
+					aria-label={L.ui.palette.label}
 					autocomplete="off"
 					spellcheck="false"
 				/>
@@ -110,10 +128,10 @@
 						</button>
 					</li>
 				{:else}
-					<li class="none">No command found. Try "hire".</li>
+					<li class="none">{L.ui.palette.none}</li>
 				{/each}
 			</ul>
-			<div class="foot"><span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate</span><span><kbd>enter</kbd> run</span></div>
+			<div class="foot"><span><kbd>&uarr;</kbd><kbd>&darr;</kbd> {L.ui.palette.navigate}</span><span><kbd>enter</kbd> {L.ui.palette.run}</span></div>
 		</div>
 	</div>
 {/if}

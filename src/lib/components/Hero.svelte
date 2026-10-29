@@ -1,11 +1,13 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { EMAIL, GITHUB, roles, yearsCoding } from '#lib/data/site.ts';
+	import { EMAIL, GITHUB, yearsCoding } from '#lib/data/site.ts';
 	import { ui } from '#lib/state/ui.svelte.ts';
+	import { L } from '#lib/i18n/index.svelte.ts';
+	import { LANGS } from '#lib/i18n/locales.ts';
 	import Mosaic from './Mosaic.svelte';
 	import Icon from './Icon.svelte';
 
-	let typed = $state(roles[0]);
+	let typed = $state(L.content.roles[0]);
 	let years = $state(yearsCoding());
 	let copied = $state(false);
 	let flash = $state(false);
@@ -14,7 +16,7 @@
 		try {
 			await navigator.clipboard.writeText(EMAIL);
 			copied = true;
-			ui.toast('Email copied. Now go write something nice.');
+			ui.toast(L.ui.hero.toastCopied);
 			setTimeout(() => (copied = false), 1800);
 		} catch {
 			location.href = `mailto:${EMAIL}`;
@@ -30,13 +32,14 @@
 		(async () => {
 			await sleep(1800);
 			while (alive) {
+				const roles = L.content.roles;
 				const word = roles[i % roles.length];
 				for (let c = word.length; c >= 0 && alive; c--) {
 					typed = word.slice(0, c);
 					await sleep(28);
 				}
 				i++;
-				const next = roles[i % roles.length];
+				const next = L.content.roles[i % L.content.roles.length];
 				for (let c = 1; c <= next.length && alive; c++) {
 					typed = next.slice(0, c);
 					await sleep(55);
@@ -59,48 +62,45 @@
 <section id="top" class="section hero">
 	<div class="grid">
 		<div class="copy pad">
-			<p class="eyebrow">Hi, I'm Quique</p>
+			<p class="eyebrow">{L.ui.hero.eyebrow}</p>
 
 			<h1 class="now-only">
-				I build software that<br />has to <em>work</em>.
+				{L.ui.hero.h1a}<br />{L.ui.hero.h1b}<em>{L.ui.hero.h1em}</em>{L.ui.hero.h1c}
 			</h1>
-			<h1 class="y2k-only retro">Welcome to Quique's Homepage!!</h1>
+			<h1 class="y2k-only retro">{L.ui.hero.retro}</h1>
 
-			<p class="lede">
-				I started writing code when I was nine and never really stopped. Today I build software for space,
-				robots and health, plus a few weird, wonderful products of my own. I live near Barcelona, I go by
-				<b>Happy</b> online, and I'm open to new work.
-			</p>
+			<p class="lede">{L.ui.hero.ledeA}<b>{L.ui.hero.ledeBold}</b>{L.ui.hero.ledeB}</p>
 
 			<p class="now">
-				<span class="label">right now i'm</span>
+				<span class="label">{L.ui.hero.rightNow}</span>
 				<span class="typed">{typed}</span><span class="caret" aria-hidden="true"></span>
 			</p>
 
 			<div class="cta">
 				<a class="btn btn-primary btn-lg" class:flash href="#hire" onclick={(e) => (e.preventDefault(), ui.go('hire'))}>
-					Hire me <Icon name="arrow" scale={2} />
+					{L.ui.hero.cta} <Icon name="arrow" scale={2} />
 				</a>
-				<button class="btn btn-lg" onclick={copy} aria-label="Copy email address">
-					<Icon name={copied ? 'check' : 'copy'} scale={2} />{copied ? 'Copied' : EMAIL}
+				<button class="btn btn-lg" onclick={copy} aria-label={L.ui.hero.copyAria}>
+					<Icon name={copied ? 'check' : 'copy'} scale={2} />{copied ? L.ui.hero.copied : EMAIL}
 				</button>
 			</div>
 
 			<ul class="meta">
 				<li><a href={GITHUB} rel="noopener">github/quiquelhappy</a></li>
-				<li>{years}+ years of code</li>
-				<li class="hide-sm">press <kbd>Ctrl</kbd> <kbd>K</kbd> to explore</li>
+				<li>{L.ui.hero.years(years)}</li>
+				<li class="hide-sm">{L.ui.hero.speaks}: {LANGS.map((l) => l.code.toUpperCase()).join(' \u00b7 ')}</li>
+				<li class="hide-sm">{L.ui.hero.pressA} <kbd>Ctrl</kbd> <kbd>K</kbd> {L.ui.hero.pressB}</li>
 			</ul>
 		</div>
 
-		<aside class="cards" aria-label="Quick profile">
+		<aside class="cards" aria-label={L.ui.hero.profileAria}>
 			<article class="issue">
 				<header>
 					<h2>Quique <span>#1</span></h2>
-					<p><span class="badge"><Icon name="bolt" scale={1.5} />Open</span> <small>on branch <code>main</code> &middot; available now</small></p>
+					<p><span class="badge"><Icon name="bolt" scale={1.5} />{L.ui.hero.open}</span> <small>{L.ui.hero.onBranch} <code>main</code> &middot; {L.ui.hero.availableNow}</small></p>
 				</header>
 				<div class="file">src/quique.ts:1</div>
-				<pre aria-label="Profile as code"><span class="ln">1</span><span class="k">const</span> quique = {'{'}
+				<pre aria-label={L.ui.hero.codeAria}><span class="ln">1</span><span class="k">const</span> quique = {'{'}
 <span class="ln">2</span>  alias: <span class="s">'happy'</span>,
 <span class="ln">3</span>  base: <span class="s">'near Barcelona'</span>,
 <span class="ln">4</span>  codingSince: <span class="s">'age 9'</span>,
@@ -109,28 +109,28 @@
 <span class="ln">7</span>  email: <span class="s">'{EMAIL}'</span>
 <span class="ln">8</span>{'}'}</pre>
 				<div class="alert">
-					<p class="sev"><Icon name="star" scale={1.5} /> Recommended</p>
-					<p><b>Potential great collaboration</b></p>
-					<p class="dim">Review suggested: say hello before someone else does.</p>
-					<p class="ql">Hire&nbsp;QL</p>
+					<p class="sev"><Icon name="star" scale={1.5} /> {L.ui.hero.recommended}</p>
+					<p><b>{L.ui.hero.alertTitle}</b></p>
+					<p class="dim">{L.ui.hero.alertText}</p>
+					<p class="ql">{L.ui.hero.hireQL}</p>
 				</div>
 			</article>
 
 			<article class="branches">
-				<div class="tabs"><span class="on">Working on</span><span>Side quests</span></div>
+				<div class="tabs"><span class="on">{L.ui.hero.workingOn}</span><span>{L.ui.hero.sideQuests}</span></div>
 				<ul>
-					<li><code>aerospace</code> <span class="pill">Current branch</span><small>mission-critical, satellite navigation</small></li>
-					<li><code>robotics</code><small>industrial automation, automotive</small></li>
-					<li><code>products</code><small>serverbench, grifpkg, purecore</small></li>
+					<li><code>aerospace</code> <span class="pill">{L.ui.hero.currentBranch}</span><small>{L.ui.hero.b1}</small></li>
+					<li><code>robotics</code><small>{L.ui.hero.b2}</small></li>
+					<li><code>products</code><small>{L.ui.hero.b3}</small></li>
 				</ul>
 			</article>
 		</aside>
 	</div>
 
 	<div class="y2k-only construction" aria-hidden="true">
-		<span>UNDER CONSTRUCTION</span> &#9632; <span>UNDER CONSTRUCTION</span> &#9632; <span>UNDER CONSTRUCTION</span>
+		<span>{L.ui.hero.construction}</span> &#9632; <span>{L.ui.hero.construction}</span> &#9632; <span>{L.ui.hero.construction}</span>
 	</div>
-	<Mosaic height={352} />
+	<Mosaic height={352} hint={L.ui.hero.mosaic} />
 </section>
 
 <style>

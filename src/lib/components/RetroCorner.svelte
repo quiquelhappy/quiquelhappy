@@ -2,20 +2,14 @@
 	import { onMount } from 'svelte';
 	import { EMAIL } from '#lib/data/site.ts';
 	import { ui } from '#lib/state/ui.svelte.ts';
+	import { L } from '#lib/i18n/index.svelte.ts';
 
 	let visitors = $state(1);
 	let kind = $state<'any' | 'specific'>('any');
-	let what = $state('A web platform');
-	let when = $state('As soon as possible');
-	let size = $state('Medium');
-
-	const news = [
-		'Save 40% on rewrites. Hire Quique before the legacy code finds you!',
-		'New: zero-downtime deploys now available at participating terminals',
-		'Get $50 or $100 cash back on your first bug fixed (not a real offer)',
-		'Docker containers: Now with 30% more whale',
-		'Experience big adventure in your own backlog'
-	];
+	// indexes, not strings, so the choice survives a language switch
+	let what = $state(0);
+	let when = $state(0);
+	let size = $state(1);
 
 	onMount(() => {
 		try {
@@ -29,12 +23,11 @@
 
 	function go(e: Event) {
 		e.preventDefault();
-		const subject = encodeURIComponent('Fast Hire Finder request');
-		const body = encodeURIComponent(
-			`Hi Quique,\n\nI used your Fast Hire Finder.\n\nProject type: ${what}\nStarting: ${when}\nSize: ${size}\nSearch mode: ${kind === 'any' ? 'any engineer' : 'specifically you'}\n\n`
-		);
+		const r = L.ui.retro;
+		const subject = encodeURIComponent(r.mailSubject);
+		const body = encodeURIComponent(r.mailBody(r.needs[what], r.whens[when], r.sizes[size], kind === 'any' ? r.modeAny : r.modeMe));
 		location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
-		ui.toast('Dialing... *screeeeeeee-kshhhhh*');
+		ui.toast(r.toastDial);
 	}
 </script>
 
@@ -42,110 +35,99 @@
 	<div class="wrap">
 		<div class="topbar">
 			<b>Quique.osuna.dev</b>
-			<span>A Happy Company</span>
+			<span>{L.ui.retro.company}</span>
 			<span class="sp"></span>
 			<label>
-				<span class="sr-only">Site shortcuts</span>
+				<span class="sr-only">{L.ui.retro.shortcuts}</span>
 				<select onchange={(e) => { const v = e.currentTarget.value; if (v) ui.go(v); e.currentTarget.selectedIndex = 0; }}>
-					<option value="">Site Shortcuts</option>
-					<option value="top">Home</option>
-					<option value="about">About</option>
-					<option value="experience">Experience</option>
-					<option value="projects">Projects</option>
-					<option value="hire">Hire me</option>
+					<option value="">{L.ui.retro.shortcuts}</option>
+					<option value="top">{L.ui.retro.home}</option>
+					<option value="about">{L.ui.nav.about}</option>
+					<option value="experience">{L.ui.nav.experience}</option>
+					<option value="projects">{L.ui.nav.projects}</option>
+					<option value="hire">{L.ui.nav.hire}</option>
 				</select>
 			</label>
 		</div>
 
 		<div class="icons">
-			<a href="#experience" onclick={(e) => (e.preventDefault(), ui.go('experience'))}>Skills</a>
-			<a href="#projects" onclick={(e) => (e.preventDefault(), ui.go('projects'))}>Projects</a>
-			<a href="#about" onclick={(e) => (e.preventDefault(), ui.go('about'))}>About</a>
-			<a href="#hire" onclick={(e) => (e.preventDefault(), ui.go('hire'))}>Hire</a>
-			<button class="bounce" onclick={() => ui.toggleY2k()}>{ui.y2k ? 'Back to 2026' : 'Go full 2000'}</button>
+			<a href="#experience" onclick={(e) => (e.preventDefault(), ui.go('experience'))}>{L.ui.retro.skills}</a>
+			<a href="#projects" onclick={(e) => (e.preventDefault(), ui.go('projects'))}>{L.ui.nav.projects}</a>
+			<a href="#about" onclick={(e) => (e.preventDefault(), ui.go('about'))}>{L.ui.nav.about}</a>
+			<a href="#hire" onclick={(e) => (e.preventDefault(), ui.go('hire'))}>{L.ui.retro.hireLink}</a>
+			<button class="bounce" onclick={() => ui.toggleY2k()}>{ui.y2k ? L.ui.retro.back2026 : L.ui.retro.go2000}</button>
 		</div>
 
 		<div class="cols">
 			<aside>
-				<h4>Quick Links</h4>
+				<h4>{L.ui.retro.quickLinks}</h4>
 				<p>
-					<a href="#experience" onclick={(e) => (e.preventDefault(), ui.go('experience'))}>Experience</a><br />
-					<a href="#projects" onclick={(e) => (e.preventDefault(), ui.go('projects'))}>Projects</a><br />
-					<a href="https://github.com/quiquelhappy" rel="noopener">My GitHub</a>
+					<a href="#experience" onclick={(e) => (e.preventDefault(), ui.go('experience'))}>{L.ui.nav.experience}</a><br />
+					<a href="#projects" onclick={(e) => (e.preventDefault(), ui.go('projects'))}>{L.ui.nav.projects}</a><br />
+					<a href="https://github.com/quiquelhappy" rel="noopener">{L.ui.retro.myGithub}</a>
 				</p>
-				<h4>Customer Service</h4>
+				<h4>{L.ui.retro.service}</h4>
 				<p>
-					<a href="mailto:{EMAIL}">Contact Quique 24/7</a><br />
-					<small>(not literally 24/7, he sleeps)</small><br />
-					<a href="mailto:{EMAIL}?subject=Security%20concern">Security Guarantee</a>
+					<a href="mailto:{EMAIL}">{L.ui.retro.contact247}</a><br />
+					<small>{L.ui.retro.notReally}</small><br />
+					<a href="mailto:{EMAIL}?subject=Security%20concern">{L.ui.retro.guarantee}</a>
 				</p>
-				<h4>Member of</h4>
+				<h4>{L.ui.retro.memberOf}</h4>
 				<div class="badges">
-					<span class="b88 b1">Made with<br />Svelte 5</span>
-					<span class="b88 b2">Best viewed<br />800x600</span>
-					<span class="b88 b3">Powered by<br />Docker</span>
-					<span class="b88 b4">Valid HTML<br />4.01 (lol)</span>
+					<span class="b88 b1">{L.ui.retro.b1}</span>
+					<span class="b88 b2">{L.ui.retro.b2}</span>
+					<span class="b88 b3">{L.ui.retro.b3}</span>
+					<span class="b88 b4">{L.ui.retro.b4}</span>
 				</div>
 			</aside>
 
 			<div class="main">
-				<h4 class="bar">Fast Hire Finder</h4>
+				<h4 class="bar">{L.ui.retro.finder}</h4>
 				<form onsubmit={go}>
-					<p class="red">Show me the best engineer for:</p>
+					<p class="red">{L.ui.retro.showMe}</p>
 					<div class="row">
-						<label><input type="radio" bind:group={kind} value="any" /> any engineer</label>
-						<label><input type="radio" bind:group={kind} value="specific" /> specifically Quique</label>
+						<label><input type="radio" bind:group={kind} value="any" /> {L.ui.retro.anyEng}</label>
+						<label><input type="radio" bind:group={kind} value="specific" /> {L.ui.retro.onlyMe}</label>
 					</div>
 					<div class="row sel">
-						<label>I need:
+						<label>{L.ui.retro.iNeed}
 							<select bind:value={what}>
-								<option>A web platform</option>
-								<option>A hosting backend</option>
-								<option>A package manager</option>
-								<option>Mission-critical software</option>
-								<option>Automation / robotics</option>
-								<option>Something weird</option>
+								{#each L.ui.retro.needs as n, i}<option value={i}>{n}</option>{/each}
 							</select>
 						</label>
-						<label>Starting:
+						<label>{L.ui.retro.starting}
 							<select bind:value={when}>
-								<option>As soon as possible</option>
-								<option>Next month</option>
-								<option>Next quarter</option>
-								<option>When Y3K arrives</option>
+								{#each L.ui.retro.whens as n, i}<option value={i}>{n}</option>{/each}
 							</select>
 						</label>
-						<label>Size:
+						<label>{L.ui.retro.size}
 							<select bind:value={size}>
-								<option>Small</option>
-								<option>Medium</option>
-								<option>Large</option>
-								<option>Moon-sized</option>
+								{#each L.ui.retro.sizes as n, i}<option value={i}>{n}</option>{/each}
 							</select>
 						</label>
-						<button class="go">Go!</button>
+						<button class="go">{L.ui.retro.go}</button>
 					</div>
 				</form>
 
-				<h4 class="bar">Deals &amp; News</h4>
+				<h4 class="bar">{L.ui.retro.news}</h4>
 				<ul class="news">
-					{#each news as n}<li><a href="mailto:{EMAIL}">{n}</a></li>{/each}
+					{#each L.ui.retro.newsItems as n}<li><a href="mailto:{EMAIL}">{n}</a></li>{/each}
 				</ul>
 
-				<h4 class="bar">Webmaster's Corner</h4>
+				<h4 class="bar">{L.ui.retro.corner}</h4>
 				<div class="counter">
-					<p>You are visitor number</p>
-					<div class="digits" aria-label="Visitor count {visitors}">
+					<p>{L.ui.retro.visitor}</p>
+					<div class="digits" aria-label="{L.ui.retro.visitor} {visitors}">
 						{#each String(visitors).padStart(6, '0') as d}<span>{d}</span>{/each}
 					</div>
-					<small>(counted only in your own browser, like a very small honest guestbook)</small>
+					<small>{L.ui.retro.visitorNote}</small>
 				</div>
 			</div>
 		</div>
 
 		<p class="fine">
-			&copy; 2000&ndash;{new Date().getFullYear()} Quique. All rights reserved. No animated GIFs were harmed in the making of this
-			section. <a href="mailto:{EMAIL}?subject=Guestbook">Sign my guestbook!</a>
+			&copy; 2000&ndash;{new Date().getFullYear()} Quique. {L.ui.retro.fineA}
+			<a href="mailto:{EMAIL}?subject=Guestbook">{L.ui.retro.guestbook}</a>
 		</p>
 	</div>
 </section>

@@ -1,21 +1,21 @@
 <script lang="ts">
-	import { marquee } from '#lib/data/site.ts';
+	import { L } from '#lib/i18n/index.svelte.ts';
 	import Icon from './Icon.svelte';
 
 	let paused = $state(false);
 </script>
 
-<div class="strip" aria-label="Things I work with">
+<div class="strip" aria-label={L.ui.marquee.aria}>
 	<div class="track" class:paused>
 		{#each [0, 1] as copy}
 			<ul aria-hidden={copy === 1}>
-				{#each marquee as item}
+				{#each L.content.marquee as item}
 					<li>{item}</li>
 				{/each}
 			</ul>
 		{/each}
 	</div>
-	<button class="pause" onclick={() => (paused = !paused)} aria-label={paused ? 'Play marquee' : 'Pause marquee'}>
+	<button class="pause" onclick={() => (paused = !paused)} aria-label={paused ? L.ui.marquee.play : L.ui.marquee.pause}>
 		<Icon name={paused ? 'play' : 'pause'} scale={2} />
 	</button>
 </div>

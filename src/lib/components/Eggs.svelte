@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import { EMAIL } from '#lib/data/site.ts';
 	import { ui } from '#lib/state/ui.svelte.ts';
+	import { L } from '#lib/i18n/index.svelte.ts';
 
 	const KONAMI = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
 	let seq: string[] = [];
@@ -9,34 +10,34 @@
 
 	const words: Record<string, () => void> = {
 		sudo() {
-			ui.toast('quique is not in the sudoers file. This incident will be reported.');
-			setTimeout(() => ui.toast('Reported to: nobody. We have no one to report to.'), 1600);
+			ui.toast(L.ui.eggs.sudo1);
+			setTimeout(() => ui.toast(L.ui.eggs.sudo2), 1600);
 		},
 		hire() {
 			ui.go('hire');
 			ui.confetti();
 			setTimeout(() => ui.flashHire(), 700);
-			ui.say('Wise choice. Wise, wise choice.');
+			ui.say(L.ui.eggs.hire);
 		},
 		gandalf() {
-			ui.summon('You said my name! Woof!');
+			ui.summon(L.ui.eggs.gandalf);
 		},
 		woof() {
-			ui.summon('WOOF! Did someone say walk?');
+			ui.summon(L.ui.eggs.woof);
 			ui.dance();
 		},
 		y2k() {
 			ui.toggleY2k();
 		},
 		happy() {
-			ui.toast('That is my name, do not wear it out.');
+			ui.toast(L.ui.eggs.happy);
 			ui.dance();
 		},
 		matrix() {
-			ui.toast('There is no spoon. There is only TypeScript.');
+			ui.toast(L.ui.eggs.matrix);
 		},
 		rm() {
-			ui.toast('rm: cannot remove the future: permission denied');
+			ui.toast(L.ui.eggs.rm);
 		}
 	};
 
@@ -67,7 +68,7 @@
 			setTimeout(() => ui.confetti(innerWidth * 0.25, innerHeight / 3), 250);
 			setTimeout(() => ui.confetti(innerWidth * 0.75, innerHeight / 3), 500);
 			ui.dance();
-			ui.toast('KONAMI CODE ACCEPTED. +30 lives. Quique approves of your childhood.');
+			ui.toast(L.ui.eggs.konami);
 		}
 
 		if (/^[a-z0-9]$/.test(k)) {

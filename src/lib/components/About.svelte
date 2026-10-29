@@ -2,7 +2,9 @@
 	import { onMount } from 'svelte';
 	import { fade, fly } from 'svelte/transition';
 	import { SvelteSet } from 'svelte/reactivity';
-	import { achievements, principles, statsFor, yearsCoding, COFFEE } from '#lib/data/site.ts';
+	import { achievements, yearsBC, yearsCoding, COFFEE } from '#lib/data/site.ts';
+	import { L } from '#lib/i18n/index.svelte.ts';
+	import { LANGS, langPath } from '#lib/i18n/locales.ts';
 	import { ui } from '#lib/state/ui.svelte.ts';
 	import Icon from './Icon.svelte';
 	import Marquee from './Marquee.svelte';
@@ -11,11 +13,15 @@
 	// ---- principle carousel
 	let idx = $state(0);
 	let hover = $state(false);
+	const principles = $derived(L.content.principles.map((p) => ({ ...p, quote: p.quote.replace('{bc}', String(yearsBC)) })));
 	const go = (n: number) => (idx = (n + principles.length) % principles.length);
 
 	// ---- count-up stats (years are computed from April 26th, 2010)
 	let years = $state(yearsCoding());
-	const stats = $derived(statsFor(years));
+	const stats = $derived([
+		{ value: years, suffix: '+', label: L.ui.about.statYears(yearsBC) },
+		{ value: 9, suffix: '', label: L.ui.about.statAge }
+	]);
 	let counts = $state([0, 0]);
 	let statsEl: HTMLElement;
 
@@ -28,13 +34,13 @@
 	function claim(i: number, e: MouseEvent) {
 		if (claimed.has(i)) return;
 		claimed.add(i);
-		ui.toast(`+10 XP: ${achievements[i].title}`, 'star');
+		ui.toast(L.ui.about.toastXp(L.content.achievements[i].title), 'star');
 		if (claimed.size === achievements.length) {
 			ui.confetti(e.clientX, e.clientY);
 			ui.dance();
-			ui.toast('100% completion. The only achievement left is hiring me.');
+			ui.toast(L.ui.about.toastAll);
 			setTimeout(() => ui.flashHire(), 1200);
-		} else if (claimed.size === 4) ui.say('Halfway there. Go on, collect them all.');
+		} else if (claimed.size === 4) ui.say(L.ui.about.sayHalf);
 	}
 
 	onMount(() => {
@@ -82,36 +88,46 @@
 <section id="about" class="section">
 	<div class="story">
 		<div class="pad left">
-			<p class="eyebrow">About me</p>
-			<h2 class="h2">Problem solver,<br />by habit.</h2>
+			<p class="eyebrow">{L.ui.about.eyebrow}</p>
+			<h2 class="h2">{L.ui.about.h2a}<br />{L.ui.about.h2b}</h2>
 			<div class="prose">
-				<p>
-					I'm Quique, <b>Happy</b> online. I've been coding since I can remember touching a computer, and I live near Barcelona.
-					I have a pile of side projects that never made it into any bio, but at heart I'm trying to fix things that make life a
-					little better, for other people and for myself.
-				</p>
-				<p>
-					By day I work at a company that builds aerospace, defense and security systems, with deep roots in satellite navigation
-					and mission-critical software, and at a robotics company doing industrial automation, mostly in automotive. By night
-					I build tools for communities: a store, a host, a package manager and an analytics engine, mostly from scratch.
-				</p>
-				<p>
-					I hold two degrees: Software Engineering (Computer Science) at UAB, and a Grado Superior in Robotics and Industrial
-					Automation at Salesians Sarri&agrave;. It shows. I think about failure modes, latency and the physical world before I
-					think about frameworks.
-				</p>
+				<p>{L.ui.about.p1a}<b>{L.ui.about.p1bold}</b>{L.ui.about.p1b}</p>
+				<p>{L.ui.about.p2}</p>
+				<p>{L.ui.about.p3}</p>
 			</div>
 		</div>
 
 		<aside class="facts">
-			<h3 class="eyebrow">Quick facts</h3>
+			<h3 class="eyebrow">{L.ui.about.facts}</h3>
 			<dl>
-				<div><dt>alias</dt><dd>Happy</dd></div>
-				<div><dt>base</dt><dd>near Barcelona</dd></div>
-				<div><dt>coding since</dt><dd>age 9 (April 2010)</dd></div>
-				<div class="deg"><dt>degrees</dt><dd>Software Eng. (UAB)<br />Robotics &amp; Automation (Salesians Sarri&agrave;)</dd></div>
-				<div><dt>status</dt><dd class="open">open to job offers</dd></div>
-				<div><dt>fuel</dt><dd><a href={COFFEE} rel="noopener"><Icon name="coffee" scale={1.5} /> coffee</a></dd></div>
+				<div><dt>{L.ui.about.alias}</dt><dd>Happy</dd></div>
+				<div><dt>{L.ui.about.base}</dt><dd>{L.ui.about.baseV}</dd></div>
+				<div><dt>{L.ui.about.since}</dt><dd>{L.ui.about.sinceV}</dd></div>
+				<div class="deg"><dt>{L.ui.about.degrees}</dt><dd>{L.ui.about.deg1}<br />{L.ui.about.deg2}</dd></div>
+				<div class="spk">
+					<dt>{L.ui.about.speaks}</dt>
+					<dd>
+						<ul class="langs">
+							{#each LANGS as l}
+								<li>
+									<a
+										href={langPath(l.code)}
+										hreflang={l.code}
+										lang={l.code}
+										data-sveltekit-noscroll
+										class:on={ui.lang === l.code}
+										onclick={() => {
+											ui.rememberLang(l.code);
+											ui.say(l.hello + '!');
+										}}>{l.native}</a
+									>
+								</li>
+							{/each}
+						</ul>
+					</dd>
+				</div>
+				<div><dt>{L.ui.about.status}</dt><dd class="open">{L.ui.about.statusV}</dd></div>
+				<div><dt>{L.ui.about.fuel}</dt><dd><a href={COFFEE} rel="noopener"><Icon name="coffee" scale={1.5} /> {L.ui.about.fuelV}</a></dd></div>
 			</dl>
 		</aside>
 	</div>
@@ -121,7 +137,7 @@
 			class="carousel pad"
 			role="group"
 			aria-roledescription="carousel"
-			aria-label="Things I believe"
+			aria-label={L.ui.about.carouselAria}
 			onmouseenter={() => (hover = true)}
 			onmouseleave={() => (hover = false)}
 		>
@@ -135,13 +151,13 @@
 				{/key}
 			</div>
 			<div class="ctrl">
-				<button onclick={() => go(idx - 1)} aria-label="Previous"><Icon name="chevL" scale={2} /></button>
+				<button onclick={() => go(idx - 1)} aria-label={L.ui.about.prev}><Icon name="chevL" scale={2} /></button>
 				<div class="dots">
 					{#each principles as _, i}
-						<button class:on={i === idx} onclick={() => go(i)} aria-label="Go to quote {i + 1}" aria-current={i === idx}></button>
+						<button class:on={i === idx} onclick={() => go(i)} aria-label={L.ui.about.goTo(i + 1)} aria-current={i === idx}></button>
 					{/each}
 				</div>
-				<button onclick={() => go(idx + 1)} aria-label="Next"><Icon name="chevR" scale={2} /></button>
+				<button onclick={() => go(idx + 1)} aria-label={L.ui.about.next}><Icon name="chevR" scale={2} /></button>
 			</div>
 		</div>
 
@@ -158,13 +174,13 @@
 	<div class="ach" bind:this={gridEl}>
 		<header class="pad">
 			<div>
-				<p class="eyebrow">Achievements</p>
-				<h2 class="h2">Unlocked so far.</h2>
+				<p class="eyebrow">{L.ui.about.achEyebrow}</p>
+				<h2 class="h2">{L.ui.about.achH2}</h2>
 			</div>
 			<div class="xp" aria-live="polite">
-				<span>XP {xp}/{achievements.length * 10}</span>
+				<span>{L.ui.about.xp} {xp}/{achievements.length * 10}</span>
 				<i><b style:width="{(xp / (achievements.length * 10)) * 100}%"></b></i>
-				<small>click to claim</small>
+				<small>{L.ui.about.clickToClaim}</small>
 			</div>
 		</header>
 		<ul>
@@ -175,9 +191,9 @@
 							<Icon name={a.icon as IconName} scale={3} />
 							<span class="tag">{a.tag}</span>
 						</span>
-						<span class="lab">{claimed.has(i) ? 'CLAIMED +10 XP' : 'ACHIEVEMENT UNLOCKED'}</span>
-						<strong>{a.title}</strong>
-						<span class="txt">{a.text}</span>
+						<span class="lab">{claimed.has(i) ? L.ui.about.claimed : L.ui.about.unlocked}</span>
+						<strong>{L.content.achievements[i].title}</strong>
+						<span class="txt">{L.content.achievements[i].text}</span>
 					</button>
 				</li>
 			{/each}
@@ -242,6 +258,36 @@
 	}
 	.open {
 		color: var(--green);
+	}
+	.spk dd {
+		text-align: right;
+	}
+	.langs {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		gap: 6px;
+	}
+	.langs a {
+		display: inline-block;
+		padding: 2px 10px;
+		border: 1px solid var(--line-strong);
+		border-radius: 999px;
+		background: var(--bg);
+		font-weight: 600;
+		font-size: 13px;
+		text-decoration: none;
+	}
+	.langs a:hover {
+		background: var(--bg-tile-2);
+	}
+	.langs a.on {
+		background: var(--green);
+		border-color: var(--green);
+		color: var(--on-green);
 	}
 
 	.quote-row {

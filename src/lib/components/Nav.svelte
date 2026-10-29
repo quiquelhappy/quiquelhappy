@@ -2,7 +2,9 @@
 	import { onMount } from 'svelte';
 	import { nav } from '#lib/data/site.ts';
 	import { ui } from '#lib/state/ui.svelte.ts';
+	import { L } from '#lib/i18n/index.svelte.ts';
 	import Icon from './Icon.svelte';
+	import LangSwitch from './LangSwitch.svelte';
 
 	let clicks = 0;
 	let timer: ReturnType<typeof setTimeout>;
@@ -45,29 +47,30 @@
 
 <header class="nav" class:scrolled>
 	<div class="bar">
-		<a class="logo" href="#top" onclick={logo} aria-label="quique, back to top">
+		<a class="logo" href="#top" onclick={logo} aria-label={L.ui.nav.home}>
 			<span class="mark" aria-hidden="true"></span>
 			<span class="word">quique</span><span class="dot">.</span>
 		</a>
 
-		<nav aria-label="Sections">
+		<nav aria-label={L.ui.nav.sections}>
 			{#each nav.filter((n) => n.id !== 'hire') as n}
-				<a href="#{n.id}" class:active={ui.section === n.id} onclick={(e) => (e.preventDefault(), ui.go(n.id))}>{n.label}</a>
+				<a href="#{n.id}" class:active={ui.section === n.id} onclick={(e) => (e.preventDefault(), ui.go(n.id))}>{L.ui.nav[n.id]}</a>
 			{/each}
 		</nav>
 
 		<div class="tools">
-			<button class="tool k" onclick={() => (ui.paletteOpen = true)} aria-label="Open command palette">
+			<button class="tool k" onclick={() => (ui.paletteOpen = true)} aria-label={L.ui.nav.palette}>
 				<Icon name="search" scale={2} />
 				<span class="kk"><kbd>{isMac ? '⌘' : 'Ctrl'}</kbd><kbd>K</kbd></span>
 			</button>
-			<button class="tool" onclick={() => ui.toggleTheme()} aria-label="Toggle dark mode" title="Dark / light">
+			<button class="tool" onclick={() => ui.toggleTheme()} aria-label={L.ui.nav.dark} title={L.ui.nav.darkTitle}>
 				<Icon name={ui.theme === 'dark' ? 'sun' : 'moon'} scale={2} />
 			</button>
-			<button class="tool y2k" aria-pressed={ui.y2k} onclick={() => ui.toggleY2k()} title="Travel to the year 2000">
+			<LangSwitch />
+			<button class="tool y2k" aria-pressed={ui.y2k} onclick={() => ui.toggleY2k()} title={L.ui.nav.y2kTitle}>
 				<span class="sw" aria-hidden="true"></span>Y2K
 			</button>
-			<a class="btn btn-primary hire" href="#hire" onclick={(e) => (e.preventDefault(), ui.go('hire'))}>Hire me</a>
+			<a class="btn btn-primary hire" href="#hire" onclick={(e) => (e.preventDefault(), ui.go('hire'))}>{L.ui.nav.hire}</a>
 		</div>
 	</div>
 </header>

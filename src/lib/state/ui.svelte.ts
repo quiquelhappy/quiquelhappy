@@ -1,4 +1,6 @@
 import { browser } from '$app/env';
+import { all } from '#lib/i18n/all.ts';
+import { DEFAULT_LANG, type LangCode } from '#lib/i18n/locales.ts';
 
 type Theme = 'light' | 'dark';
 export type Toast = { id: number; text: string; icon?: string };
@@ -22,6 +24,7 @@ const write = (key: string, value: string) => {
 let n = 0;
 
 class UI {
+	lang = $state<LangCode>(DEFAULT_LANG);
 	theme = $state<Theme>('light');
 	y2k = $state(false);
 	section = $state('top');
@@ -43,8 +46,17 @@ class UI {
 	apply() {
 		if (!browser) return;
 		const root = document.documentElement;
+		root.lang = this.lang;
 		root.dataset.theme = this.theme;
 		root.dataset.era = this.y2k ? 'y2k' : 'now';
+	}
+
+	rememberLang(code: LangCode) {
+		write('lang', code);
+	}
+
+	savedLang() {
+		return read('lang');
 	}
 
 	toggleTheme() {
@@ -56,8 +68,9 @@ class UI {
 		this.y2k = !this.y2k;
 		write('y2k', this.y2k ? '1' : '0');
 		if (announce) {
-			this.toast(this.y2k ? 'Welcome to the year 2000. Your modem is dialing...' : 'Back to the future. Welcome home.');
-			this.say(this.y2k ? 'Whoa. Everything is beige now.' : 'Phew. Antialiasing!');
+			const m = all[this.lang].ui.y2k;
+			this.toast(this.y2k ? m.on : m.off);
+			this.say(this.y2k ? m.sayOn : m.sayOff);
 		}
 	}
 
