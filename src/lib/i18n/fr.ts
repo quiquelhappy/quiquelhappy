@@ -1,0 +1,619 @@
+import type { Messages } from './en.ts';
+
+export const fr: Messages = {
+	ui: {
+		meta: {
+			title: 'Quique Osuna | Ingénieur logiciel, ouvert aux propositions',
+			description:
+				"Quique (Happy) construit des logiciels qui doivent fonctionner : aérospatial, robotique, santé, hébergement, e-commerce et outils pour développeurs. Il programme depuis l'âge de 9 ans, vit près de Barcelone et est ouvert à de nouvelles missions.",
+			og: "Des logiciels pour l'espace, les robots et les recoins les plus étranges d'internet. Ouvert à de nouvelles missions : quique@osuna.dev"
+		},
+		nav: {
+			top: 'Bonjour',
+			about: 'À propos',
+			experience: 'Expérience',
+			projects: 'Projets',
+			hire: 'Embauchez-moi',
+			sections: 'Sections',
+			home: 'quique, retour en haut',
+			palette: 'Ouvrir la palette de commandes',
+			dark: 'Basculer en mode sombre',
+			darkTitle: 'Sombre / clair',
+			y2kTitle: "Voyager jusqu'à l'an 2000",
+			language: 'Langue'
+		},
+		hero: {
+			eyebrow: 'Bonjour, je suis Quique',
+			h1a: 'Je construis des logiciels',
+			h1b: 'qui doivent ',
+			h1em: 'fonctionner',
+			h1c: '.',
+			retro: 'Bienvenue sur la page de Quique !!',
+			ledeA:
+				"J'ai commencé à programmer à neuf ans et je n'ai jamais vraiment arrêté. Aujourd'hui, je construis des logiciels pour l'espace, les robots et la santé, ainsi que quelques produits à moi, étranges et merveilleux. J'habite près de Barcelone, on m'appelle ",
+			ledeBold: 'Happy',
+			ledeB: " en ligne, et je suis ouvert à de nouvelles missions.",
+			rightNow: 'en ce moment je suis',
+			cta: 'Embauchez-moi',
+			copied: 'Copié',
+			copyAria: "Copier l'adresse e-mail",
+			toastCopied: 'E-mail copié. Allez écrire quelque chose de sympa.',
+			years: (n: number) => `${n}+ ans de code`,
+			pressA: 'appuyez sur',
+			pressB: 'pour explorer',
+			speaks: 'je parle',
+			profileAria: 'Profil rapide',
+			open: 'Ouvert',
+			onBranch: 'sur la branche',
+			availableNow: 'disponible maintenant',
+			codeAria: 'Profil sous forme de code',
+			recommended: 'Recommandé',
+			alertTitle: 'Belle collaboration potentielle',
+			alertText: "Revue suggérée : dites bonjour avant que quelqu'un d'autre ne le fasse.",
+			hireQL: 'Hire QL',
+			workingOn: 'En cours',
+			sideQuests: 'Quêtes annexes',
+			currentBranch: 'Branche actuelle',
+			b1: 'systèmes critiques, navigation par satellite',
+			b2: 'automatisation industrielle, automobile',
+			b3: 'serverbench, grifpkg, purecore',
+			construction: 'EN CONSTRUCTION',
+			mosaic: 'survolez pour peindre. cliquez pour fixer un bloc.'
+		},
+		about: {
+			eyebrow: 'À propos',
+			h2a: 'Résolveur de problèmes,',
+			h2b: "par habitude.",
+			p1a: 'Je suis Quique, ',
+			p1bold: 'Happy',
+			p1b: " en ligne. Je programme depuis que je me souviens avoir touché un ordinateur, et j'habite près de Barcelone. J'ai un tas de projets personnels qui ne sont jamais entrés dans aucune bio, mais au fond, j'essaie de réparer des choses qui rendent la vie un peu meilleure, pour les autres et pour moi.",
+			p2: "Le jour, je travaille dans une entreprise qui construit des systèmes aérospatiaux, de défense et de sécurité, avec de profondes racines dans la navigation par satellite et les logiciels critiques, et dans une entreprise de robotique spécialisée en automatisation industrielle, surtout dans l'automobile. La nuit, je construis des outils pour des communautés : une boutique, un hébergeur, un gestionnaire de paquets et un moteur d'analytique, presque tout de zéro.",
+			p3: "J'ai deux diplômes : Génie logiciel (Informatique) à l'UAB, et un Grado Superior (formation professionnelle supérieure) en Robotique et Automatisation industrielle à Salesians Sarrià. Ça se voit. Je pense aux modes de défaillance, à la latence et au monde physique avant de penser aux frameworks.",
+			facts: 'En bref',
+			alias: 'pseudo',
+			base: 'lieu',
+			baseV: 'près de Barcelone',
+			since: 'code depuis',
+			sinceV: "l'âge de 9 ans (avril 2010)",
+			degrees: 'diplômes',
+			deg1: 'Génie logiciel (UAB)',
+			deg2: 'Robotique et Automatisation (Salesians Sarrià)',
+			speaks: 'je parle',
+			status: 'statut',
+			statusV: "ouvert aux offres d'emploi",
+			fuel: 'carburant',
+			fuelV: 'café',
+			carouselAria: 'Ce en quoi je crois',
+			prev: 'Précédent',
+			next: 'Suivant',
+			goTo: (n: number) => `Aller à la citation ${n}`,
+			statYears: (bc: number) => `ans de code, dont ${bc} av. J.-C. (avant ChatGPT)`,
+			statAge: "ans quand j'ai commencé à écrire du code",
+			achEyebrow: 'Succès',
+			achH2: 'Débloqués jusqu’ici.',
+			xp: 'XP',
+			clickToClaim: 'cliquez pour réclamer',
+			claimed: 'RÉCLAMÉ +10 XP',
+			unlocked: 'SUCCÈS DÉBLOQUÉ',
+			toastXp: (title: string) => `+10 XP : ${title}`,
+			toastAll: "100 % terminé. Le seul succès restant est de m'embaucher.",
+			sayHalf: 'À mi-chemin. Allez, collectionnez-les tous.'
+		},
+		marquee: { aria: 'Avec quoi je travaille', play: 'Relancer le défilement', pause: 'Mettre le défilement en pause' },
+		exp: {
+			eyebrow: 'Expérience',
+			h2a: "Ce que j'ai vraiment",
+			h2b: 'construit et exploité.',
+			lede: (areas: number, entries: number) =>
+				`${areas} domaines de compétence, ${entries} entrées, zéro remplissage de mots à la mode. Filtrez par compétence, technologie ou contexte. Chaque carte s'ouvre et chaque étiquette technologique est un filtre.`,
+			filters: 'Filtres',
+			searchPh: 'Rechercher : docker, commerce, go...',
+			searchLabel: "Rechercher dans l'expérience",
+			skillArea: 'Domaine de compétence',
+			everything: 'Tout',
+			context: 'Contexte',
+			tech: 'Technologie',
+			matchMode: 'Mode de correspondance',
+			any: 'une',
+			all: 'toutes',
+			gLang: 'Langages',
+			gFrame: 'Frameworks',
+			gTools: 'Outils et plateformes',
+			reset: 'Réinitialiser les filtres',
+			showing: (n: number, total: number) => `${n} sur ${total} affichés`,
+			filtered: 'filtré',
+			expandAll: 'Tout déplier',
+			collapseAll: 'Tout replier',
+			details: 'Détails',
+			less: 'Moins',
+			filterBy: (t: string) => `Filtrer par ${t}`,
+			emptyTitle: 'Rien ne correspond.',
+			emptyText: "Même Gandalf n'a pas pu le flairer. Essayez avec moins de filtres, ou demandez-moi directement.",
+			emptySay: "Rien ne correspond. Même moi, je n'ai pas trouvé."
+		},
+		projects: {
+			eyebrow: 'Projets',
+			h2a: "Des choses que j'ai faites",
+			h2b: 'parce que je devais.',
+			lede: "Rien de ce qui existait ne convenait, alors j'ai construit une boutique, un hébergeur, un gestionnaire de paquets et un moteur d'analytique.",
+			visit: (d: string) => `Visiter ${d}`,
+			none: 'Pas de site public'
+		},
+		hire: {
+			eyebrow: 'Disponible pour une mission',
+			h2: 'Quelque chose de difficile à construire ? Parlons-en.',
+			small:
+				"Je suis ouvert à de nouvelles offres d'emploi. J'aime les problèmes avec des arêtes vives : systèmes distribués, hébergement, outils pour développeurs et logiciels qui doivent être justes du premier coup.",
+			ledeA: "Dites-moi ce que vous construisez et ce qui coince. Quelques lignes suffisent. Je lis tout et je vous répondrai depuis ",
+			ledeB: '.',
+			langs: 'Vous pouvez m’écrire en français, anglais, espagnol, catalan ou allemand.',
+			emailLabel: 'Votre e-mail',
+			emailPh: 'vous@email.fr',
+			buildLabel: 'Que construisons-nous ?',
+			buildPh: 'Que construisons-nous ?',
+			send: 'Écrire à Quique',
+			sending: "Ouverture de l'e-mail...",
+			copy: (e: string) => `Copier ${e}`,
+			copied: 'Copié',
+			mosaic: 'chaque bloc est une idée de projet. fixez la vôtre.',
+			subject: 'Travaillons ensemble',
+			defaultBody: "Bonjour Quique, j'aimerais parler d'un projet.",
+			replyTo: 'Répondre à : ',
+			toastSent: "Votre application de messagerie devrait s'ouvrir. Sinon, copiez l'adresse ci-dessous.",
+			say: "Vous l'avez fait ! Il va adorer.",
+			toastCopied: 'Copié ! Collez-le où vous voulez.'
+		},
+		retro: {
+			company: 'Une entreprise Happy',
+			shortcuts: 'Raccourcis du site',
+			home: 'Accueil',
+			skills: 'Compétences',
+			hireLink: 'Embaucher',
+			go2000: "Passer à l'an 2000",
+			back2026: 'Retour en 2026',
+			quickLinks: 'Liens rapides',
+			myGithub: 'Mon GitHub',
+			service: 'Service client',
+			contact247: 'Contacter Quique 24h/24',
+			notReally: "(pas littéralement 24h/24, il dort)",
+			guarantee: 'Garantie de sécurité',
+			memberOf: 'Membre de',
+			b1: 'Fait avec Svelte 5',
+			b2: 'Optimisé pour 800x600',
+			b3: 'Propulsé par Docker',
+			b4: 'HTML 4.01 valide (mdr)',
+			finder: "Chercheur d'ingénieur express",
+			showMe: "Montrez-moi le meilleur ingénieur pour :",
+			anyEng: "n'importe quel ingénieur",
+			onlyMe: 'Quique en particulier',
+			iNeed: "J'ai besoin de :",
+			needs: ['Une plateforme web', "Un backend d'hébergement", 'Un gestionnaire de paquets', 'Un logiciel critique', 'Automatisation / robotique', 'Quelque chose de bizarre'],
+			starting: 'Début :',
+			whens: ['Dès que possible', 'Le mois prochain', 'Le trimestre prochain', "Quand l'an 3000 arrivera"],
+			size: 'Taille :',
+			sizes: ['Petit', 'Moyen', 'Grand', 'Taille lunaire'],
+			go: 'Go !',
+			news: 'Offres et actualités',
+			newsItems: [
+				"Économisez 40 % sur les réécritures. Embauchez Quique avant que le code legacy ne vous trouve !",
+				'Nouveau : déploiements sans interruption disponibles sur les terminaux participants',
+				"Recevez 50 ou 100 € de remboursement sur votre premier bug corrigé (offre fictive)",
+				'Conteneurs Docker : maintenant avec 30 % de baleine en plus',
+				'Vivez une grande aventure dans votre propre backlog'
+			],
+			corner: 'Le coin du webmaster',
+			visitor: 'Vous êtes le visiteur numéro',
+			visitorNote: '(compté uniquement dans votre navigateur, comme un tout petit livre d’or honnête)',
+			fineA: "Tous droits réservés. Aucun GIF animé n'a été blessé lors de la création de cette section.",
+			guestbook: "Signez mon livre d'or !",
+			mailSubject: "Demande via le Chercheur d'ingénieur express",
+			mailBody: (project: string, start: string, size: string, mode: string) =>
+				`Bonjour Quique,\n\nJ'ai utilisé votre Chercheur d'ingénieur express.\n\nType de projet : ${project}\nDébut : ${start}\nTaille : ${size}\nMode de recherche : ${mode}\n\n`,
+			modeAny: "n'importe quel ingénieur",
+			modeMe: 'vous en particulier',
+			toastDial: 'Connexion... *screeeeeeee-kshhhhh*'
+		},
+		footer: {
+			made: "Fait près de Barcelone avec Svelte 5, une quantité déraisonnable de café et un berger australien blue merle nommé Gandalf.",
+			elsewhere: 'Ailleurs',
+			coffee: 'Offrez-moi un café'
+		},
+		palette: {
+			aria: 'Palette de commandes',
+			placeholder: 'Tapez une commande ou cherchez...',
+			label: 'Commande',
+			none: 'Aucune commande trouvée. Essayez « embaucher ».',
+			navigate: 'naviguer',
+			run: 'exécuter',
+			go: 'Aller à',
+			actions: 'Actions',
+			fun: 'Amusement',
+			retro: "Le coin des années 2000",
+			email: 'Écrire à Quique',
+			copy: "Copier l'adresse e-mail",
+			github: 'Ouvrir GitHub',
+			dark: 'Basculer en mode sombre',
+			y2kOn: "Voyager jusqu'à l'an 2000",
+			y2kOff: "Quitter l'an 2000",
+			summon: 'Invoquer Gandalf',
+			summonSay: 'Ouaf ! Vous avez sonné ?',
+			trick: 'Faire faire un tour à Gandalf',
+			confetti: 'Confettis',
+			sudoHint: 'permission accordée',
+			toastCopied: 'E-mail copié. Allez, écrivez quelque chose.',
+			sudo1: '[sudo] mot de passe pour le recruteur : ********',
+			sudo2: "Accès accordé. Ouverture de la section d'embauche...",
+			language: 'Changer de langue'
+		},
+		mosaic: {
+			t12: '12 blocs fixés. Graphique de contributions ou Picasso ?',
+			say12: "Ooh, on peint ? J'adore peindre.",
+			t36: '36 blocs. Ceci est officiellement une galerie.'
+		},
+		mascot: {
+			aria: 'Gandalf, un berger australien blue merle. Cliquez pour une surprise.',
+			away: '(._.) Gandalf vous attend. Revenez',
+			startle: ['Ouaf !', 'Oh là !', 'Trop près !', 'Non. Au revoir.'],
+			confettiSay: "D'accord, d'accord ! Qui est un bon garçon ? Moi. Tenez, les confettis !",
+			clickToast: (n: number) => `Vous avez cliqué ${n} fois sur Gandalf. Voilà de la détermination. Embauchez Quique avec.`
+		},
+		eggs: {
+			sudo1: "quique n'est pas dans le fichier sudoers. Cet incident sera signalé.",
+			sudo2: "Signalé à : personne. Nous n'avons personne à qui signaler.",
+			hire: 'Sage décision. Très sage décision.',
+			gandalf: "Vous avez dit mon nom ! Ouaf !",
+			woof: 'OUAF ! Quelqu’un a dit promenade ?',
+			happy: "C'est mon nom, ne l'usez pas.",
+			matrix: "Il n'y a pas de cuillère. Il n'y a que du TypeScript.",
+			rm: "rm : impossible de supprimer le futur : permission refusée",
+			konami: "CODE KONAMI ACCEPTÉ. +30 vies. Quique approuve votre enfance."
+		},
+		y2k: {
+			on: "Bienvenue en l'an 2000. Votre modem compose le numéro...",
+			off: 'Retour vers le futur. Bienvenue à la maison.',
+			sayOn: "Oh là là. Tout est beige maintenant.",
+			sayOff: "Ouf. L'antialiasing !"
+		}
+	},
+	content: {
+		roles: [
+			'un résolveur de problèmes',
+			'un ingénieur presque de fusées',
+			'un chuchoteur de Docker',
+			'un dompteur de robots',
+			'un développeur PHP repenti',
+			'un inventeur de gestionnaires de paquets',
+			'quelqu’un qui lit les logs',
+			'disponible pour une mission'
+		],
+		principles: [
+			{ quote: "J'ai appris beaucoup de choses à la dure.", by: 'moi, dans mon propre README' },
+			{
+				quote: "Au fond, je suis un résolveur de problèmes. J'essaie de réparer des choses qui rendent la vie un peu meilleure, pour les autres et pour moi.",
+				by: 'encore moi'
+			},
+			{
+				quote: "Quand rien de ce qui existait n'était assez bien, je l'ai construit de zéro : une boutique, un hébergeur, un gestionnaire de paquets.",
+				by: 'le git log'
+			},
+			{
+				quote: "La vie privée est une contrainte de conception. J'ai lié des sessions uniquement à partir des données de connexion, sans empreinte d'appareil.",
+				by: 'un socket, sans doute'
+			},
+			{ quote: "{bc} ans d'expérience av. J.-C. Comprenez : avant ChatGPT.", by: 'mon calendrier' }
+		],
+		achievements: [
+			{ title: 'Commerçant', text: "J'ai construit ma propre plateforme e-commerce pour biens numériques, comme Shopify mais pour des objets de collection dans les jeux." },
+			{ title: 'Propriétaire', text: "J'ai construit mon propre système d'hébergement sous Docker. Les serveurs de jeux sont les locataires les plus gourmands." },
+			{ title: 'Chuchoteur de dépendances', text: "J'ai construit de zéro la logique d'un gestionnaire de paquets, avec couches de cache et de distribution." },
+			{ title: "Pas d'empreinte, merci", text: "J'ai construit une plateforme d'analytique à base de sockets avec une liaison de sessions stricte, sans aucune empreinte d'appareil." },
+			{ title: 'Centre de contrôle', text: "J'ai travaillé sur des projets spatiaux critiques qui repoussent la prochaine frontière de l'exploration humaine." },
+			{ title: "D'abord, ne pas nuire", text: "J'ai travaillé sur des applications de santé qui améliorent la compréhension et la conduite des essais cliniques." },
+			{ title: 'Double diplôme', text: "Génie logiciel (Informatique) à l'UAB, plus un Grado Superior en Robotique et Automatisation industrielle à Salesians Sarrià, avec A+ dans la plupart des matières." },
+			{ title: 'Cicatrices', text: "J'ai appris beaucoup de choses à la dure. Celle-là n'a pas de catégorie." }
+		],
+		marquee: [
+			'TypeScript', 'Go', 'Svelte', 'Docker', 'Linux', 'PHP', 'C / C++', 'WebSockets', 'AWS',
+			'Vue', 'Maven / Gradle', 'CSS', 'Systèmes distribués', 'Gestionnaires de paquets', 'Logiciels critiques'
+		],
+		quips: {
+			general: [
+				"Ouaf. Ne faites pas attention à moi. J'habite dans votre fenêtre maintenant.",
+				'Je rassemble des choses. Surtout des échéances.',
+				'Vous ne passerez pas... sans regarder le bouton Embauchez-moi.',
+				"Quique m'a dessiné en 24x24 pixels. Je crois qu'il en est fier.",
+				'Bons garçons : 1. Friandises : 0. Merci de conseiller.',
+				'Je connais trois tunnels. Ne me parlez pas du quatrième.',
+				'psst. le bouton Embauchez-moi fonctionne.',
+				"Un merle n'est jamais en retard. Ni en avance. Il arrive précisément quand il l'a décidé.",
+				'Essayez Ctrl+K. Ou Cmd+K. Je ne suis pas difficile.',
+				"Il y a un code Konami quelque part ici. Je n'ai rien dit."
+			],
+			top: ["Ouaf ! Je suis Gandalf. Quique est un peu timide, alors c'est moi qui parle.", "Faites défiler. Le meilleur n'est pas dans l'en-tête."],
+			about: ['Ces succès sont réels. Les confettis sont en supplément.', "Il a commencé à coder à neuf ans. Moi, au démarrage."],
+			experience: ['Essayez les filtres. Ils sont très satisfaisants.', 'Filtrez par Go. Puis rapportez la balle. Attendez, ce n’est pas un filtre.', 'Chaque carte s’ouvre. Chacune.'],
+			projects: ["Il a construit tout ça. Oui, le gestionnaire de paquets aussi.", "serverbench est une pile entière, pas un seul projet."],
+			hire: ["C'est ici que vous lui écrivez un e-mail.", "Dites bonjour. Il répond. Je l'ai vu.", "quique@osuna.dev. J'attends ici. Les bons garçons attendent."]
+		},
+		clickLines: ['Boop !', 'Ouaf !', "J'ai une hitbox, vous savez.", 'Les câlins sur le ventre sont en supplément.', 'Cliquez 10 fois. Je vous défie.', 'Sept. Vous êtes décidé.', 'Neuf. Le dix va être génial.'],
+		areas: {
+			backend: { label: 'Backend et systèmes distribués', blurb: 'Des services qui tiennent, passent à l’échelle et ne réveillent personne à 3 h du matin.' },
+			infra: { label: 'Infrastructure et hébergement', blurb: "Conteneurs, orchestration et exécution sûre des charges de travail des autres." },
+			frontend: { label: 'Frontend et produit', blurb: "Des interfaces que les gens aiment vraiment utiliser : tableaux de bord, éditeurs et boutiques." },
+			commerce: { label: 'Commerce, publicité et croissance', blurb: 'Vendre des biens numériques, monétiser des communautés et se faire trouver.' },
+			data: { label: 'Données, analytique et statistiques', blurb: "Transformer des flux d'événements en décisions, prévisions et modération." },
+			security: { label: 'Sécurité et confiance', blurb: "Sessions respectueuses de la vie privée, détection de vulnérabilités et valeurs sûres par défaut." },
+			devtools: { label: 'Outils pour développeurs', blurb: "Gestionnaires de paquets, pipelines de build et outils pour d'autres ingénieurs." },
+			foundations: { label: "Fondamentaux de l'informatique", blurb: "Formation académique : la théorie et la discipline d'ingénierie sous tout le reste." },
+			aerospace: { label: 'Aérospatial et systèmes critiques', blurb: "Des logiciels où l'échec n'est pas une option et où les enjeux sont orbitaux." },
+			robotics: { label: 'Robotique et automatisation', blurb: "Automatisation industrielle, surtout automobile, là où le logiciel rencontre l'acier." },
+			health: { label: 'Santé et essais cliniques', blurb: "Des applications qui aident à comprendre et à mener la recherche clinique." }
+		},
+		contexts: { product: 'Mes propres produits', industry: "Travail en entreprise", education: 'Formation' },
+		sources: {
+			serverbench: 'serverbench',
+			purecore: 'purecore',
+			grifpkg: 'grifpkg',
+			'all of the above': 'tout ce qui précède',
+			various: 'divers',
+			UAB: 'UAB',
+			'Aerospace, defense and security company': 'Entreprise aérospatiale, de défense et de sécurité',
+			'Robotics company': 'Entreprise de robotique',
+			'Salesians Sarrià': 'Salesians Sarrià',
+			'Health technology': 'Technologie de santé'
+		},
+		entries: {
+			'game-hosting': {
+				title: 'Hébergement à forte intensité de calcul',
+				summary: "Un service d'hébergement pour serveurs de jeux, parmi les charges les plus gourmandes et les plus difficiles à bien gérer.",
+				detail:
+					"Les serveurs de jeux ne pardonnent pas : ils dévorent CPU et mémoire, sont sensibles à la latence, et les joueurs remarquent le moindre accroc. Le service devait répartir ces charges équitablement, les isoler les unes des autres et se rétablir vite quand quelque chose déraillait. Il a été construit avec Go, JavaScript, TypeScript et PHP, avec les conteneurs comme unité d'isolation.",
+				highlights: ['Isolation des charges par serveur', 'Ordonnancement selon les ressources', 'Plan de contrôle en Go, tableaux de bord en TypeScript']
+			},
+			permissions: {
+				title: 'Permissions basées sur les rôles',
+				summary: 'Des permissions très fines pour que les équipes séparent marketing, commerce, support et modération.',
+				detail:
+					"Les communautés sont des équipes, et les équipes ont des rôles. Le système de permissions laisse chaque communauté définir qui peut toucher à quoi, de sorte que l'équipe de modération n'a jamais besoin d'accéder à la boutique et que le marketing n'a jamais à voir les tickets de support. La vérification devait être rapide, car chaque requête pose la même question.",
+				highlights: ['Rôles fins par communauté', 'Vérifié à chaque requête', "Conçu autour de vraies structures d'équipe"]
+			},
+			tracking: {
+				title: 'Suivi des clients entre supports',
+				summary: 'Suit un client à travers les jeux, les navigateurs et Discord pour construire un profil d’intérêts précis.',
+				detail:
+					"Une même personne apparaît comme compte de jeu, session de navigateur et membre Discord. Fusionner ces identités en un seul profil rend les recommandations pertinentes plutôt qu'agaçantes. Il alimente la boutique et le studio de créateurs pour que le bon contenu atteigne la bonne personne.",
+				highlights: ['Fusion des identités sur trois supports', 'Alimente les recommandations boutique et créateurs', 'Construit avec les leçons de vie privée de purecore']
+			},
+			'realtime-ingest': {
+				title: 'Ingestion temps réel par sockets',
+				summary: 'Un backend d’analytique à base de sockets qui garde des connexions longues et les transforme en sessions.',
+				detail:
+					"purecore garde les connexions ouvertes et lit la session directement dans la connexion, plutôt que dans des cookies ou des identifiants d'appareil. Cela garde le modèle de données simple et honnête : si le socket est le même, la session est la même.",
+				highlights: ['Connexions WebSocket de longue durée', 'Identité de session issue de la connexion', 'Faible surcharge par événement']
+			},
+			'docker-hosting': {
+				title: "Système d'hébergement basé sur Docker",
+				summary: "Mon propre système d'hébergement de conteneurs, construit de zéro parce que rien d'existant ne convenait.",
+				detail:
+					"La couche d'hébergement enveloppe Docker avec la logique produit dont un métier d'hébergeur a vraiment besoin : provisionnement, limites, cycle de vie, crochets de facturation et panneau client. C'est le socle de serverbench, et il m'a appris plus sur Linux, les cgroups et les réseaux que n'importe quel cours.",
+				highlights: ['Provisionnement et gestion du cycle de vie', 'Limites par conteneur', 'Panneau client par-dessus']
+			},
+			byod: {
+				title: 'Orchestrateur « apportez votre propre appareil »',
+				summary: 'Permet aux clients de brancher leurs propres machines et de retrouver la même expérience gérée.',
+				detail:
+					"Tout le monde ne veut pas louer de la capacité. L'orchestrateur BYOD permet à un client de brancher son propre matériel et d'obtenir les mêmes déploiements, la même supervision et les mêmes contrôles, ce qui implique de traiter chaque machine comme non fiable, distante et parfois hors ligne.",
+				highlights: ['Machines du client comme nœuds à part entière', "Les mêmes outils que l'hébergement géré", 'Conçu pour les liaisons instables']
+			},
+			'cdn-edge': {
+				title: "Distribution en périphérie et mise en cache de fichiers",
+				summary: 'Des téléchargements mis en cache et servis depuis la périphérie pour que les dépendances se résolvent vite où que soit le serveur.',
+				detail:
+					"Un gestionnaire de paquets vit ou meurt par sa vitesse de téléchargement. grifpkg met en cache les fichiers avec des métadonnées riches et les sert depuis la périphérie, ce qui garde les installations rapides et ménage les sites en amont.",
+				highlights: ['Cache de fichiers avec métadonnées', 'Distribution en périphérie', 'Ménage les hôtes en amont']
+			},
+			'linux-ops': {
+				title: 'Exploitation Linux',
+				summary: "Des années à faire tourner de vrais serveurs pour de vraies communautés, où une panne a son propre canal Discord.",
+				detail:
+					"Faire tourner PureVanilla et serverbench signifiait garder des machines Linux en bonne santé pour des gens qui remarquent instantanément quand elles ne le sont pas. Supervision, sauvegardes et réponse aux incidents faisaient partie du quotidien, pas d'une équipe à part.",
+				highlights: ['Supervision et sauvegardes', 'Réponse aux incidents devant public', 'Débogage en production avec soin']
+			},
+			'creator-studio': {
+				title: 'Studio de créateurs',
+				summary: 'Un tableau de bord marketing pour des créateurs qui font des vidéos et des publications sur les communautés qu’ils aiment.',
+				detail:
+					"Le studio connecte des comptes YouTube, TikTok et Twitch, permet de monétiser les publications et montre aux créateurs comment leur travail performe. Il devait ressembler à un outil de créateurs, pas à une console d'entreprise.",
+				highlights: ['Authentification YouTube, TikTok et Twitch', 'Monétisation des publications', 'Analytique pour créateurs']
+			},
+			cms: {
+				title: 'CMS et créateur de sites web',
+				summary: "Un CRM et créateur de sites avec moteur de modèles et place de marché de modèles.",
+				detail:
+					"Les communautés construisent leurs propres sites sans toucher au code. Les pages se composent de modules réutilisables, les modèles peuvent être partagés ou vendus sur une place de marché, et le moteur rend le tout avec des performances prévisibles.",
+				highlights: ['Sites multi-pages', 'Modules réutilisables', 'Place de marché de modèles intégrée']
+			},
+			storefronts: {
+				title: 'Boutiques en ligne personnalisables',
+				summary: "Chaque communauté a une boutique qu'elle peut faire sienne.",
+				detail:
+					"La boutique doit ressembler à la communauté qui la possède : la personnalisation va donc loin, tandis que le paiement reste cohérent et digne de confiance. C'est la moitié côté client de la plateforme de commerce.",
+				highlights: ['Thèmes par communauté', 'Paiement cohérent et de confiance', 'Objets de collection, badges et boosters']
+			},
+			'modern-ui': {
+				title: 'Interfaces modernes par composants',
+				summary: 'Des interfaces à base de composants en Svelte et Vue, stylées avec Tailwind ou du CSS écrit à la main.',
+				detail:
+					"J'aime les interfaces petites et rapides. Svelte est mon choix par défaut, Vue quand l'équipe y vit déjà, et Tailwind ou du CSS écrit à la main selon le projet. Ce site en est un exemple.",
+				highlights: ["Svelte d'abord, Vue quand ça convient", 'Tailwind ou CSS écrit à la main', 'Accessible par défaut']
+			},
+			'commerce-platform': {
+				title: 'Plateforme e-commerce de biens numériques',
+				summary: "Ma propre plateforme façon Shopify, faite pour les objets de collection, badges et boosters dans les jeux.",
+				detail:
+					"Les biens numériques obéissent à d'autres règles que les biens physiques : livraison instantanée, fraude, rétrofacturations et intégrations par jeu. La plateforme gère catalogues, paiement et livraison dans le jeu, et donne à chaque communauté sa propre boutique en ligne.",
+				highlights: ['Livraison instantanée dans les jeux', 'Boutiques en ligne par communauté', 'Construite de zéro']
+			},
+			'paid-plugins': {
+				title: 'Plugins payants et vérification des achats',
+				summary: "Vendez des dépendances, ou authentifiez des achats faits ailleurs pour autoriser les téléchargements.",
+				detail:
+					"Les développeurs peuvent vendre leur travail via le gestionnaire de paquets, et les acheteurs qui possèdent déjà un plugin ailleurs peuvent le prouver et le télécharger. Autoriser les téléchargements sans casser le parcours d'installation était la partie difficile.",
+				highlights: ['Vente de dépendances', "Vérification d'achat entre sites", 'Téléchargements autorisés dans la CLI']
+			},
+			ads: {
+				title: 'Pages de téléchargement hébergées avec publicité',
+				summary: "Les développeurs open source gagnent de l'argent grâce à des pages de téléchargement hébergées, avec des publicités issues de notre propre réserve.",
+				detail:
+					"L'open source devrait pouvoir se financer. Les développeurs activent des pages de téléchargement hébergées et gagnent grâce à la publicité servie depuis la réserve publicitaire de la plateforme, ce qui a gardé la qualité élevée et le suivi limité.",
+				highlights: ['Revenus pour les développeurs open source', 'Réserve publicitaire en propre', 'Opt-in par projet']
+			},
+			promoted: {
+				title: 'Logiciels mis en avant',
+				summary: 'Les développeurs font la promotion de plugins payants sur le site et via des recommandations textuelles dans la CLI.',
+				detail:
+					"La découverte est la partie difficile quand on vend un logiciel. Les promotions apparaissent sur le site et sous forme de suggestions textuelles discrètes en ligne de commande, là où les développeurs cherchent déjà une solution.",
+				highlights: ['Promotion sur le site', 'Recommandations textuelles dans la CLI', 'Placement respectueux et non intrusif']
+			},
+			'seo-studio': {
+				title: 'Studio SEO et votes',
+				summary: 'Un panneau SEO avec système de vote qui suggère les sites où chaque vote de membre rapporte le plus.',
+				detail:
+					"Les communautés listent leurs sites et les membres votent pour eux. Le studio suggère quels sites de vote tiers utiliser pour que chaque vote porte le plus loin, transformant une corvée éparse en boucle de croissance mesurée.",
+				highlights: ['Système de vote intégré', 'Suggestions intelligentes de sites', "Maximise la portée par vote"]
+			},
+			'community-analytics': {
+				title: 'Analytique de communautés',
+				summary: "Tout ce qu'une communauté doit savoir sur sa croissance, plus une prévision des jours fériés.",
+				detail:
+					"Au-delà des compteurs et graphiques habituels, l'analytique prédit les effets des jours fériés et combine les signaux des systèmes SEO et créateurs, pour qu'une communauté voie d'où vient vraiment sa croissance.",
+				highlights: ['Métriques de croissance standard', 'Prévision des jours fériés', 'Signaux des outils SEO et créateurs']
+			},
+			automod: {
+				title: 'Automodération statistique',
+				summary: "Modération à fort volume avec Perspective API, qui tient à l'écart de la conversation les membres toxiques récurrents.",
+				detail:
+					"Plutôt que de juger chaque message isolément, le système adopte une vue statistique de chaque membre dans le temps. Les récidivistes s'éloignent de la conversation, alors qu'une mauvaise journée isolée ne mène personne au bannissement.",
+				highlights: ['Notation via Perspective API', 'Historique statistique par membre', "Conçu pour un fort débit d'ingestion"]
+			},
+			'interest-profiles': {
+				title: "Profils d'intérêts et recommandations",
+				summary: "Construit un profil d'intérêts par client pour recommander du contenu de la boutique ou des médias de créateurs.",
+				detail:
+					"Les signaux des jeux, des navigateurs et de Discord sont fusionnés en un profil qui décide quoi recommander. L'objectif était la pertinence : moins de suggestions, mais meilleures.",
+				highlights: ['Profils issus de plusieurs sources', 'Recommandations boutique et créateurs', 'Réglé pour la pertinence plutôt que le volume']
+			},
+			'fingerprint-free': {
+				title: "Liaison de sessions sans empreinte d'appareil",
+				summary: "Liaison de sessions très sécurisée basée uniquement sur les données de connexion, sans empreinte d'appareil.",
+				detail:
+					"La méthode facile pour suivre les visiteurs est de prendre l'empreinte de leurs appareils. Je ne voulais pas de ça. La plateforme lie les sessions aux propriétés de la connexion elle-même, ce qui garde l'analytique utile et les visiteurs non identifiés.",
+				highlights: ["Aucune empreinte d'appareil", 'Identité basée sur la connexion', 'Normes de sécurité élevées']
+			},
+			'vuln-detection': {
+				title: 'Détection de vulnérabilités',
+				summary: "Les dépendances sont identifiées par empreinte et peuvent être marquées comme vulnérables, prévenant les développeurs de l'usage de code non sûr.",
+				detail:
+					"Une fois les fichiers identifiés par empreinte, une version connue comme mauvaise peut être marquée, et quiconque en dépend reçoit un avertissement. Cela transforme un gestionnaire de paquets en système d'alerte précoce pour l'écosystème.",
+				highlights: ["Empreinte des artefacts", 'Marquage des versions vulnérables', 'Notifications aux développeurs concernés']
+			},
+			'jar-pm': {
+				title: 'Gestionnaire de paquets JAR',
+				summary: 'Un gestionnaire de paquets qui importe, met à jour et gère les dépendances de logiciels Java.',
+				detail:
+					"Les écosystèmes de plugins Java reposent souvent sur des téléchargements manuels. grifpkg résout, met en cache et met à jour les dépendances automatiquement, avec son propre registre, sa CLI et sa couche de distribution. Utilisé surtout par la communauté SpigotMC.",
+				highlights: ['Registre, CLI et couches de distribution', 'Mises à jour automatiques', 'Utilisé dans la communauté SpigotMC']
+			},
+			'auto-index': {
+				title: 'Indexation automatique',
+				summary: 'Bibliothèques et logiciels sont indexés automatiquement, avec des métadonnées riches et un cache de fichiers.',
+				detail:
+					"Un registre vaut ce que vaut sa couverture. L'indexation automatique trouve les nouvelles versions, extrait les métadonnées et met les fichiers en cache, pour que le catalogue reste à jour sans que les mainteneurs fassent la paperasse.",
+				highlights: ['Exploration et indexation des nouvelles versions', 'Extraction de métadonnées riches', 'Cache de fichiers']
+			},
+			'dep-compile': {
+				title: 'Compilation des dépendances',
+				summary: "Certains projets ne fournissent aucun .jar. grifpkg se branche sur leurs dépôts git et les construit avec Maven ou Gradle.",
+				detail:
+					"Quand il n'existe pas d'artefact précompilé, la plateforme récupère le dépôt, le construit dans un bac à sable avec Maven ou Gradle, puis sert le résultat comme n'importe quel autre paquet.",
+				highlights: ['Builds pilotés par git', 'Prise en charge de Maven et Gradle', 'Environnement de build isolé']
+			},
+			'local-import': {
+				title: 'Import local automatique',
+				summary: "Détecte les dépendances d'un projet existant et les associe automatiquement aux entrées du registre.",
+				detail:
+					"Adopter un gestionnaire de paquets ne devrait pas obliger à refaire son projet à la main. L'importeur analyse ce qui existe déjà, le fait correspondre aux identifiants du registre et met tout en place.",
+				highlights: ['Analyse les projets existants', 'Fait correspondre les identifiants du registre', 'Une commande pour adopter']
+			},
+			'se-degree': {
+				title: 'Diplôme de génie logiciel (Informatique)',
+				summary: "Un diplôme de génie logiciel, avec l'informatique au cœur, à l'Universitat Autònoma de Barcelona.",
+				detail:
+					"Des années de code avant le diplôme l'ont fait atterrir autrement : il a mis des noms, de la théorie et de la discipline sur des choses que j'avais apprises en les cassant. Il côtoie mes études de robotique, si bien que j'ai une formation formelle côté logiciel comme côté matériel de l'automatisation.",
+				highlights: ["Fondamentaux de l'informatique", 'Pratique du génie logiciel', "Pendant formel à des années de construction en autodidacte"]
+			},
+			space: {
+				title: 'Projets spatiaux critiques',
+				summary: "Des logiciels pour un travail qui repousse la prochaine frontière de l'exploration humaine.",
+				detail:
+					"Je travaille dans une entreprise de technologie et d'ingénierie spécialisée dans les systèmes aérospatiaux, de défense et de sécurité, avec une solide expertise en navigation par satellite et en logiciels critiques. Les détails ne m'appartiennent pas, mais le niveau d'exigence est clair : rigoureux, traçable et correct du premier coup.",
+				highlights: ['Normes des systèmes critiques', 'Contexte de navigation par satellite', "Exactitude et traçabilité d'abord"]
+			},
+			'robotics-work': {
+				title: 'Automatisation industrielle',
+				summary: "Des logiciels pour une entreprise de robotique axée sur l'automatisation industrielle, surtout dans l'automobile.",
+				detail:
+					"Le logiciel d'atelier, c'est un autre sport : la sortie fait bouger de vraies machines, la disponibilité, c'est de l'argent et le temps de cycle est tout. C'est là que se rencontrent ma formation en robotique et mes habitudes de logiciel.",
+				highlights: ["Industrie automobile", 'Des logiciels qui font bouger des machines', 'Temps de cycle et disponibilité comptent']
+			},
+			degree: {
+				title: 'Robotique et automatisation industrielle (Grado Superior)',
+				summary: "Une formation professionnelle supérieure (Grado Superior) en robotique et automatisation industrielle, terminée avec A+ dans la plupart des matières.",
+				detail:
+					"Étudiée à Salesians Sarrià, à Barcelone. Capteurs, actionneurs, régulation et systèmes d'automatisation m'ont donné une intuition physique pour le logiciel. C'est pourquoi je pense aux modes de défaillance et à la latence avant d'écrire du code, et pourquoi l'automatisation industrielle me fait me sentir chez moi.",
+				highlights: ['A+ dans la plupart des matières', 'Régulation, capteurs et automatisation', 'Intuition matérielle pour le logiciel']
+			},
+			clinical: {
+				title: 'Applications pour essais cliniques',
+				summary: 'Des applications de santé qui améliorent la compréhension et la conduite des essais cliniques.',
+				detail:
+					"La recherche clinique dépend de données exactes issues de vraies personnes. Les applications facilitent la collecte, la compréhension et l'exploitation de ces données, là où vie privée et exactitude ne sont pas négociables.",
+				highlights: ["De meilleures données d'essais", "Vie privée et exactitude d'abord", 'Des logiciels qui aident la médecine à avancer plus vite']
+			}
+		},
+		projects: {
+			serverbench: {
+				kind: 'E-commerce, analytique et hébergement',
+				blurb:
+					"Une plateforme complète pour les communautés en ligne, en particulier les serveurs de jeux : une plateforme e-commerce de biens numériques, un outil d'analytique pour communautés et un orchestrateur d'hébergement « apportez votre propre appareil ».",
+				points: [
+					"Boutique : les communautés vendent objets de collection, badges et boosters, avec une boutique en ligne personnalisable pour chacune",
+					"Hébergement : un orchestrateur basé sur Docker pour des serveurs de jeux très gourmands",
+					"Studios : outils de créateurs, SEO et CMS qui partagent leurs données avec un seul cœur d'analytique"
+				]
+			},
+			grifpkg: {
+				kind: 'Gestionnaire de paquets',
+				blurb:
+					"Un gestionnaire de paquets pour plugins Java, logiciels serveur et code généraliste, utilisé surtout par la communauté SpigotMC. Il importe, met à jour et gère les dépendances automatiquement.",
+				points: [
+					'Couches de cache et de distribution maison pour une livraison rapide en périphérie',
+					"Indexe les bibliothèques automatiquement et compile depuis les sources quand aucun .jar n'existe",
+					'Plugins payants, détection de vulnérabilités et monétisation pour développeurs intégrés'
+				]
+			},
+			purecore: {
+				kind: 'Analytique temps réel',
+				blurb:
+					"Une plateforme d'analytique à base de sockets avec des normes de sécurité élevées. Les sessions sont liées uniquement à partir des données de connexion, sans empreinte d'appareil.",
+				points: ['Liaison de sessions basée sur la connexion elle-même', "Vie privée dès la conception, aucun raccourci d'empreinte", 'Ingestion temps réel via WebSockets']
+			},
+			purevanilla: {
+				kind: 'Serveur communautaire',
+				blurb:
+					"Un projet de serveur Minecraft vanilla centré sur une expérience propre et fidèle à l'original. Géré comme un produit, avec une vraie infrastructure derrière un jeu.",
+				points: ["Philosophie vanilla d'abord : moins de mods, plus de soin", "Une communauté vivante qui a besoin de disponibilité", "Là où ont commencé bien des leçons d'hébergement"]
+			}
+		}
+	}
+};
