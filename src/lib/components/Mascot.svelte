@@ -65,7 +65,7 @@
 	let look = $state({ x: 0, y: 0 });
 	let speech = $state('');
 	type Edge = 'b' | 't' | 'l' | 'r';
-	type Trail = { id: number; from: Corner; to: Corner; edge: Edge; dur: number; a: string; b: string };
+	type Trail = { id: number; from: Corner; to: Corner; edge: Edge; dur: number; from_: string; to_: string; axis: 'h' | 'v'; rev: boolean };
 	let trail = $state<Trail | null>(null);
 	let reduced = $state(false);
 	let winEl: HTMLButtonElement;
@@ -154,7 +154,8 @@
 		}, 3400);
 	}
 
-	// the move animation is just one small dot of earth travelling along the screen edge
+	// the move animation: a rainbow streak gliding along the edge of the screen
+	const RB_LEN = 220;
 	const INSET_X = 70;
 	const INSET_Y = 34;
 
@@ -166,7 +167,11 @@
 		const inset = horizontal ? INSET_X : INSET_Y;
 		const start = `${inset}px`, end = `calc(100% - ${inset}px)`;
 		const forward = horizontal ? tx > fx : ty > fy;
-		return { id: Date.now(), from, to, edge, dur: horizontal ? 1300 : 950, a: forward ? start : end, b: forward ? end : start };
+		const a = forward ? start : end;
+		const b = forward ? end : start;
+		// the head leads. going forward the streak trails behind it (to the left / above), going back it trails to the right / below
+		const shift = (v: string) => (forward ? `calc(${v} - ${RB_LEN}px)` : v);
+		return { id: Date.now(), from, to, edge, dur: horizontal ? 1700 : 1300, from_: shift(a), to_: shift(b), axis: horizontal ? 'h' : 'v', rev: !forward };
 	}
 
 	function adjacent(c: Corner): Corner {
@@ -185,7 +190,7 @@
 				await nap(250);
 				trail = run;
 				await nap(run.dur);
-				trail = null; // the dot is gone before Gandalf comes out
+				trail = null; // the rainbow has faded out before Gandalf comes out
 				at = next;
 				await tick();
 				await nap(250);
@@ -281,7 +286,14 @@
 			ui.confetti(winEl.getBoundingClientRect().left + 40, winEl.getBoundingClientRect().top);
 			doDance();
 			ui.toast(L.ui.mascot.clickToast(clicks));
-		} else say(L.content.clickLines[Math.min(clicks - 1, L.content.clickLines.length - 1)] ?? quip());
+		} else if (clicks < 10) {
+			// clicks 1 to 9 each have their own line, so the countdown to ten is accurate
+			say(L.content.clickLines[clicks - 1]);
+		} else {
+			// after the first ten: lines without numbers, restarting after every multiple of ten
+			const more = L.content.clickMore;
+			say(more[((clicks % 10) - 1) % more.length]);
+		}
 	}
 
 	// ----- cues from the rest of the site
@@ -350,7 +362,7 @@
 <div class="trail" aria-hidden="true">
 	{#if trail}
 		{#key trail.id}
-			<span class="pip {trail.edge}" style="--dur:{trail.dur}ms;--a:{trail.a};--b:{trail.b};--steps:{Math.round(trail.dur / 70)}"></span>
+			<span class="rainbow {trail.axis} {trail.edge}" class:rev={trail.rev} style="--dur:{trail.dur}ms;--from:{trail.from_};--to:{trail.to_};--len:{RB_LEN}px"></span>
 		{/key}
 	{/if}
 </div>
@@ -520,57 +532,89 @@
 		top: calc(var(--px) * 24 + 8px);
 	}
 
-	/* ------------------------------------------------ the move: one dot, hole to hole */
+	/* ------------------------------------------------ the move: a rainbow gliding along the edge */
 	.trail {
 		inset: var(--nav-h) 0 0 0;
 		z-index: 45;
+		overflow: hidden;
 	}
-	.pip {
+	.rainbow {
 		position: absolute;
-		width: 12px;
-		height: 12px;
-		background: #8a5a2b;
-		box-shadow: inset -3px -3px 0 #5e3b1c, inset 3px 3px 0 #b98a55;
-		animation-duration: var(--dur);
-		animation-timing-function: steps(var(--steps));
-		animation-fill-mode: both;
+		--t: 12px;
+		opacity: 0;
+		--bands: #ff4d6d 0 16.66%, #ff9f1c 0 33.33%, #ffe14d 0 50%, #4ade80 0 66.66%, #38bdf8 0 83.33%, #a78bfa 0 100%;
 	}
-	.pip.b,
-	.pip.t {
-		animation-name: slideX;
-		margin-left: -6px;
+	.rainbow.h {
+		width: var(--len);
+		height: var(--t);
+		background: linear-gradient(180deg, var(--bands));
+		animation:
+			slideX var(--dur) cubic-bezier(0.45, 0.05, 0.55, 0.95) both,
+			glow var(--dur) linear both;
 	}
-	.pip.l,
-	.pip.r {
-		animation-name: slideY;
-		margin-top: -6px;
+	.rainbow.v {
+		width: var(--t);
+		height: var(--len);
+		background: linear-gradient(90deg, var(--bands));
+		animation:
+			slideY var(--dur) cubic-bezier(0.45, 0.05, 0.55, 0.95) both,
+			glow var(--dur) linear both;
 	}
-	.pip.b {
+	/* the tail fades away behind the bright head */
+	.rainbow.h:not(.rev) {
+		-webkit-mask-image: linear-gradient(90deg, transparent, #000 85%);
+		mask-image: linear-gradient(90deg, transparent, #000 85%);
+	}
+	.rainbow.h.rev {
+		-webkit-mask-image: linear-gradient(270deg, transparent, #000 85%);
+		mask-image: linear-gradient(270deg, transparent, #000 85%);
+	}
+	.rainbow.v:not(.rev) {
+		-webkit-mask-image: linear-gradient(180deg, transparent, #000 85%);
+		mask-image: linear-gradient(180deg, transparent, #000 85%);
+	}
+	.rainbow.v.rev {
+		-webkit-mask-image: linear-gradient(0deg, transparent, #000 85%);
+		mask-image: linear-gradient(0deg, transparent, #000 85%);
+	}
+	.rainbow.b {
 		bottom: 0;
 	}
-	.pip.t {
+	.rainbow.t {
 		top: 0;
 	}
-	.pip.l {
+	.rainbow.l {
 		left: 0;
 	}
-	.pip.r {
+	.rainbow.r {
 		right: 0;
 	}
 	@keyframes slideX {
 		from {
-			left: var(--a);
+			left: var(--from);
 		}
 		to {
-			left: var(--b);
+			left: var(--to);
 		}
 	}
 	@keyframes slideY {
 		from {
-			top: var(--a);
+			top: var(--from);
 		}
 		to {
-			top: var(--b);
+			top: var(--to);
+		}
+	}
+	@keyframes glow {
+		0% {
+			opacity: 0;
+		}
+		12%,
+		86% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
 		}
 	}
 	@media print {

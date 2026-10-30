@@ -25,7 +25,7 @@ export const achievements = [
 	{ icon: 'cart', tag: 'serverbench' },
 	{ icon: 'cloud', tag: 'serverbench' },
 	{ icon: 'box', tag: 'grifpkg' },
-	{ icon: 'shield', tag: 'purecore' },
+	{ icon: 'shield', tag: 'serverbench' },
 	{ icon: 'rocket', tag: 'aerospace' },
 	{ icon: 'heart', tag: 'health' },
 	{ icon: 'trophy', tag: 'education' },

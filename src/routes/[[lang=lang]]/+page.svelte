@@ -4,6 +4,7 @@
 	import About from '#lib/components/About.svelte';
 	import Experience from '#lib/components/Experience.svelte';
 	import Projects from '#lib/components/Projects.svelte';
+	import Graveyard from '#lib/components/Graveyard.svelte';
 	import RetroCorner from '#lib/components/RetroCorner.svelte';
 	import Hire from '#lib/components/Hire.svelte';
 	import Footer from '#lib/components/Footer.svelte';
@@ -15,6 +16,7 @@
 	<About />
 	<Experience />
 	<Projects />
+	<Graveyard />
 	<RetroCorner />
 	<Hire />
 	<Footer />

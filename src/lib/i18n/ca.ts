@@ -20,7 +20,7 @@ export const ca: Messages = {
 			dark: 'Canvia al mode fosc',
 			darkTitle: 'Fosc / clar',
 			y2kTitle: 'Viatja a l’any 2000',
-			language: 'Llengua'
+			language: 'Llengua',
 		},
 		hero: {
 			eyebrow: 'Hola, sóc el Quique',
@@ -56,7 +56,7 @@ export const ca: Messages = {
 			currentBranch: 'Branca actual',
 			b1: 'missió crítica, navegació per satèl·lit',
 			b2: 'automatització industrial, automoció',
-			b3: 'serverbench, grifpkg, purecore',
+			b3: "nominal.es, serverbench, grifpkg",
 			construction: 'EN CONSTRUCCIÓ',
 			mosaic: 'passa el cursor per pintar. fes clic per fixar un bloc.'
 		},
@@ -67,7 +67,7 @@ export const ca: Messages = {
 			p1a: 'Sóc el Quique, ',
 			p1bold: 'Happy',
 			p1b: " a internet. Programo des que tinc memòria de tocar un ordinador i visc a prop de Barcelona. Tinc un munt de projectes personals que mai van arribar a cap biografia, però en el fons intento arreglar coses que facin la vida una mica millor, per als altres i per a mi.",
-			p2: "De dia treballo en una empresa que construeix sistemes aeroespacials, de defensa i seguretat, amb arrels profundes en navegació per satèl·lit i programari de missió crítica, i en una empresa de robòtica que fa automatització industrial, sobretot en automoció. De nit construeixo eines per a comunitats: una botiga, un hosting, un gestor de paquets i un motor d'analítica, gairebé tot des de zero.",
+			p2: "De dia treballo en una empresa que construeix sistemes aeroespacials, de defensa i seguretat, amb arrels profundes en navegació per satèl·lit i programari de missió crítica, i en una empresa de robòtica que fa automatització industrial, sobretot en automoció. De nit construeixo nominal.es, una família de productes per a equips (identitat, suport, facturació, analítica i hosting), a més d'eines per a comunitats com una botiga, un hosting i un gestor de paquets.",
 			p3: "Tinc dues titulacions: Enginyeria del Programari (Informàtica) a la UAB, i un Cicle Formatiu de Grau Superior (Grado Superior) en Robòtica i Automatització Industrial a Salesians Sarrià. Es nota. Penso en modes de fallada, latència i el món físic abans de pensar en frameworks.",
 			facts: 'Dades ràpides',
 			alias: 'àlies',
@@ -129,13 +129,13 @@ export const ca: Messages = {
 			filterBy: (t: string) => `Filtra per ${t}`,
 			emptyTitle: 'Res coincideix amb això.',
 			emptyText: 'Ni tan sols el Gandalf ho ha pogut ensumar. Prova amb menys filtres o pregunta-m’ho directament.',
-			emptySay: 'Res coincideix. Ni jo ho he trobat.'
+			emptySay: "Res coincideix. He ensumat per tot arreu."
 		},
 		projects: {
 			eyebrow: 'Projectes',
 			h2a: 'Coses que vaig fer',
 			h2b: 'perquè no hi havia més remei.',
-			lede: 'Res del que hi havia encaixava, així que vaig construir una botiga, un hosting, un gestor de paquets i un motor d’analítica.',
+			lede: "Res del que hi havia encaixava, així que vaig construir els meus propis productes: identitat, suport, facturació, analítica, hosting, control horari i un gestor de paquets.",
 			visit: (d: string) => `Visita ${d}`,
 			none: 'Sense web pública'
 		},
@@ -243,7 +243,8 @@ export const ca: Messages = {
 			toastCopied: 'Correu copiat. Au, escriu alguna cosa.',
 			sudo1: '[sudo] contrasenya per al reclutador: ********',
 			sudo2: 'Accés concedit. Obrint la secció de contractar...',
-			language: 'Canvia de llengua'
+			language: 'Canvia de llengua',
+			"graveyard": "El cementiri"
 		},
 		mosaic: {
 			t12: '12 blocs fixats. Això és un gràfic de contribucions o un Picasso?',
@@ -253,7 +254,12 @@ export const ca: Messages = {
 		mascot: {
 			aria: 'Gandalf, un pastor australià blue merle. Fes clic per a una sorpresa.',
 			away: '(._.) El Gandalf et troba a faltar. Torna',
-			startle: ['Bup!', 'Ei!', 'Massa a prop!', 'Nop. Adéu.'],
+			startle: [
+	"Bup!",
+	"Yip!",
+	"Això és un esquirol?!",
+	"Zoomies! Adéu."
+],
 			confettiSay: 'Vale, vale! Qui és un bon noi? Jo. Pren el confeti!',
 			clickToast: (n: number) => `Has fet clic al Gandalf ${n} cops. Això és dedicació. Contracta el Quique amb ella.`
 		},
@@ -273,7 +279,26 @@ export const ca: Messages = {
 			off: 'Tornada al futur. Benvingut a casa.',
 			sayOn: 'Ostres. Ara tot és beix.',
 			sayOff: 'Uf! Antialiasing!'
-		}
+		},
+			"graveyard": {
+				"eyebrow": "El cementiri",
+				"h2a": "On els bons projectes",
+				"h2b": "van a descansar.",
+				"lede": "Tot bon desenvolupador té projectes abandonats. Els meus tenen unes quantes teranyines i un bon noi que els vigila. Encén una espelma, o simplement prem F.",
+				"rip": "D.E.P.",
+				"cause": "Causa de la mort",
+				"dig": "Desenterrar els detalls",
+				"rebury": "Tornar a enterrar",
+				"respects": "Respectes rendits",
+				"pay": "Rendir respectes",
+				"pressF": "prem F per rendir respectes",
+				"toastF": "F. Respectes rendits.",
+				"toast10": "10 respectes. Ho han notat.",
+				"toast25": "25 respectes. El Gandalf està plorant. En silenci.",
+				"noYear": "any perdut en la història",
+				"hint": "Fes clic en una làpida per desenterrar els detalls.",
+				"aria": "Projectes abandonats"
+			}
 	},
 	content: {
 		roles: [
@@ -317,25 +342,59 @@ export const ca: Messages = {
 			'Vue', 'Maven / Gradle', 'CSS', 'Sistemes distribuïts', 'Gestors de paquets', 'Programari de missió crítica'
 		],
 		quips: {
-			general: [
-				'Bup. No em facis cas. Ara visc a la teva pantalla.',
-				'Jo pastoro coses. Sobretot terminis.',
-				'No passaràs... sense mirar el botó de contractar.',
-				'El Quique em va dibuixar en 24x24 píxels. Crec que n’està orgullós.',
-				'Bons nois: 1. Premis: 0. Si us plau, aconselleu.',
-				'Conec tres túnels. No em preguntis pel quart.',
-				'psst. el botó de contractar funciona.',
-				'Un merle mai arriba tard. Ni d’hora. Arriba just quan es proposa.',
-				'Prova Ctrl+K. O Cmd+K. No sóc exigent.',
-				'Hi ha un codi Konami per aquí. Jo no he dit res.'
-			],
-			top: ['Bup! Sóc el Gandalf. El Quique és una mica tímid, així que parlo jo.', 'Baixa. El millor no és a la portada.'],
-			about: ['Aquests assoliments són reals. El confeti és extra.', 'Ell va començar a programar als nou. Jo, en arrencar.'],
-			experience: ['Prova els filtres. Són molt satisfactoris.', 'Filtra per Go. Després porta la pilota. Espera, això no és un filtre.', 'Totes les targetes s’obren. Totes.'],
-			projects: ['Va fer tot això. Sí, el gestor de paquets també.', 'serverbench és una pila sencera, no un sol projecte.'],
-			hire: ['Aquí és on li escrius un correu.', 'Saluda’l. Respon. Ho he vist.', 'quique@osuna.dev. Esperaré aquí. Els bons nois esperen.']
-		},
-		clickLines: ['Bup!', 'Guau!', 'Tinc hitbox, saps?', 'Les carícies a la panxa són extra.', 'Fes clic 10 cops. T’ho repto.', 'Set. Vas de debò.', 'Nou. El deu serà genial.'],
+	"general": [
+		"Bup. No em facis cas. Ara visc a la teva pantalla.",
+		"Jo pastoro coses. Sobretot terminis.",
+		"No passaràs... sense mirar el botó de contractar.",
+		"El Quique em va dibuixar en 24x24 píxels. Crec que n’està orgullós.",
+		"Bons nois: 1. Premis: 0. Si us plau, aconselleu.",
+		"Conec tres túnels. No em preguntis pel quart.",
+		"psst. el botó de contractar funciona.",
+		"Un merle mai arriba tard. Ni d’hora. Arriba just quan es proposa.",
+		"Prem Ctrl+K. Ho faria, però no tinc polzes.",
+		"Espera, he sentit la paraula passejada? Algú ha dit passejada?",
+		"Hi ha un codi Konami per aquí. Jo no he dit res.",
+		"Un esquirol! ...Perdó. On érem?"
+	],
+	"top": [
+		"Bup! Sóc el Gandalf. El Quique està ocupat programant, així que saludo jo.",
+		"Baixa. Els millors premis no són a la portada."
+	],
+	"about": [
+		"Aquests assoliments són reals. El confeti és extra.",
+		"Ell va començar a programar als nou. Jo, a mastegar sabates a les nou setmanes."
+	],
+	"experience": [
+		"Prova els filtres. Els he ensumat. Molt satisfactoris.",
+		"Filtra per Go. Després porta la pilota. Espera, això no és un filtre.",
+		"Totes les targetes s’obren. Les he comprovat totes. Dues vegades."
+	],
+	"projects": [
+		"Va fer tot això mentre jo supervisava des del sofà.",
+		"nominal té cinc productes. Jo tinc una pilota. Prioritats."
+	],
+	"hire": [
+		"Aquí és on li escrius un correu.",
+		"Saluda’l. Respon. Ho he vist. Amb remenada de cua inclosa.",
+		"quique@osuna.dev. Esperaré aquí. Els bons nois esperen."
+	],
+			"graveyard": [
+				"Vaig enterrar un os per aquí una vegada. No ho diguis als projectes.",
+				"Tot bon desenvolupador té un cementiri. El del Quique té un bon noi vigilant.",
+				"No els despertis. L’últim encara s’està compilant."
+			]
+},
+		clickLines: [
+	"Bup!",
+	"Guau!",
+	"Sóc un bon noi, saps?",
+	"Les carícies a la panxa són extra.",
+	"A mig camí del premi. Probablement.",
+	"Sis. Jo també estic comptant.",
+	"Set. Vas de debò.",
+	"Vuit. Ja veig el premi.",
+	"Nou. El deu serà genial."
+],
 		areas: {
 			backend: { label: 'Backend i sistemes distribuïts', blurb: 'Serveis que es mantenen drets, escalen i no desperten ningú a les 3 de la matinada.' },
 			infra: { label: 'Infraestructura i hosting', blurb: 'Contenidors, orquestració i executar amb seguretat les càrregues d’altres persones.' },
@@ -347,12 +406,15 @@ export const ca: Messages = {
 			foundations: { label: 'Fonaments d’informàtica', blurb: 'Formació reglada: la teoria i la disciplina d’enginyeria que hi ha sota tota la resta.' },
 			aerospace: { label: 'Aeroespacial i missió crítica', blurb: 'Programari on fallar no és una opció i el que està en joc és orbital.' },
 			robotics: { label: 'Robòtica i automatització', blurb: 'Automatització industrial, sobretot automoció, on el programari es troba amb l’acer.' },
-			health: { label: 'Salut i assaigs clínics', blurb: 'Aplicacions que ajuden a entendre i gestionar la recerca clínica.' }
+			health: { label: 'Salut i assaigs clínics', blurb: 'Aplicacions que ajuden a entendre i gestionar la recerca clínica.' },
+			"ai": {
+				"label": "Productes assistits per IA",
+				"blurb": "Programari que redacta, suggereix i agilitza, amb una persona sempre al circuit."
+			}
 		},
 		contexts: { product: 'Els meus propis productes', industry: 'Feina a la indústria', education: 'Formació' },
 		sources: {
 			serverbench: 'serverbench',
-			purecore: 'purecore',
 			grifpkg: 'grifpkg',
 			'all of the above': 'tot l’anterior',
 			various: 'diversos',
@@ -360,7 +422,12 @@ export const ca: Messages = {
 			'Aerospace, defense and security company': 'Empresa aeroespacial, de defensa i seguretat',
 			'Robotics company': 'Empresa de robòtica',
 			'Salesians Sarrià': 'Salesians Sarrià',
-			'Health technology': 'Tecnologia sanitària'
+			'Health technology': 'Tecnologia sanitària',
+			"Confidential client": "Client confidencial",
+			"Professional work": "Feina professional",
+			"Graveyard \u00b7 Bachillerato TFG": "Cementiri · TFG de Batxillerat",
+			"Graveyard \u00b7 personal experiment": "Cementiri · experiment personal",
+			"Graveyard \u00b7 academic project": "Cementiri · projecte acadèmic"
 		},
 		entries: {
 			'game-hosting': {
@@ -382,13 +449,13 @@ export const ca: Messages = {
 				summary: 'Segueix un client entre jocs, navegadors i Discord per construir un únic perfil d’interessos fiable.',
 				detail:
 					'Una mateixa persona apareix com a compte de joc, sessió de navegador i membre de Discord. Unir aquestes identitats en un sol perfil és el que fa que les recomanacions siguin rellevants en lloc de molestes. Alimenta la botiga i l’estudi de creadors perquè el contingut adequat arribi a la persona adequada.',
-				highlights: ['Unió d’identitats entre tres mitjans', 'Alimenta recomanacions de botiga i creadors', 'Construït amb les lliçons de privadesa de purecore']
+				highlights: ['Unió d’identitats entre tres mitjans', 'Alimenta recomanacions de botiga i creadors', 'Construït amb les lliçons de privadesa de serverbench']
 			},
 			'realtime-ingest': {
 				title: 'Ingesta en temps real per sockets',
 				summary: 'Un backend d’analítica basat en sockets que manté connexions llargues i les converteix en sessions.',
 				detail:
-					'purecore manté les connexions obertes i llegeix la sessió directament de la connexió, en lloc de galetes o identificadors de dispositiu. Això manté el model de dades simple i honest: si el socket és el mateix, la sessió és la mateixa.',
+					'serverbench manté les connexions obertes i llegeix la sessió directament de la connexió, en lloc de galetes o identificadors de dispositiu. Això manté el model de dades simple i honest: si el socket és el mateix, la sessió és la mateixa.',
 				highlights: ['Connexions WebSocket de llarga durada', 'Identitat de sessió a partir de la connexió', 'Poc cost per esdeveniment']
 			},
 			'docker-hosting': {
@@ -579,19 +646,182 @@ export const ca: Messages = {
 				detail:
 					'La recerca clínica depèn de dades precises de persones reals. Les aplicacions faciliten recollir, entendre i actuar sobre aquestes dades, on la privadesa i la correcció no són negociables.',
 				highlights: ['Millors dades d’assaigs', 'Privadesa i correcció primer', 'Programari que ajuda que la medicina avanci més ràpid']
+			},
+			"obex-identity": {
+				"title": "Identitat i sessions (obex)",
+				"summary": "Una identitat per a cada app: una sola sessió porta permisos acotats a totes les apps de nominal, més accés de tercers enllaçat, com les instal·lacions de GitHub App.",
+				"detail": "obex és la capa d'identitat de nominal.es. Una sola sessió porta permisos acotats a través de totes les apps i enllaça accessos de tercers, com les instal·lacions de GitHub App. Els equips poden inspeccionar i revocar qualsevol sessió a l'instant en lloc d'esperar que el token caduqui, auditar cada permís concedit i cada inici de sessió, connectar SSO amb SAML i OIDC sense configuració extra per app i emetre claus d'API acotades per recurs i amb límit de taxa, lligades al mateix sistema d'identitat que els inicis de sessió d'usuari.",
+				"highlights": [
+					"Inspector de sessions amb revocació instantània",
+					"Registre d’auditoria exportable",
+					"SSO d’organització amb SAML i OIDC",
+					"Claus d’API acotades i amb límit de taxa"
+				]
+			},
+			"eris-support": {
+				"title": "Suport assistit per IA (eris)",
+				"summary": "Respostes suggerides abans que s’obri ni tan sols un tiquet. La IA l’esborrana, una persona l’envia.",
+				"detail": "eris llegeix cada tiquet, el compara amb totes les resolucions que l'equip ha aplicat mai i redacta una solució. L'equip la revisa, l'edita si cal i l'envia, així les respostes continuen sent ràpides sense perdre el toc personal. Quan es tanca un tiquet es desen la resolució i les dades usades per arribar-hi, de manera que el següent cas similar es resol més ràpid i amb coherència. Funciona com a widget al teu producte, des del tauler de nominal o directament des de Discord.",
+				"highlights": [
+					"Una persona al circuit, per disseny",
+					"Coneixement que s’acumula amb cada tiquet tancat",
+					"Widget, tauler o Discord",
+					"Cada solució lligada a la petició que la va originar"
+				]
+			},
+			"hermes-billing": {
+				"title": "Facturació global i compliment fiscal (hermes)",
+				"summary": "Subscripcions i cobraments únics, amb l’impost de cada país calculat i declarat automàticament, inclòs Verifactu.",
+				"detail": "hermes gestiona subscripcions recurrents i cobraments únics amb la mateixa configuració de facturació. Accepta pagaments a través de centenars de sistemes de pagament en centenars de països, calcula l'impost de cada país i el declara automàticament, amb focus en el compliment fiscal de la UE i suport de Verifactu integrat. Escala des d'un petit projecte configurat en minuts fins a una gran corporació, amb configuracions de facturació extremadament flexibles.",
+				"highlights": [
+					"Centenars de països i sistemes de pagament",
+					"Compliment fiscal de la UE amb Verifactu",
+					"Subscripcions i pagaments únics",
+					"De projecte personal a empresa"
+				]
+			},
+			"kinesis-events": {
+				"title": "Analítica d’esdeveniments a escala (kinesis)",
+				"summary": "Més d’1.000.000 d’esdeveniments processats per hora, de l’esdeveniment de l’SDK al tauler en mil·lisegons.",
+				"detail": "kinesis rep esdeveniments d'un SDK d'una sola línia a web, mòbil o backend, els valida contra un esquema tipat i extensible perquè els esdeveniments malformats mai contaminin les dades, i actualitza taulers en temps real (portals) en mil·lisegons. Es pot autoallotjar o ser gestionat, i admet repetició d'esdeveniments contra nous esquemes, polítiques de retenció d'esdeveniments en brut i alertes per llindar.",
+				"highlights": [
+					"Més d’1.000.000 d’esdeveniments per hora",
+					"Esquemes tipats i extensibles",
+					"Autoallotjat o gestionat",
+					"Taulers en temps real, repetició i alertes"
+				]
+			},
+			"archon-deploys": {
+				"title": "Desplegaments al teu propi maquinari (archon)",
+				"summary": "Fes push a un repositori i desplega al teu propi maquinari, amb còpies de seguretat programades per defecte.",
+				"detail": "archon gestiona màquines remotes des d'un sol tauler, siguin on siguin. Fas push a GitHub o GitLab, i archon construeix i versiona el contenidor automàticament i el desplega a la teva màquina, amb una còpia de seguretat programada per defecte. Les còpies es poden crear i restaurar sota demanda, i l'accés a màquines i contenidors es comparteix amb l'equip, acotat al que cada persona necessita.",
+				"highlights": [
+					"Gestió remota de màquines des d’un sol tauler",
+					"Desplegaments de contenidors guiats per git",
+					"Còpies de seguretat sota demanda i per defecte",
+					"Accés granular per a l’equip"
+				]
+			},
+			"workhours-app": {
+				"title": "Control horari offline-first (workhours)",
+				"summary": "Registre horari fet a Espanya, conforme a la llei laboral espanyola, instal·lable com a PWA en qualsevol dispositiu i funcional sense connexió.",
+				"detail": "workhours és una PWA multiplataforma de control horari que compleix la llei laboral espanyola. Funciona a iOS, Android, Windows, macOS i Linux, s'instal·la des del navegador, registra el temps fins i tot sense connexió i se sincronitza automàticament, sense conflictes i en temps real, en tornar a estar en línia. Hi afegeix geolocalització precisa d'entrades i sortides, un sistema de sol·licituds d'ajust amb historial d'auditoria clar, gestió de vacances i baixes, i compliment del RGPD amb les dades a la UE i xifratge d'extrem a extrem.",
+				"highlights": [
+					"PWA multiplataforma que funciona sense connexió",
+					"Sincronització en temps real i sense conflictes",
+					"Compliment legal i RGPD",
+					"Vacances, baixes i sol·licituds d’ajust"
+				]
+			},
+			"verifactu": {
+				"title": "Compliment de facturació Verifactu",
+				"summary": "Compliment automàtic de la normativa Verifactu d’Espanya, a hermes i workhours.",
+				"detail": "Verifactu és el nou marc regulador espanyol per a la facturació i el compliment fiscal, creat per l'AEAT per modernitzar la facturació i combatre el frau fiscal. hermes inclou suport de Verifactu de sèrie, i workhours s'està actualitzant perquè la seva facturació compleixi automàticament els requisits de l'AEAT.",
+				"highlights": [
+					"Compliment automàtic amb l’AEAT",
+					"Suport de Verifactu integrat a hermes",
+					"workhours, en camí"
+				]
+			},
+			"opencti-threat-intel": {
+				"title": "Anàlisi d’intel·ligència d’amenaces (OpenCTI)",
+				"summary": "Programari d’anàlisi de ciberseguretat que detecta tendències i redacta informes automàtics sobre les majors amenaces del món. El client no es pot revelar.",
+				"detail": "Vaig construir programari d’anàlisi de ciberseguretat amb OpenCTI per entendre les tendències de les amenaces i redactar informes automàtics sobre les majors amenaces del món. Processa milions d’esdeveniments cada any i converteix aquestes dades en brut en informes que la gent pot llegir i sobre els quals pot actuar. El client no es pot revelar.",
+				"highlights": [
+					"Construït amb OpenCTI",
+					"Milions d’esdeveniments processats cada any",
+					"Informes automàtics sobre les majors amenaces globals",
+					"Client confidencial"
+				]
+			},
+			"hours-offers": {
+				"title": "Control horari i gestió d’ofertes",
+				"summary": "Programari de fitxatge i un sistema de gestió d’ofertes que controla les hores de les persones de principi a fi i segueix cada oferta des de la proposta fins a la conclusió.",
+				"detail": "Vaig crear un sistema de fitxatge i un sistema de gestió d’ofertes que controlen les hores de les persones de principi a fi i segueixen cada oferta des de la proposta fins a la conclusió. Gestiona projectes que facturen milions d’euros, així que les hores, les ofertes i la facturació han de quadrar al cèntim.",
+				"highlights": [
+					"Fitxatge per controlar les hores de les persones",
+					"Flux d’ofertes de la proposta a la conclusió",
+					"Projectes que facturen milions d’euros",
+					"Hores i ofertes lligades a la facturació del projecte"
+				]
+			},
+			"national-data": {
+				"title": "Plataforma nacional de dades",
+				"summary": "Un projecte nacional que reuneix dades de tots els llocs en un únic lloc web, perquè la gent entengui el país des de moltes perspectives diferents.",
+				"detail": "Vaig col·laborar en la implementació i el manteniment d’un projecte nacional que reuneix dades de tots els llocs en un únic lloc web, fet per a frikis (i per a frikis disfressats de científics i investigadors) que volen entendre el país des de tota mena de perspectives.",
+				"highlights": [
+					"Implementació i manteniment continu",
+					"Dades de tots els llocs en un únic lloc web",
+					"Fet per a científics, investigadors i frikis curiosos"
+				]
+			},
+			"slate": {
+	"title": "Slate: una plataforma d’aula local",
+	"summary": "Un «Google Classroom» local per a l'institut: una pissarra digital que se sincronitza amb les llibretes dels alumnes, a més de seguiment de notes, lliuraments i esdeveniments del centre. El meu TFG de Batxillerat, amb un 10/10.",
+	"detail": "Slate va ser el meu treball final (TFG) del Batxillerat Tecnològic, i va treure un 10/10. És una experiència tipus Google Classroom local per a un institut. La pissarra digital se sincronitza automàticament amb les llibretes dels alumnes, i la plataforma també porta el seguiment de notes i lliuraments i mostra els esdeveniments del centre. Tenia una app nativa d'Android i una versió web, totes dues sobre un backend en PHP. Avui descansa al cementiri.",
+	"highlights": [
+		"Qualificat amb un 10/10",
+		"Pissarra digital sincronitzada automàticament amb les llibretes dels alumnes",
+		"Notes, lliuraments i esdeveniments del centre",
+		"App nativa d’Android i versió web, backend en PHP"
+	]
+},
+			"sodge": {
+				"title": "Sodge: xarxa social que aparella per interessos",
+				"summary": "Una xarxa social que et mostrava automàticament gent amb interessos semblants, amb aparellament de paraules sobre xarxes neuronals, cap al 2017.",
+				"detail": "Sodge va ser un experiment personal de cap al 2017, anys abans que la IA es fes popular: una xarxa social que feia servir aparellament de paraules construït sobre xarxes neuronals per mostrar-te automàticament gent amb interessos semblants. Funcionava a web i Android amb un backend en PHP. Avui descansa al cementiri.",
+				"highlights": [
+					"Aparellament per interessos amb paraules sobre xarxes neuronals",
+					"Fet cap al 2017, abans de la febre de la IA",
+					"Web i Android",
+					"Backend en PHP"
+				]
+			},
+			"vidfeed": {
+				"title": "thememepage: feed infinit de vídeos",
+				"summary": "Una pàgina estil TikTok per fer scroll sense fi per vídeos divertits d'internet, feta cap al 2014, molt abans que el contingut vertical existís.",
+				"detail": "Cap al 2014 vaig fer una pàgina molt semblant al TikTok d'avui: scroll infinit per vídeos divertits d'internet, anys abans que el contingut vertical existís. «Infinit» és una paraula generosa: la llista era força curta i jo era l'únic usuari. Estava escrita en JavaScript i avui descansa al cementiri.",
+				"highlights": [
+					"Feed de vídeos amb scroll infinit",
+					"Fet cap al 2014, avançat al vídeo vertical",
+					"JavaScript",
+					"Un usuari molt fidel (jo)"
+				]
+			},
+			"greenie": {
+				"title": "Greenie: la salut d’una planta amb una foto",
+				"summary": "Una app d'Android amb backend en Python que et diu com de sana està una planta a partir d'una sola foto, amb un model entrenat en local amb PyTorch.",
+				"detail": "Greenie va ser un projecte acadèmic: una app només per a Android on fas una foto a qualsevol planta i en veus la salut. El backend estava escrit en Python i el model es va entrenar en local amb PyTorch. Avui descansa al cementiri.",
+				"highlights": [
+					"Salut de la planta a partir d’una sola foto",
+					"Model entrenat en local amb PyTorch",
+					"App d’Android, backend en Python",
+					"Projecte acadèmic"
+				]
+			},
+			"openagv": {
+				"title": "OpenAGV: un robot amb rodes omnidireccionals",
+				"summary": "Un vehicle de guiatge automàtic sobre rodes omnidireccionals que navega sol d'A a B, amb radar, una interfície completa i control remot per Bluetooth amb evitació automàtica d'obstacles.",
+				"detail": "OpenAGV va ser un projecte acadèmic de 2021: un sistema AGV (vehicle de guiatge automàtic) que navegava automàticament d'A a B sobre rodes omnidireccionals. Estava escrit en C i incorporava un radar amb una interfície completa, a més de Bluetooth per al control remot amb evitació automàtica d'obstacles. Avui descansa al cementiri.",
+				"highlights": [
+					"Navegació automàtica d’A a B sobre rodes omnidireccionals",
+					"Radar amb una interfície completa",
+					"Control remot per Bluetooth amb evitació automàtica d’obstacles",
+					"Escrit en C"
+				]
 			}
 		},
 		projects: {
 			serverbench: {
-				kind: 'E-commerce, analítica i hosting',
-				blurb:
-					'Una plataforma completa per a comunitats en línia, especialment servidors de jocs: una plataforma de comerç per a béns digitals, una eina d’analítica per a comunitats i un orquestrador d’hosting «porta el teu propi dispositiu».',
-				points: [
-					'Botiga: les comunitats venen col·leccionables, insígnies i potenciadors, amb una botiga web personalitzable per a cadascuna',
-					'Hosting: un orquestrador basat en Docker per a servidors de jocs molt exigents',
-					'Estudis: eines de creadors, SEO i CMS que comparteixen dades amb un únic nucli d’analítica'
-				]
-			},
+	"kind": "E-commerce, analítica i hosting",
+	"blurb": "Una plataforma completa per a comunitats en línia, sobretot servidors de jocs (abans purecore): una plataforma de comerç per a béns digitals, una eina d’analítica que prioritza la privadesa i un orquestrador d’hosting «porta el teu propi dispositiu». Diverses de les seves funcions viuen ara als productes de nominal.es.",
+	"points": [
+		"Botiga: les comunitats venen col·leccionables, insígnies i potenciadors, amb una botiga web personalitzable per a cadascuna",
+		"Hosting: un orquestrador basat en Docker per a servidors de jocs molt exigents",
+		"Analítica: basada en sockets, vincula sessions només amb dades de la connexió, sense empremta digital del dispositiu",
+		"Estudis: eines de creadors, SEO i CMS que comparteixen dades amb un únic nucli d’analítica"
+	]
+},
 			grifpkg: {
 				kind: 'Gestor de paquets',
 				blurb:
@@ -602,18 +832,151 @@ export const ca: Messages = {
 					'Plugins de pagament, detecció de vulnerabilitats i monetització per a desenvolupadors integrats'
 				]
 			},
-			purecore: {
-				kind: 'Analítica en temps real',
-				blurb:
-					'Una plataforma d’analítica basada en sockets amb alts estàndards de seguretat. Les sessions es vinculen només a partir de dades de la connexió, sense empremta digital del dispositiu.',
-				points: ['Vinculació de sessions basada en la mateixa connexió', 'Privadesa per disseny, sense dreceres d’empremta digital', 'Ingesta en temps real mitjançant WebSockets']
-			},
 			purevanilla: {
 				kind: 'Servidor de comunitat',
 				blurb:
 					'Un projecte de servidor de Minecraft vanilla centrat en una experiència neta i fidel a l’original. Gestionat com un producte, amb infraestructura real darrere d’un joc.',
 				points: ['Filosofia vanilla primer: menys mods, més cura', 'Una comunitat viva que necessita disponibilitat', 'On van començar moltes de les lliçons d’hosting']
+			},
+			"workhours": {
+				"kind": "Registre horari fet a Espanya",
+				"blurb": "Control horari sense esforç que compleix la llei laboral espanyola. Una PWA multiplataforma per a treballadors que mereixen el millor.",
+				"points": [
+					"Funciona en qualsevol dispositiu i sense connexió, i se sincronitza en tornar a estar en línia",
+					"Fitxatges amb geolocalització, sol·licituds d’ajust amb historial d’auditoria, gestió de vacances i baixes",
+					"Compliment del RGPD: dades a la UE i xifratge d’extrem a extrem. Suport de Verifactu en camí"
+				]
 			}
-		}
+		},
+			"notes": {
+				"docker-hosting": "Va començar dins de serverbench i avui continua viu com a archon, a nominal.es.",
+				"byod": "Avui continua viu com a archon, a nominal.es: fes push a un repo i desplega al teu propi maquinari.",
+				"permissions": "La mateixa idea va créixer fins a convertir-se en obex, a nominal.es: una identitat i permisos acotats a totes les apps.",
+				"realtime-ingest": "Aquest nucli d’analítica continua viu avui com a kinesis, a nominal.es.",
+				"community-analytics": "La seva part d’analítica continua viva avui com a kinesis, a nominal.es.",
+				"commerce-platform": "La seva part de facturació i impostos continua viva avui com a hermes, a nominal.es."
+			},
+			"nominal": {
+	"obex": {
+		"tagline": "Una identitat per a cada app que construeixis.",
+		"summary": "Una sola sessió d’obex porta permisos acotats a través de totes les apps de nominal, a més d’accés de tercers enllaçat, com les instal·lacions de GitHub App.",
+		"stat": {
+			"value": "",
+			"label": ""
+		},
+		"points": [
+			"Inspector de sessions",
+			"Registre d’auditoria complet",
+			"SSO d’organització",
+			"Claus d’API acotades"
+		]
+	},
+	"eris": {
+		"tagline": "Mantén contents els teus usuaris, automàticament.",
+		"summary": "Afegeix un fragment de codi al teu producte. Els usuaris reben respostes suggerides abans que s’obri ni tan sols un tiquet. La IA l’esborrana, una persona l’envia.",
+		"stat": {
+			"value": "",
+			"label": ""
+		},
+		"points": [
+			"Suggeriments intel·ligents, amb una persona al comandament",
+			"Coneixement que s’acumula",
+			"Widget, plataforma o Discord",
+			"Resolucions coherents"
+		]
+	},
+	"hermes": {
+		"tagline": "Cobra des de qualsevol lloc, complint la normativa.",
+		"summary": "La mateixa configuració de facturació gestiona subscripcions recurrents o cobraments únics, calcula l’impost de cada país i el declara, inclòs Verifactu, automàticament.",
+		"stat": {
+			"value": "",
+			"label": ""
+		},
+		"points": [
+			"Centenars de països",
+			"Compliment fiscal de la UE",
+			"De projecte personal a empresa",
+			"Facturació flexible"
+		]
+	},
+	"kinesis": {
+		"tagline": "Entén el teu producte a qualsevol escala.",
+		"summary": "Esdeveniments des de web, mòbil o backend, validats contra esquemes tipats i mostrats en taulers en temps real.",
+		"stat": {
+			"value": "1.000.000+",
+			"label": "esdeveniments processats per hora"
+		},
+		"points": [
+			"Implementació facilíssima",
+			"Autoallotjat o gestionat",
+			"Esquemes tipats i extensibles",
+			"Portals bonics i fiables"
+		]
+	},
+	"archon": {
+		"tagline": "Porta el teu propi maquinari. Nosaltres fem la resta.",
+		"summary": "Gestiona les teves pròpies màquines de forma remota i desplega contenidors directament des de GitHub o GitLab, amb còpies de seguretat incloses.",
+		"stat": {
+			"value": "",
+			"label": ""
+		},
+		"points": [
+			"Gestió remota de màquines",
+			"Contenidors guiats per git",
+			"Còpies de seguretat sota demanda",
+			"Accés granular per a l’equip"
+		]
+	}
+},
+			"graveyard": {
+				"slate": {
+	"name": "slate",
+	"tag": "TFG de Batxillerat",
+	"year": "2019",
+	"epitaph": "Va posar nota als deures de tothom. El tribunal li va posar un 10.",
+	"cause": "La graduació (amb un 10).",
+	"summary": "Un «Google Classroom» local per a l'institut: la pissarra digital se sincronitzava automàticament amb les llibretes dels alumnes, amb seguiment de notes, lliuraments i fins i tot esdeveniments del centre. App nativa d'Android i versió web, backend en PHP. Nota: 10/10."
+},
+				"sodge": {
+					"name": "sodge",
+					"tag": "Experiment personal",
+					"year": "c. 2017",
+					"epitaph": "Aparellava la gent per interessos amb xarxes neuronals abans que fos moda. Mai es va aparellar amb cap usuari.",
+					"cause": "Causes naturals (sense usuaris).",
+					"summary": "Una xarxa social que et mostrava automàticament gent amb interessos semblants, amb aparellament de paraules sobre xarxes neuronals, molt abans que la IA es fes popular. Web i Android, backend en PHP."
+				},
+				"feed": {
+					"name": "thememepage",
+					"tag": "Experiment personal",
+					"year": "c. 2014",
+					"epitaph": "Scroll infinit. Infinit és una paraula generosa: la llista tenia una dotzena de vídeos i exactament un usuari.",
+					"cause": "Es va quedar sense vídeos.",
+					"summary": "Una pàgina estil TikTok per fer scroll sense fi per vídeos divertits d'internet, anys abans que el contingut vertical existís. La llista era curta i jo era l'únic usuari. JavaScript."
+				},
+				"greenie": {
+					"name": "greenie",
+					"tag": "Projecte acadèmic",
+					"year": "2023",
+					"epitaph": "Sabia dir-te que la teva planta es moria. No sabia evitar-ho.",
+					"cause": "Em vaig graduar. Les plantes no.",
+					"summary": "Una app només per a Android amb backend en Python: fes una foto a qualsevol planta i mira com de sana està, amb un model entrenat en local amb PyTorch."
+				},
+			"openagv": {
+				"name": "openagv",
+				"tag": "Projecte acadèmic",
+				"year": "2021",
+				"epitaph": "Esquivava tots els obstacles de la sala. La data de lliurament no sortia al radar.",
+				"cause": "Data de lliurament (no detectada pel radar).",
+				"summary": "Un AGV que navegava automàticament d'A a B sobre rodes omnidireccionals. Escrit en C, amb un radar amb una interfície completa i control remot per Bluetooth amb evitació automàtica d'obstacles."
+			}
+			},
+			"clickMore": [
+				"Una altra vegada? M’encanta.",
+				"Encara aquí? Respecte.",
+				"Se m’arrencarà la cua.",
+				"Això és un joc? M’agrada aquest joc.",
+				"Més bups. Més bups.",
+				"Deu clics més per a un altre premi. Porto el compte."
+			]
 	}
 };

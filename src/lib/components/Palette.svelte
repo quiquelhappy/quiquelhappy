@@ -35,6 +35,7 @@
 			{ group: go, label: L.ui.nav.about, run: jump('about'), words: 'story achievements about' },
 			{ group: go, label: L.ui.nav.experience, run: jump('experience'), words: 'skills filters work experience' },
 			{ group: go, label: L.ui.nav.projects, run: jump('projects'), words: 'serverbench grifpkg projects' },
+			{ group: go, label: P.graveyard, run: jump('graveyard'), words: 'graveyard cementerio cementiri friedhof cimetiere dead abandoned rip' },
 			{ group: go, label: P.retro, run: jump('retro'), words: 'retro y2k webmaster' },
 			{ group: go, label: L.ui.nav.hire, run: jump('hire'), words: 'contact email job hire' },
 			{ group: act, label: P.email, hint: EMAIL, run: () => (close(), (location.href = `mailto:${EMAIL}`)), words: 'contact mail hire email' },

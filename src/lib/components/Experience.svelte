@@ -15,11 +15,19 @@
 	let mode = $state<'any' | 'all'>('any');
 	const open = new SvelteSet<string>();
 	let mobileFilters = $state(false);
+	let contentEl = $state<HTMLElement>();
+	let finderEl = $state<HTMLElement>();
+	// height of the full, collapsed list. filtering never shrinks the page below it, so the view stays put
+	let baseline = $state(0);
 
 	// text comes from the current language, structure (area, stack, context) from the data file
 	const areas = $derived(rawAreas.map((a) => ({ ...a, ...L.content.areas[a.id] })));
 	const entries = $derived(
-		rawEntries.map((e) => ({ ...e, ...L.content.entries[e.id as keyof typeof L.content.entries], source: L.content.sources[e.source as keyof typeof L.content.sources] ?? e.source }))
+		rawEntries.map((e) => {
+			const t = L.content.entries[e.id as keyof typeof L.content.entries];
+			const note = (L.content.notes as Record<string, string>)[e.id];
+			return { ...e, ...t, detail: note ? `${t.detail} ${note}` : t.detail, source: (L.content.sources as Record<string, string>)[e.source] ?? e.source };
+		})
 	);
 	const usedTech = new Set(rawEntries.flatMap((e) => e.stack));
 
@@ -70,6 +78,50 @@
 		else visible.forEach((e) => open.add(e.id));
 	}
 
+	$effect(() => {
+		if (!contentEl) return;
+		const ro = new ResizeObserver(() => {
+			if (!filtered && open.size === 0 && contentEl) baseline = contentEl.offsetHeight;
+		});
+		ro.observe(contentEl);
+		return () => ro.disconnect();
+	});
+
+	// when a filter shrinks the list and nothing is left on screen, go back to the start of the finder
+	let firstRun = true;
+	$effect(() => {
+		area;
+		mode;
+		q;
+		ctxs.size;
+		techs.size;
+		if (firstRun) {
+			firstRun = false;
+			return;
+		}
+		// wait for the old cards to finish fading out, they still count as "on screen" until then
+		const timer = setTimeout(() => {
+			if (!contentEl || !finderEl) return;
+			const nav = 56;
+			// phones: the filters are a panel above the results. if it is open and on screen, the user is using it, leave them there
+			const panel = finderEl.querySelector('.filters.open');
+			if (panel) {
+				const pr = panel.getBoundingClientRect();
+				if (pr.bottom > nav && pr.top < innerHeight) return;
+			}
+			const onScreen = [...contentEl.querySelectorAll('article, .empty')].some((el) => {
+				const r = el.getBoundingClientRect();
+				return r.bottom > nav + 8 && r.top < innerHeight - 8;
+			});
+			if (!onScreen) {
+				const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+				const phone = matchMedia('(max-width: 1080px)').matches;
+				(phone ? contentEl : finderEl).scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+			}
+		}, 450);
+		return () => clearTimeout(timer);
+	});
+
 	let emptyQuipped = false;
 	$effect(() => {
 		if (visible.length === 0 && !emptyQuipped) {
@@ -87,7 +139,7 @@
 		<p class="lede">{L.ui.exp.lede(areas.length, entries.length)}</p>
 	</header>
 
-	<div class="layout">
+	<div class="layout" bind:this={finderEl}>
 		<aside class="filters" class:open={mobileFilters} aria-label={L.ui.exp.filters}>
 			<button class="mtoggle" onclick={() => (mobileFilters = !mobileFilters)} aria-expanded={mobileFilters}>
 				<Icon name="search" scale={2} /> {L.ui.exp.filters}
@@ -158,7 +210,8 @@
 			</div>
 		</aside>
 
-		<div class="results">
+		<div class="results" style:min-height={baseline ? baseline + 'px' : undefined}>
+			<div class="content" bind:this={contentEl}>
 			<div class="bar">
 				<p class="status" aria-live="polite">
 					{L.ui.exp.showing(visible.length, entries.length)}
@@ -219,6 +272,7 @@
 					<button class="btn btn-primary" onclick={reset}>{L.ui.exp.reset}</button>
 				</div>
 			{/if}
+			</div>
 		</div>
 	</div>
 </section>
@@ -581,6 +635,8 @@
 	}
 
 	.empty {
+		min-height: min(60vh, 520px);
+		align-content: center;
 		padding: 80px var(--pad);
 		text-align: center;
 		display: grid;

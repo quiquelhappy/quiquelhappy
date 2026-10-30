@@ -172,6 +172,10 @@
 		font: bold 30px 'Times New Roman', serif;
 		letter-spacing: 0;
 	}
+	/* the eyebrow does not need a blinking cursor */
+	.copy :global(.eyebrow)::after {
+		display: none;
+	}
 	.now {
 		font-family: var(--font-mono);
 		font-size: 15px;
@@ -179,6 +183,21 @@
 		flex-wrap: wrap;
 		gap: 0 10px;
 		align-items: baseline;
+	}
+	/* phones: roles can wrap to 2 lines, so reserve 3 lines (label + longest role) and nothing below ever jumps */
+	@media (max-width: 760px) {
+		.now {
+			display: block;
+			min-height: calc(15px * 1.55 * 3);
+		}
+		.now .label {
+			display: block;
+		}
+		.now .caret {
+			display: inline-block;
+			vertical-align: middle;
+			margin-left: 2px;
+		}
 	}
 	.label {
 		color: var(--ink-3);

@@ -31,7 +31,7 @@
 			},
 			{ rootMargin: '-45% 0px -50% 0px' }
 		);
-		for (const id of [...nav.map((n) => n.id), 'retro']) {
+		for (const id of [...nav.map((n) => n.id), 'graveyard', 'retro']) {
 			const el = document.getElementById(id);
 			if (el) io.observe(el);
 		}
@@ -202,7 +202,7 @@
 		font-size: 14px;
 		padding: 0 14px;
 	}
-	@media (max-width: 960px) {
+	@media (max-width: 1040px) {
 		nav,
 		.k {
 			display: none;

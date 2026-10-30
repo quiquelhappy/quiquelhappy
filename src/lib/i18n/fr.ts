@@ -20,7 +20,7 @@ export const fr: Messages = {
 			dark: 'Basculer en mode sombre',
 			darkTitle: 'Sombre / clair',
 			y2kTitle: "Voyager jusqu'à l'an 2000",
-			language: 'Langue'
+			language: 'Langue',
 		},
 		hero: {
 			eyebrow: 'Bonjour, je suis Quique',
@@ -56,7 +56,7 @@ export const fr: Messages = {
 			currentBranch: 'Branche actuelle',
 			b1: 'systèmes critiques, navigation par satellite',
 			b2: 'automatisation industrielle, automobile',
-			b3: 'serverbench, grifpkg, purecore',
+			b3: "nominal.es, serverbench, grifpkg",
 			construction: 'EN CONSTRUCTION',
 			mosaic: 'survolez pour peindre. cliquez pour fixer un bloc.'
 		},
@@ -67,7 +67,7 @@ export const fr: Messages = {
 			p1a: 'Je suis Quique, ',
 			p1bold: 'Happy',
 			p1b: " en ligne. Je programme depuis que je me souviens avoir touché un ordinateur, et j'habite près de Barcelone. J'ai un tas de projets personnels qui ne sont jamais entrés dans aucune bio, mais au fond, j'essaie de réparer des choses qui rendent la vie un peu meilleure, pour les autres et pour moi.",
-			p2: "Le jour, je travaille dans une entreprise qui construit des systèmes aérospatiaux, de défense et de sécurité, avec de profondes racines dans la navigation par satellite et les logiciels critiques, et dans une entreprise de robotique spécialisée en automatisation industrielle, surtout dans l'automobile. La nuit, je construis des outils pour des communautés : une boutique, un hébergeur, un gestionnaire de paquets et un moteur d'analytique, presque tout de zéro.",
+			p2: "Le jour, je travaille dans une entreprise qui construit des systèmes aérospatiaux, de défense et de sécurité, avec de profondes racines dans la navigation par satellite et les logiciels critiques, et dans une entreprise de robotique spécialisée en automatisation industrielle, surtout dans l'automobile. La nuit, je construis nominal.es, une famille de produits pour les équipes (identité, support, facturation, analytique et hébergement), ainsi que des outils pour des communautés comme une boutique, un hébergeur et un gestionnaire de paquets.",
 			p3: "J'ai deux diplômes : Génie logiciel (Informatique) à l'UAB, et un Grado Superior (formation professionnelle supérieure) en Robotique et Automatisation industrielle à Salesians Sarrià. Ça se voit. Je pense aux modes de défaillance, à la latence et au monde physique avant de penser aux frameworks.",
 			facts: 'En bref',
 			alias: 'pseudo',
@@ -129,13 +129,13 @@ export const fr: Messages = {
 			filterBy: (t: string) => `Filtrer par ${t}`,
 			emptyTitle: 'Rien ne correspond.',
 			emptyText: "Même Gandalf n'a pas pu le flairer. Essayez avec moins de filtres, ou demandez-moi directement.",
-			emptySay: "Rien ne correspond. Même moi, je n'ai pas trouvé."
+			emptySay: "Rien ne correspond. J'ai reniflé partout."
 		},
 		projects: {
 			eyebrow: 'Projets',
 			h2a: "Des choses que j'ai faites",
 			h2b: 'parce que je devais.',
-			lede: "Rien de ce qui existait ne convenait, alors j'ai construit une boutique, un hébergeur, un gestionnaire de paquets et un moteur d'analytique.",
+			lede: "Rien de ce qui existait ne convenait, alors j'ai construit mes propres produits : identité, support, facturation, analytique, hébergement, suivi du temps de travail et un gestionnaire de paquets.",
 			visit: (d: string) => `Visiter ${d}`,
 			none: 'Pas de site public'
 		},
@@ -243,7 +243,8 @@ export const fr: Messages = {
 			toastCopied: 'E-mail copié. Allez, écrivez quelque chose.',
 			sudo1: '[sudo] mot de passe pour le recruteur : ********',
 			sudo2: "Accès accordé. Ouverture de la section d'embauche...",
-			language: 'Changer de langue'
+			language: 'Changer de langue',
+			"graveyard": "Le cimetière"
 		},
 		mosaic: {
 			t12: '12 blocs fixés. Graphique de contributions ou Picasso ?',
@@ -253,7 +254,12 @@ export const fr: Messages = {
 		mascot: {
 			aria: 'Gandalf, un berger australien blue merle. Cliquez pour une surprise.',
 			away: '(._.) Gandalf vous attend. Revenez',
-			startle: ['Ouaf !', 'Oh là !', 'Trop près !', 'Non. Au revoir.'],
+			startle: [
+	"Ouaf !",
+	"Aïe !",
+	"C'est un écureuil ?!",
+	"Zoomies ! Au revoir."
+],
 			confettiSay: "D'accord, d'accord ! Qui est un bon garçon ? Moi. Tenez, les confettis !",
 			clickToast: (n: number) => `Vous avez cliqué ${n} fois sur Gandalf. Voilà de la détermination. Embauchez Quique avec.`
 		},
@@ -273,7 +279,26 @@ export const fr: Messages = {
 			off: 'Retour vers le futur. Bienvenue à la maison.',
 			sayOn: "Oh là là. Tout est beige maintenant.",
 			sayOff: "Ouf. L'antialiasing !"
-		}
+		},
+			"graveyard": {
+				"eyebrow": "Le cimetière",
+				"h2a": "Là où les bons projets",
+				"h2b": "vont se reposer.",
+				"lede": "Tout bon développeur a des projets abandonnés. Les miens ont quelques toiles d'araignée et un très bon garçon pour les garder. Allumez une bougie, ou appuyez simplement sur F.",
+				"rip": "R.I.P.",
+				"cause": "Cause du décès",
+				"dig": "Déterrer les détails",
+				"rebury": "Réenterrer",
+				"respects": "Hommages rendus",
+				"pay": "Rendre hommage",
+				"pressF": "appuyez sur F pour rendre hommage",
+				"toastF": "F. Hommage rendu.",
+				"toast10": "10 hommages. Ils l'ont senti.",
+				"toast25": "25 hommages. Gandalf pleure. Discrètement.",
+				"noYear": "année perdue dans l'histoire",
+				"hint": "Cliquez sur une pierre tombale pour déterrer les détails.",
+				"aria": "Projets abandonnés"
+			}
 	},
 	content: {
 		roles: [
@@ -317,25 +342,59 @@ export const fr: Messages = {
 			'Vue', 'Maven / Gradle', 'CSS', 'Systèmes distribués', 'Gestionnaires de paquets', 'Logiciels critiques'
 		],
 		quips: {
-			general: [
-				"Ouaf. Ne faites pas attention à moi. J'habite dans votre fenêtre maintenant.",
-				'Je rassemble des choses. Surtout des échéances.',
-				'Vous ne passerez pas... sans regarder le bouton Embauchez-moi.',
-				"Quique m'a dessiné en 24x24 pixels. Je crois qu'il en est fier.",
-				'Bons garçons : 1. Friandises : 0. Merci de conseiller.',
-				'Je connais trois tunnels. Ne me parlez pas du quatrième.',
-				'psst. le bouton Embauchez-moi fonctionne.',
-				"Un merle n'est jamais en retard. Ni en avance. Il arrive précisément quand il l'a décidé.",
-				'Essayez Ctrl+K. Ou Cmd+K. Je ne suis pas difficile.',
-				"Il y a un code Konami quelque part ici. Je n'ai rien dit."
-			],
-			top: ["Ouaf ! Je suis Gandalf. Quique est un peu timide, alors c'est moi qui parle.", "Faites défiler. Le meilleur n'est pas dans l'en-tête."],
-			about: ['Ces succès sont réels. Les confettis sont en supplément.', "Il a commencé à coder à neuf ans. Moi, au démarrage."],
-			experience: ['Essayez les filtres. Ils sont très satisfaisants.', 'Filtrez par Go. Puis rapportez la balle. Attendez, ce n’est pas un filtre.', 'Chaque carte s’ouvre. Chacune.'],
-			projects: ["Il a construit tout ça. Oui, le gestionnaire de paquets aussi.", "serverbench est une pile entière, pas un seul projet."],
-			hire: ["C'est ici que vous lui écrivez un e-mail.", "Dites bonjour. Il répond. Je l'ai vu.", "quique@osuna.dev. J'attends ici. Les bons garçons attendent."]
-		},
-		clickLines: ['Boop !', 'Ouaf !', "J'ai une hitbox, vous savez.", 'Les câlins sur le ventre sont en supplément.', 'Cliquez 10 fois. Je vous défie.', 'Sept. Vous êtes décidé.', 'Neuf. Le dix va être génial.'],
+	"general": [
+		"Ouaf. Ne faites pas attention à moi. J'habite sur votre écran maintenant.",
+		"Je rassemble des troupeaux. Surtout des échéances.",
+		"Vous ne passerez pas... sans regarder le bouton Embauchez-moi.",
+		"Quique m'a dessiné en 24x24 pixels. Je crois qu'il en est fier.",
+		"Bons garçons : 1. Friandises : 0. Merci de conseiller.",
+		"Je connais trois tunnels. Ne me parlez pas du quatrième.",
+		"psst. le bouton Embauchez-moi fonctionne.",
+		"Un merle n'est jamais en retard. Ni en avance. Il arrive précisément quand il l'a décidé.",
+		"Appuyez sur Ctrl+K. Je le ferais bien, mais je n'ai pas de pouces.",
+		"Attendez, j'ai entendu le mot promenade ? Quelqu'un a dit promenade ?",
+		"Il y a un code Konami quelque part ici. Je n'ai rien dit.",
+		"Un écureuil ! ...Pardon. Où en étions-nous ?"
+	],
+	"top": [
+		"Ouaf ! Je suis Gandalf. Quique est occupé à coder, alors c'est moi qui accueille.",
+		"Faites défiler. Les meilleures friandises ne sont pas dans l'en-tête."
+	],
+	"about": [
+		"Ces succès sont réels. Les confettis sont en supplément.",
+		"Il a commencé à coder à neuf ans. Moi, à mâchouiller des chaussures à neuf semaines."
+	],
+	"experience": [
+		"Essayez les filtres. Je les ai reniflés. Très satisfaisants.",
+		"Filtrez par Go. Puis rapportez la balle. Attendez, ce n’est pas un filtre.",
+		"Chaque carte s'ouvre. Je les ai toutes vérifiées. Deux fois."
+	],
+	"projects": [
+		"Il a construit tout ça pendant que je supervisais depuis le canapé.",
+		"nominal a cinq produits. J'ai une balle. Priorités."
+	],
+	"hire": [
+		"C'est ici que vous lui écrivez un e-mail.",
+		"Dites bonjour. Il répond. Je l'ai vu. Avec frétillement de queue.",
+		"quique@osuna.dev. J'attends ici. Les bons garçons attendent."
+	],
+			"graveyard": [
+				"J'ai enterré un os ici un jour. Ne le dites pas aux projets.",
+				"Tout bon développeur a un cimetière. Celui de Quique est gardé par un très bon garçon.",
+				"Ne les réveillez pas. Le dernier est encore en train de compiler."
+			]
+},
+		clickLines: [
+	"Boop !",
+	"Ouaf !",
+	"Je suis un très bon garçon, vous savez.",
+	"Les câlins sur le ventre sont en supplément.",
+	"À mi-chemin de la friandise. Probablement.",
+	"Six. Je compte aussi.",
+	"Sept. Vous êtes décidé.",
+	"Huit. Je vois déjà la friandise.",
+	"Neuf. Le dix va être génial."
+],
 		areas: {
 			backend: { label: 'Backend et systèmes distribués', blurb: 'Des services qui tiennent, passent à l’échelle et ne réveillent personne à 3 h du matin.' },
 			infra: { label: 'Infrastructure et hébergement', blurb: "Conteneurs, orchestration et exécution sûre des charges de travail des autres." },
@@ -347,12 +406,15 @@ export const fr: Messages = {
 			foundations: { label: "Fondamentaux de l'informatique", blurb: "Formation académique : la théorie et la discipline d'ingénierie sous tout le reste." },
 			aerospace: { label: 'Aérospatial et systèmes critiques', blurb: "Des logiciels où l'échec n'est pas une option et où les enjeux sont orbitaux." },
 			robotics: { label: 'Robotique et automatisation', blurb: "Automatisation industrielle, surtout automobile, là où le logiciel rencontre l'acier." },
-			health: { label: 'Santé et essais cliniques', blurb: "Des applications qui aident à comprendre et à mener la recherche clinique." }
+			health: { label: 'Santé et essais cliniques', blurb: "Des applications qui aident à comprendre et à mener la recherche clinique." },
+			"ai": {
+				"label": "Produits assistés par IA",
+				"blurb": "Des logiciels qui rédigent, suggèrent et accélèrent, avec toujours un humain dans la boucle."
+			}
 		},
 		contexts: { product: 'Mes propres produits', industry: "Travail en entreprise", education: 'Formation' },
 		sources: {
 			serverbench: 'serverbench',
-			purecore: 'purecore',
 			grifpkg: 'grifpkg',
 			'all of the above': 'tout ce qui précède',
 			various: 'divers',
@@ -360,7 +422,12 @@ export const fr: Messages = {
 			'Aerospace, defense and security company': 'Entreprise aérospatiale, de défense et de sécurité',
 			'Robotics company': 'Entreprise de robotique',
 			'Salesians Sarrià': 'Salesians Sarrià',
-			'Health technology': 'Technologie de santé'
+			'Health technology': 'Technologie de santé',
+			"Confidential client": "Client confidentiel",
+			"Professional work": "Travail professionnel",
+			"Graveyard \u00b7 Bachillerato TFG": "Cimetière · TFG de Bachillerato",
+			"Graveyard \u00b7 personal experiment": "Cimetière · expérience personnelle",
+			"Graveyard \u00b7 academic project": "Cimetière · projet académique"
 		},
 		entries: {
 			'game-hosting': {
@@ -382,13 +449,13 @@ export const fr: Messages = {
 				summary: 'Suit un client à travers les jeux, les navigateurs et Discord pour construire un profil d’intérêts précis.',
 				detail:
 					"Une même personne apparaît comme compte de jeu, session de navigateur et membre Discord. Fusionner ces identités en un seul profil rend les recommandations pertinentes plutôt qu'agaçantes. Il alimente la boutique et le studio de créateurs pour que le bon contenu atteigne la bonne personne.",
-				highlights: ['Fusion des identités sur trois supports', 'Alimente les recommandations boutique et créateurs', 'Construit avec les leçons de vie privée de purecore']
+				highlights: ['Fusion des identités sur trois supports', 'Alimente les recommandations boutique et créateurs', 'Construit avec les leçons de vie privée de serverbench']
 			},
 			'realtime-ingest': {
 				title: 'Ingestion temps réel par sockets',
 				summary: 'Un backend d’analytique à base de sockets qui garde des connexions longues et les transforme en sessions.',
 				detail:
-					"purecore garde les connexions ouvertes et lit la session directement dans la connexion, plutôt que dans des cookies ou des identifiants d'appareil. Cela garde le modèle de données simple et honnête : si le socket est le même, la session est la même.",
+					"serverbench garde les connexions ouvertes et lit la session directement dans la connexion, plutôt que dans des cookies ou des identifiants d'appareil. Cela garde le modèle de données simple et honnête : si le socket est le même, la session est la même.",
 				highlights: ['Connexions WebSocket de longue durée', 'Identité de session issue de la connexion', 'Faible surcharge par événement']
 			},
 			'docker-hosting': {
@@ -579,19 +646,182 @@ export const fr: Messages = {
 				detail:
 					"La recherche clinique dépend de données exactes issues de vraies personnes. Les applications facilitent la collecte, la compréhension et l'exploitation de ces données, là où vie privée et exactitude ne sont pas négociables.",
 				highlights: ["De meilleures données d'essais", "Vie privée et exactitude d'abord", 'Des logiciels qui aident la médecine à avancer plus vite']
+			},
+			"obex-identity": {
+				"title": "Identité et sessions (obex)",
+				"summary": "Une identité pour chaque application : une seule session porte des permissions délimitées à travers toutes les applications nominal, plus l'accès tiers lié, comme les installations de GitHub App.",
+				"detail": "obex est la couche d'identité de nominal.es. Une seule session porte des permissions délimitées à travers toutes les applications et lie des accès tiers, comme les installations de GitHub App. Les équipes peuvent inspecter et révoquer n'importe quelle session instantanément au lieu d'attendre l'expiration du jeton, auditer chaque permission accordée et chaque connexion, brancher le SSO SAML et OIDC sans configuration supplémentaire par application, et émettre des clés d'API limitées en débit et par ressource, liées au même système d'identité que les connexions des utilisateurs.",
+				"highlights": [
+					"Inspecteur de sessions avec révocation instantanée",
+					"Journal d'audit exportable",
+					"SSO d'organisation SAML et OIDC",
+					"Clés d'API délimitées et limitées en débit"
+				]
+			},
+			"eris-support": {
+				"title": "Support assisté par IA (eris)",
+				"summary": "Des réponses suggérées avant même qu'un ticket soit ouvert. L'IA le rédige, un humain l'envoie.",
+				"detail": "eris lit chaque ticket, le compare à toutes les résolutions que l'équipe a appliquées, et rédige une solution. L'équipe relit, modifie si besoin et envoie, ce qui garde les réponses rapides sans perdre la touche personnelle. À la fermeture d'un ticket, la résolution et les données utilisées pour y arriver sont enregistrées, si bien que le prochain ticket similaire se résout plus vite et de façon cohérente. Il fonctionne comme widget dans votre produit, depuis le tableau de bord nominal, ou directement depuis Discord.",
+				"highlights": [
+					"Un humain dans la boucle, par conception",
+					"Un savoir qui s'accumule à chaque ticket fermé",
+					"Widget, tableau de bord ou Discord",
+					"Chaque correctif lié à la demande qui l'a produit"
+				]
+			},
+			"hermes-billing": {
+				"title": "Facturation mondiale et conformité fiscale (hermes)",
+				"summary": "Abonnements et paiements uniques, avec la taxe de chaque pays calculée et déclarée automatiquement, y compris Verifactu.",
+				"detail": "hermes gère abonnements récurrents et paiements uniques avec la même configuration de facturation. Il accepte des paiements via des centaines de systèmes de paiement dans des centaines de pays, calcule la taxe pays par pays et la déclare automatiquement, avec un accent sur la conformité fiscale de l'UE et la prise en charge de Verifactu intégrée. Il passe du petit projet configuré en quelques minutes à la grande entreprise, avec des configurations de facturation extrêmement flexibles.",
+				"highlights": [
+					"Des centaines de pays et de systèmes de paiement",
+					"Conformité fiscale UE avec Verifactu",
+					"Abonnements et paiements uniques",
+					"Du projet perso à l'entreprise"
+				]
+			},
+			"kinesis-events": {
+				"title": "Analytique d'événements à grande échelle (kinesis)",
+				"summary": "Plus de 1 000 000 d'événements traités par heure, de l'événement du SDK au tableau de bord en millisecondes.",
+				"detail": "kinesis reçoit des événements via un SDK d'une seule ligne depuis le web, le mobile ou le backend, les valide contre un schéma typé et extensible pour que les événements malformés ne polluent jamais les données, et met à jour des tableaux de bord en temps réel (portails) en quelques millisecondes. Il peut être auto-hébergé ou géré, et prend en charge la relecture d'événements sur de nouveaux schémas, des politiques de rétention des événements bruts et des alertes par seuil.",
+				"highlights": [
+					"Plus de 1 000 000 d'événements par heure",
+					"Schémas typés et extensibles",
+					"Auto-hébergé ou géré",
+					"Tableaux de bord en temps réel, relecture et alertes"
+				]
+			},
+			"archon-deploys": {
+				"title": "Déploiements sur votre propre matériel (archon)",
+				"summary": "Poussez vers un dépôt et livrez sur votre propre matériel, avec des sauvegardes planifiées par défaut.",
+				"detail": "archon gère des machines distantes depuis un seul panneau, où qu'elles soient. Vous poussez vers GitHub ou GitLab, et archon construit et versionne le conteneur automatiquement puis le déploie sur votre machine, avec une sauvegarde planifiée par défaut. Les sauvegardes peuvent être créées et restaurées à la demande, et l'accès aux machines et aux conteneurs se partage avec l'équipe, limité à ce dont chaque personne a besoin.",
+				"highlights": [
+					"Gestion à distance des machines depuis un seul panneau",
+					"Déploiements de conteneurs pilotés par git",
+					"Sauvegardes à la demande et par défaut",
+					"Accès d'équipe granulaire"
+				]
+			},
+			"workhours-app": {
+				"title": "Suivi du temps offline-first (workhours)",
+				"summary": "Suivi du temps de travail fait en Espagne, conforme à la loi du travail espagnole, installable en PWA sur tout appareil et fonctionnel hors ligne.",
+				"detail": "workhours est une PWA multiplateforme de suivi du temps de travail qui respecte la loi du travail espagnole. Elle fonctionne sur iOS, Android, Windows, macOS et Linux, s'installe depuis le navigateur, enregistre le temps même hors ligne et se synchronise automatiquement, sans conflit et en temps réel, au retour de la connexion. Elle ajoute une géolocalisation précise des pointages, un système de demandes d'ajustement avec un historique d'audit clair, la gestion des congés et des arrêts maladie, et la conformité RGPD avec des données dans l'UE et un chiffrement de bout en bout.",
+				"highlights": [
+					"PWA multiplateforme qui fonctionne hors ligne",
+					"Synchronisation en temps réel et sans conflit",
+					"Conformité légale et RGPD",
+					"Congés, arrêts maladie et demandes d'ajustement"
+				]
+			},
+			"verifactu": {
+				"title": "Conformité de facturation Verifactu",
+				"summary": "Conformité automatique à la réglementation espagnole Verifactu, dans hermes et workhours.",
+				"detail": "Verifactu est le nouveau cadre espagnol de facturation et de conformité fiscale, créé par l'AEAT pour moderniser la facturation et lutter contre la fraude fiscale. hermes intègre la prise en charge de Verifactu en natif, et workhours est en cours de mise à jour pour que sa facturation respecte automatiquement les exigences de l'AEAT.",
+				"highlights": [
+					"Conformité automatique avec l'AEAT",
+					"Prise en charge de Verifactu intégrée à hermes",
+					"workhours bientôt"
+				]
+			},
+			"opencti-threat-intel": {
+				"title": "Analyse du renseignement sur les menaces (OpenCTI)",
+				"summary": "Un logiciel d'analyse de cybersécurité qui repère les tendances et rédige des rapports automatiques sur les plus grandes menaces du monde. Le client ne peut pas être divulgué.",
+				"detail": "J'ai construit un logiciel d'analyse de cybersécurité avec OpenCTI pour comprendre les tendances des menaces et rédiger des rapports automatiques sur les plus grandes menaces du monde. Il traite des millions d'événements chaque année et transforme ces données brutes en rapports que les gens peuvent vraiment lire et sur lesquels ils peuvent agir. Le client ne peut pas être divulgué.",
+				"highlights": [
+					"Construit avec OpenCTI",
+					"Des millions d'événements traités chaque année",
+					"Rapports automatiques sur les plus grandes menaces mondiales",
+					"Client confidentiel"
+				]
+			},
+			"hours-offers": {
+				"title": "Suivi du temps et gestion des offres",
+				"summary": "Un logiciel de pointage et un système de gestion des offres qui contrôle les heures de travail de bout en bout et suit chaque offre de la proposition à la conclusion.",
+				"detail": "J'ai créé un système de pointage et un système de gestion des offres qui contrôlent les heures de travail de bout en bout et suivent chaque offre de la proposition à la conclusion. Il gère des projets qui facturent des millions d'euros, si bien que les heures, les offres et la facturation doivent concorder au centime près.",
+				"highlights": [
+					"Pointage pour les heures de travail",
+					"Flux d'offres de la proposition à la conclusion",
+					"Projets facturant des millions d'euros",
+					"Heures et offres liées à la facturation du projet"
+				]
+			},
+			"national-data": {
+				"title": "Plateforme nationale de données",
+				"summary": "Un projet national qui réunit les données de tous les endroits sur un seul site, pour que chacun comprenne le pays sous de nombreuses perspectives différentes.",
+				"detail": "J'ai collaboré à la mise en œuvre et à la maintenance d'un projet national qui réunit les données de tous les endroits sur un seul site, conçu pour les geeks (et pour les geeks déguisés en scientifiques et en chercheurs) qui veulent comprendre le pays sous toutes sortes de perspectives.",
+				"highlights": [
+					"Mise en œuvre et maintenance continue",
+					"Les données de tous les endroits sur un seul site",
+					"Conçu pour les scientifiques, les chercheurs et les geeks curieux"
+				]
+			},
+			"slate": {
+	"title": "Slate : une plateforme de classe locale",
+	"summary": "Un « Google Classroom » local pour le lycée : un tableau numérique qui se synchronise avec les cahiers des élèves, plus suivi des notes, rendus de devoirs et événements de l'établissement. Mon TFG de Bachillerato, noté 10/10.",
+	"detail": "Slate était mon projet de fin d'études (TFG) du Bachillerato Tecnológico, et il a été noté 10/10. C'est une expérience façon Google Classroom locale pour un lycée. Le tableau numérique se synchronise automatiquement avec les cahiers des élèves, et la plateforme suit aussi les notes et les rendus et affiche les événements de l'établissement. Il y avait une appli Android native et une version web, toutes deux sur un backend en PHP. Aujourd'hui, il repose au cimetière.",
+	"highlights": [
+		"Noté 10/10",
+		"Tableau numérique synchronisé automatiquement avec les cahiers des élèves",
+		"Notes, rendus et événements de l'établissement",
+		"Appli Android native et version web, backend en PHP"
+	]
+},
+			"sodge": {
+				"title": "Sodge : réseau social par centres d'intérêt",
+				"summary": "Un réseau social qui vous montrait automatiquement des gens aux centres d'intérêt proches, par association de mots sur des réseaux de neurones, vers 2017.",
+				"detail": "Sodge était une expérience personnelle d'environ 2017, des années avant que l'IA devienne courante : un réseau social qui utilisait une association de mots construite sur des réseaux de neurones pour vous montrer automatiquement des gens aux centres d'intérêt proches. Il tournait sur le web et sur Android avec un backend en PHP. Aujourd'hui, il repose au cimetière.",
+				"highlights": [
+					"Association par centres d'intérêt via des réseaux de neurones",
+					"Construit vers 2017, avant l'essor de l'IA",
+					"Web et Android",
+					"Backend en PHP"
+				]
+			},
+			"vidfeed": {
+				"title": "thememepage : flux vidéo infini",
+				"summary": "Une page façon TikTok pour faire défiler sans fin des vidéos drôles d'internet, construite vers 2014, bien avant que le contenu vertical existe.",
+				"detail": "Vers 2014, j'ai construit une page très proche du TikTok d'aujourd'hui : un défilement infini de vidéos drôles d'internet, des années avant que le contenu vertical existe. « Infini » est un mot généreux : la liste était plutôt courte, et j'étais le seul utilisateur. Elle était écrite en JavaScript et repose aujourd'hui au cimetière.",
+				"highlights": [
+					"Flux vidéo à défilement infini",
+					"Construit vers 2014, en avance sur la vidéo verticale",
+					"JavaScript",
+					"Un utilisateur très fidèle (moi)"
+				]
+			},
+			"greenie": {
+				"title": "Greenie : la santé d'une plante par la photo",
+				"summary": "Une appli Android avec backend en Python qui vous dit si une plante est en bonne santé à partir d'une seule photo, grâce à un modèle entraîné en local avec PyTorch.",
+				"detail": "Greenie était un projet académique : une appli uniquement Android où l'on prend en photo n'importe quelle plante pour voir sa santé. Le backend était écrit en Python, et le modèle a été entraîné en local avec PyTorch. Aujourd'hui, il repose au cimetière.",
+				"highlights": [
+					"La santé d'une plante à partir d'une seule photo",
+					"Modèle entraîné en local avec PyTorch",
+					"Appli Android, backend en Python",
+					"Projet académique"
+				]
+			},
+			"openagv": {
+				"title": "OpenAGV : un robot à roues omnidirectionnelles",
+				"summary": "Un véhicule à guidage automatique sur roues omnidirectionnelles qui navigue seul de A à B, avec radar, interface complète et télécommande Bluetooth avec évitement automatique des obstacles.",
+				"detail": "OpenAGV était un projet académique de 2021 : un système AGV (véhicule à guidage automatique) qui naviguait automatiquement de A à B sur des roues omnidirectionnelles. Il était écrit en C et intégrait un radar avec une interface complète, ainsi que le Bluetooth pour la télécommande avec évitement automatique des obstacles. Aujourd'hui, il repose au cimetière.",
+				"highlights": [
+					"Navigation automatique de A à B sur roues omnidirectionnelles",
+					"Radar avec une interface complète",
+					"Télécommande Bluetooth avec évitement automatique des obstacles",
+					"Écrit en C"
+				]
 			}
 		},
 		projects: {
 			serverbench: {
-				kind: 'E-commerce, analytique et hébergement',
-				blurb:
-					"Une plateforme complète pour les communautés en ligne, en particulier les serveurs de jeux : une plateforme e-commerce de biens numériques, un outil d'analytique pour communautés et un orchestrateur d'hébergement « apportez votre propre appareil ».",
-				points: [
-					"Boutique : les communautés vendent objets de collection, badges et boosters, avec une boutique en ligne personnalisable pour chacune",
-					"Hébergement : un orchestrateur basé sur Docker pour des serveurs de jeux très gourmands",
-					"Studios : outils de créateurs, SEO et CMS qui partagent leurs données avec un seul cœur d'analytique"
-				]
-			},
+	"kind": "E-commerce, analytique et hébergement",
+	"blurb": "Une plateforme complète pour les communautés en ligne, en particulier les serveurs de jeux (anciennement purecore) : une plateforme e-commerce de biens numériques, un outil d'analytique respectueux de la vie privée et un orchestrateur d'hébergement « apportez votre propre appareil ». Plusieurs de ses fonctions vivent désormais dans les produits de nominal.es.",
+	"points": [
+		"Boutique : les communautés vendent objets de collection, badges et boosters, avec une boutique en ligne personnalisable pour chacune",
+		"Hébergement : un orchestrateur basé sur Docker pour des serveurs de jeux très gourmands",
+		"Analytique : à base de sockets, liaison des sessions uniquement à partir des données de connexion, sans empreinte d'appareil",
+		"Studios : outils de créateurs, SEO et CMS qui partagent leurs données avec un seul cœur d'analytique"
+	]
+},
 			grifpkg: {
 				kind: 'Gestionnaire de paquets',
 				blurb:
@@ -602,18 +832,151 @@ export const fr: Messages = {
 					'Plugins payants, détection de vulnérabilités et monétisation pour développeurs intégrés'
 				]
 			},
-			purecore: {
-				kind: 'Analytique temps réel',
-				blurb:
-					"Une plateforme d'analytique à base de sockets avec des normes de sécurité élevées. Les sessions sont liées uniquement à partir des données de connexion, sans empreinte d'appareil.",
-				points: ['Liaison de sessions basée sur la connexion elle-même', "Vie privée dès la conception, aucun raccourci d'empreinte", 'Ingestion temps réel via WebSockets']
-			},
 			purevanilla: {
 				kind: 'Serveur communautaire',
 				blurb:
 					"Un projet de serveur Minecraft vanilla centré sur une expérience propre et fidèle à l'original. Géré comme un produit, avec une vraie infrastructure derrière un jeu.",
 				points: ["Philosophie vanilla d'abord : moins de mods, plus de soin", "Une communauté vivante qui a besoin de disponibilité", "Là où ont commencé bien des leçons d'hébergement"]
+			},
+			"workhours": {
+				"kind": "Suivi du temps fait en Espagne",
+				"blurb": "Un suivi du temps de travail sans effort qui respecte la loi du travail espagnole. Une PWA multiplateforme pour des travailleurs qui méritent le meilleur.",
+				"points": [
+					"Fonctionne sur tout appareil et hors ligne, avec synchronisation automatique au retour de la connexion",
+					"Pointages géolocalisés, demandes d'ajustement avec historique d'audit, gestion des congés et des arrêts maladie",
+					"Conforme RGPD : données dans l'UE, chiffrement de bout en bout. Prise en charge de Verifactu bientôt"
+				]
 			}
-		}
+		},
+			"notes": {
+				"docker-hosting": "Il est né dans serverbench et vit aujourd'hui sous le nom d'archon, chez nominal.es.",
+				"byod": "Aujourd'hui, il vit sous le nom d'archon, chez nominal.es : poussez vers un dépôt, livrez sur votre propre matériel.",
+				"permissions": "La même idée a grandi pour devenir obex, chez nominal.es : une identité, des permissions délimitées dans chaque application.",
+				"realtime-ingest": "Ce cœur d'analytique vit aujourd'hui sous le nom de kinesis, chez nominal.es.",
+				"community-analytics": "Son volet analytique vit aujourd'hui sous le nom de kinesis, chez nominal.es.",
+				"commerce-platform": "Son volet facturation et taxes vit aujourd'hui sous le nom d'hermes, chez nominal.es."
+			},
+			"nominal": {
+	"obex": {
+		"tagline": "Une identité pour chaque application que vous construisez.",
+		"summary": "Une seule session obex porte des permissions délimitées à travers toutes les applications nominal, plus l'accès tiers lié, comme les installations de GitHub App.",
+		"stat": {
+			"value": "",
+			"label": ""
+		},
+		"points": [
+			"Inspecteur de sessions",
+			"Journal d'audit complet",
+			"SSO d'organisation",
+			"Clés d'API délimitées"
+		]
+	},
+	"eris": {
+		"tagline": "Gardez vos utilisateurs satisfaits, automatiquement.",
+		"summary": "Ajoutez un extrait de code à votre produit. Les utilisateurs reçoivent des réponses suggérées avant même qu'un ticket soit ouvert. L'IA le rédige, un humain l'envoie.",
+		"stat": {
+			"value": "",
+			"label": ""
+		},
+		"points": [
+			"Suggestions intelligentes, humain dans la boucle",
+			"Un savoir qui s'accumule",
+			"Widget, plateforme ou Discord",
+			"Résolutions cohérentes"
+		]
+	},
+	"hermes": {
+		"tagline": "Soyez payé de n'importe où, en toute conformité.",
+		"summary": "La même configuration de facturation gère abonnements récurrents ou paiements uniques, calcule la taxe de chaque pays et la déclare, y compris Verifactu, automatiquement.",
+		"stat": {
+			"value": "",
+			"label": ""
+		},
+		"points": [
+			"Des centaines de pays",
+			"Conformité fiscale UE",
+			"Du projet perso à l'entreprise",
+			"Facturation flexible"
+		]
+	},
+	"kinesis": {
+		"tagline": "Comprenez votre produit à toute échelle.",
+		"summary": "Des événements du web, du mobile ou du backend, validés contre des schémas typés et affichés sur des tableaux de bord en temps réel.",
+		"stat": {
+			"value": "1 000 000+",
+			"label": "événements traités par heure"
+		},
+		"points": [
+			"Une mise en œuvre extrêmement simple",
+			"Auto-hébergé ou géré",
+			"Schémas typés et extensibles",
+			"Des portails beaux et fiables"
+		]
+	},
+	"archon": {
+		"tagline": "Apportez votre propre matériel. Nous gérons le reste.",
+		"summary": "Gérez vos propres machines à distance et déployez des conteneurs directement depuis GitHub ou GitLab, sauvegardes incluses.",
+		"stat": {
+			"value": "",
+			"label": ""
+		},
+		"points": [
+			"Gestion des machines à distance",
+			"Conteneurs pilotés par git",
+			"Sauvegardes à la demande",
+			"Accès d'équipe granulaire"
+		]
+	}
+},
+			"graveyard": {
+				"slate": {
+	"name": "slate",
+	"tag": "TFG de Bachillerato",
+	"year": "2019",
+	"epitaph": "Il a noté les devoirs de tout le monde. Le jury lui a mis 10/10.",
+	"cause": "Le diplôme (avec 10/10).",
+	"summary": "Un « Google Classroom » local pour le lycée : le tableau numérique se synchronisait automatiquement avec les cahiers des élèves, avec suivi des notes, rendus de devoirs et même événements de l'établissement. Une appli Android native et une version web, backend en PHP. Note : 10/10."
+},
+				"sodge": {
+					"name": "sodge",
+					"tag": "Expérience personnelle",
+					"year": "vers 2017",
+					"epitaph": "Il associait les gens par centres d'intérêt grâce aux réseaux de neurones avant que ce soit à la mode. Il ne s'est jamais associé à un seul utilisateur.",
+					"cause": "Causes naturelles (aucun utilisateur).",
+					"summary": "Un réseau social qui vous montrait automatiquement des gens aux centres d'intérêt proches, par association de mots sur des réseaux de neurones, bien avant que l'IA devienne courante. Web et Android, backend en PHP."
+				},
+				"feed": {
+					"name": "thememepage",
+					"tag": "Expérience personnelle",
+					"year": "vers 2014",
+					"epitaph": "Défilement infini. Infini est un mot généreux : la liste comptait une douzaine de vidéos et exactement un utilisateur.",
+					"cause": "Plus de vidéos.",
+					"summary": "Une page façon TikTok pour faire défiler sans fin des vidéos drôles d'internet, des années avant que le contenu vertical existe. La liste était courte et j'étais le seul utilisateur. JavaScript."
+				},
+				"greenie": {
+					"name": "greenie",
+					"tag": "Projet académique",
+					"year": "2023",
+					"epitaph": "Il pouvait vous dire que votre plante mourait. Il ne pouvait pas l'en empêcher.",
+					"cause": "Diplômé. Pas les plantes.",
+					"summary": "Une appli uniquement Android avec backend en Python : prenez en photo n'importe quelle plante et voyez sa santé, grâce à un modèle entraîné en local avec PyTorch."
+				},
+			"openagv": {
+				"name": "openagv",
+				"tag": "Projet académique",
+				"year": "2021",
+				"epitaph": "Il évitait tous les obstacles de la pièce. L'échéance n'apparaissait pas sur le radar.",
+				"cause": "Échéance (non détectée par le radar).",
+				"summary": "Un AGV qui naviguait automatiquement de A à B sur des roues omnidirectionnelles. Écrit en C, avec un radar doté d'une interface complète et une télécommande Bluetooth avec évitement automatique des obstacles."
+			}
+			},
+			"clickMore": [
+				"Encore ? J'adore.",
+				"Toujours là ? Respect.",
+				"Ma queue va tomber.",
+				"C'est un jeu ? J'aime ce jeu.",
+				"Encore des boops. Encore des boops.",
+				"Dix clics de plus pour une autre friandise. Je compte."
+			]
 	}
 };

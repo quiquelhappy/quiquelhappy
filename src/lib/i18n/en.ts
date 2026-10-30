@@ -18,7 +18,7 @@ export const en = {
 			dark: 'Toggle dark mode',
 			darkTitle: 'Dark / light',
 			y2kTitle: 'Travel to the year 2000',
-			language: 'Language'
+			language: 'Language',
 		},
 		hero: {
 			eyebrow: "Hi, I'm Quique",
@@ -54,7 +54,7 @@ export const en = {
 			currentBranch: 'Current branch',
 			b1: 'mission-critical, satellite navigation',
 			b2: 'industrial automation, automotive',
-			b3: 'serverbench, grifpkg, purecore',
+			b3: "nominal.es, serverbench, grifpkg",
 			construction: 'UNDER CONSTRUCTION',
 			mosaic: 'hover to paint. click to pin a block.'
 		},
@@ -65,7 +65,7 @@ export const en = {
 			p1a: "I'm Quique, ",
 			p1bold: 'Happy',
 			p1b: " online. I've been coding since I can remember touching a computer, and I live near Barcelona. I have a pile of side projects that never made it into any bio, but at heart I'm trying to fix things that make life a little better, for other people and for myself.",
-			p2: 'By day I work at a company that builds aerospace, defense and security systems, with deep roots in satellite navigation and mission-critical software, and at a robotics company doing industrial automation, mostly in automotive. By night I build tools for communities: a store, a host, a package manager and an analytics engine, mostly from scratch.',
+			p2: "By day I work at a company that builds aerospace, defense and security systems, with deep roots in satellite navigation and mission-critical software, and at a robotics company doing industrial automation, mostly in automotive. By night I build nominal.es, a suite of products for teams (identity, support, billing, analytics and hosting), plus tools for communities like a store, a host and a package manager.",
 			p3: 'I hold two degrees: Software Engineering (Computer Science) at UAB, and a Grado Superior in Robotics and Industrial Automation at Salesians Sarrià. It shows. I think about failure modes, latency and the physical world before I think about frameworks.',
 			facts: 'Quick facts',
 			alias: 'alias',
@@ -127,13 +127,13 @@ export const en = {
 			filterBy: (t: string) => `Filter by ${t}`,
 			emptyTitle: 'Nothing matches that.',
 			emptyText: 'Not even Gandalf could sniff that one out. Try fewer filters, or ask me directly.',
-			emptySay: "Nothing matches. Even I couldn't find that one."
+			emptySay: "Nothing matches. I sniffed everywhere."
 		},
 		projects: {
 			eyebrow: 'Projects',
 			h2a: 'Things I made',
 			h2b: 'because I had to.',
-			lede: 'Nothing off the shelf fit, so I built a store, a host, a package manager and an analytics engine.',
+			lede: "Nothing off the shelf fit, so I built my own: identity, support, billing, analytics, hosting, time tracking and a package manager.",
 			visit: (d: string) => `Visit ${d}`,
 			none: 'No public site'
 		},
@@ -241,7 +241,8 @@ export const en = {
 			toastCopied: 'Email copied. Go on, write something.',
 			sudo1: '[sudo] password for recruiter: ********',
 			sudo2: 'Access granted. Opening the hire section...',
-			language: 'Switch language'
+			language: 'Switch language',
+			"graveyard": "The graveyard"
 		},
 		mosaic: {
 			t12: '12 blocks pinned. Is that a contribution graph or a Picasso?',
@@ -251,7 +252,12 @@ export const en = {
 		mascot: {
 			aria: 'Gandalf, a blue merle Australian Shepherd. Click for a surprise.',
 			away: '(._.) Gandalf misses you. Come back',
-			startle: ['Woof!', 'Whoa!', 'Too close!', 'Nope. Bye.'],
+			startle: [
+	"Woof!",
+	"Yip!",
+	"Is that a squirrel?!",
+	"Zoomies! Bye."
+],
 			confettiSay: 'Okay, okay! Who is a good boy? Me. Take the confetti!',
 			clickToast: (n: number) => `You clicked Gandalf ${n} times. That's dedication. Hire Quique with it.`
 		},
@@ -271,7 +277,26 @@ export const en = {
 			off: 'Back to the future. Welcome home.',
 			sayOn: 'Whoa. Everything is beige now.',
 			sayOff: 'Phew. Antialiasing!'
-		}
+		},
+			"graveyard": {
+				"eyebrow": "The graveyard",
+				"h2a": "Where good projects",
+				"h2b": "go to rest.",
+				"lede": "Every good developer has abandoned projects. Mine have a few cobwebs and a very good boy guarding them. Light a candle, or just press F.",
+				"rip": "R.I.P.",
+				"cause": "Cause of death",
+				"dig": "Dig up the details",
+				"rebury": "Rebury",
+				"respects": "Respects paid",
+				"pay": "Pay respects",
+				"pressF": "press F to pay respects",
+				"toastF": "F. Respects paid.",
+				"toast10": "10 respects. They felt that.",
+				"toast25": "25 respects. Gandalf is crying. Quietly.",
+				"noYear": "year lost to history",
+				"hint": "Click a tombstone to dig up the details.",
+				"aria": "Abandoned projects"
+			}
 	},
 	content: {
 	"roles": [
@@ -358,50 +383,59 @@ export const en = {
 		"Mission-critical software"
 	],
 	"quips": {
-		"general": [
-			"Woof. Don't mind me. I live in your viewport now.",
-			"I herd things. Mostly deadlines.",
-			"You shall not pass... without checking the hire button.",
-			"Quique drew me in 24x24 pixels. I think he is proud.",
-			"Good boy count: 1. Treat count: 0. Please advise.",
-			"I know three tunnels. Do not ask me about the fourth.",
-			"psst. the hire button works.",
-			"A merle is never late. Nor is he early. He arrives precisely when he means to.",
-			"Try pressing Ctrl+K. Or Cmd+K. I am not picky.",
-			"There is a Konami code here somewhere. I did not say that."
-		],
-		"top": [
-			"Woof! I'm Gandalf. Quique is a little shy, so I do the talking.",
-			"Scroll down. The good stuff is not in the hero."
-		],
-		"about": [
-			"Those achievements are real. The confetti is extra.",
-			"He started coding at nine. I started at boot."
-		],
-		"experience": [
-			"Try the filters. They are very satisfying.",
-			"Filter by Go. Then fetch. Wait, fetch is not a filter.",
-			"Every card opens. Every single one."
-		],
-		"projects": [
-			"He built all of these. Yes, the package manager too.",
-			"serverbench is a whole stack, not one project."
-		],
-		"hire": [
-			"This is the part where you email him.",
-			"Say hi. He replies. I have seen it.",
-			"quique@osuna.dev. I will wait here. Good boys wait."
-		]
-	},
-	"clickLines": [
-		"Boop!",
-		"Woof!",
-		"I have a hitbox, you know.",
-		"Belly rubs are extra.",
-		"Click me 10 times. I dare you.",
-		"Seven. You are committed.",
-		"Nine. Ten is going to be great."
+	"general": [
+		"Woof. Don't mind me. I live on your screen now.",
+		"I herd things. Mostly deadlines.",
+		"You shall not pass... without checking the hire button.",
+		"Quique drew me in 24x24 pixels. I think he is proud.",
+		"Good boy count: 1. Treat count: 0. Please advise.",
+		"I know three tunnels. Do not ask me about the fourth.",
+		"psst. the hire button works.",
+		"A merle is never late. Nor is he early. He arrives precisely when he means to.",
+		"Press Ctrl+K. I would, but I have no thumbs.",
+		"Wait, did I hear the word walk? Did someone say walk?",
+		"There is a Konami code here somewhere. I did not say that.",
+		"Squirrel! ...Sorry. Where were we?"
 	],
+	"top": [
+		"Woof! I'm Gandalf. Quique is busy coding, so I do the greeting.",
+		"Scroll down. The best treats are not in the hero."
+	],
+	"about": [
+		"Those achievements are real. The confetti is extra.",
+		"He started coding at nine. I started chewing shoes at nine weeks."
+	],
+	"experience": [
+		"Try the filters. I sniffed them. Very satisfying.",
+		"Filter by Go. Then fetch. Wait, fetch is not a filter.",
+		"Every card opens. I checked every single one. Twice."
+	],
+	"projects": [
+		"He built all of these while I supervised from the couch.",
+		"nominal has five products. I have one ball. Priorities."
+	],
+	"hire": [
+		"This is the part where you email him.",
+		"Say hi. He replies. I have seen it. Tail wags included.",
+		"quique@osuna.dev. I will wait here. Good boys wait."
+	],
+			"graveyard": [
+				"I buried a bone here once. Do not tell the projects.",
+				"Every good developer has a graveyard. Quique's has a very good boy guarding it.",
+				"Do not wake them. The last one is still compiling."
+			]
+},
+	"clickLines": [
+	"Boop!",
+	"Woof!",
+	"I am a very good boy, you know.",
+	"Belly rubs are extra.",
+	"Halfway to a treat. Probably.",
+	"Six. I am counting too.",
+	"Seven. You are committed.",
+	"Eight. I can see the treat.",
+	"Nine. Ten is going to be great."
+],
 	"areas": {
 		"backend": {
 			"label": "Backend & distributed systems",
@@ -446,7 +480,11 @@ export const en = {
 		"health": {
 			"label": "Health & clinical trials",
 			"blurb": "Applications that help us understand and run clinical research."
-		}
+		},
+			"ai": {
+				"label": "AI-assisted products",
+				"blurb": "Software that drafts, suggests and speeds things up, with a human always in the loop."
+			}
 	},
 	"contexts": {
 		"product": "My own products",
@@ -455,7 +493,6 @@ export const en = {
 	},
 	"sources": {
 		"serverbench": "serverbench",
-		"purecore": "purecore",
 		"grifpkg": "grifpkg",
 		"all of the above": "all of the above",
 		"various": "various",
@@ -463,7 +500,12 @@ export const en = {
 		"Aerospace, defense and security company": "Aerospace, defense and security company",
 		"Robotics company": "Robotics company",
 		"Salesians Sarrià": "Salesians Sarrià",
-		"Health technology": "Health technology"
+		"Health technology": "Health technology",
+			"Confidential client": "Confidential client",
+			"Professional work": "Professional work",
+			"Graveyard \u00b7 Bachillerato TFG": "Graveyard · Bachillerato TFG",
+			"Graveyard \u00b7 personal experiment": "Graveyard · personal experiment",
+			"Graveyard \u00b7 academic project": "Graveyard · academic project"
 	},
 	"entries": {
 		"game-hosting": {
@@ -493,13 +535,13 @@ export const en = {
 			"highlights": [
 				"Identity stitching across three mediums",
 				"Feeds store and creator recommendations",
-				"Built with the privacy lessons from purecore"
+				"Built with the privacy lessons from serverbench"
 			]
 		},
 		"realtime-ingest": {
 			"title": "Real-time socket ingestion",
 			"summary": "A socket-based analytics backend that keeps long-lived connections and turns them into sessions.",
-			"detail": "purecore keeps connections open and reads the session directly from the connection, rather than from cookies or device identifiers. That keeps the data model simple and honest: if the socket is the same, the session is the same.",
+			"detail": "serverbench keeps connections open and reads the session directly from the connection, rather than from cookies or device identifiers. That keeps the data model simple and honest: if the socket is the same, the session is the same.",
 			"highlights": [
 				"Long-lived WebSocket connections",
 				"Session identity from the connection",
@@ -775,18 +817,182 @@ export const en = {
 				"Privacy and correctness first",
 				"Software that helps medicine move faster"
 			]
-		}
+		},
+			"obex-identity": {
+				"title": "Identity and sessions (obex)",
+				"summary": "One identity for every app: a single session carries scoped permissions across every nominal app, plus linked third-party access like GitHub App installations.",
+				"detail": "obex is the identity layer of nominal.es. A single session carries scoped permissions across every app and links third-party access such as GitHub App installations. Teams can inspect and revoke any session instantly instead of waiting on token expiry, audit every permission grant and login, plug in SAML and OIDC single sign-on without per-app config, and issue rate-limited, resource-scoped API keys tied to the same identity system as user logins.",
+				"highlights": [
+					"Session inspector with instant revocation",
+					"Exportable audit log",
+					"SAML and OIDC org SSO",
+					"Scoped, rate-limited API keys"
+				]
+			},
+			"eris-support": {
+				"title": "AI-assisted support (eris)",
+				"summary": "Suggested answers before a ticket is even filed. AI drafts it, a human sends it.",
+				"detail": "eris reads each ticket, matches it against every resolution the team has ever applied and drafts a fix. The team reviews, edits if needed and sends, so replies stay fast without losing the personal touch. When a ticket closes, the resolution and the data behind it are saved, so similar tickets resolve faster and more consistently. It works as a widget in your product, from the nominal dashboard, or straight from Discord.",
+				"highlights": [
+					"Human in the loop by design",
+					"Knowledge that compounds with every closed ticket",
+					"Widget, dashboard or Discord",
+					"Every fix tied to the request that produced it"
+				]
+			},
+			"hermes-billing": {
+				"title": "Global billing and tax compliance (hermes)",
+				"summary": "Subscriptions and one-time charges, with tax per country calculated and reported automatically, including Verifactu.",
+				"detail": "hermes handles recurring subscriptions and one-time charges with the same billing setup. It accepts payments through hundreds of payment systems across hundreds of countries, calculates tax per country and reports it automatically, with a focus on EU tax compliance and built-in Verifactu support. It scales from a small side project configured in minutes to a large corporation, with extremely configurable billing setups.",
+				"highlights": [
+					"Hundreds of countries and payment systems",
+					"EU tax compliance with Verifactu",
+					"Subscriptions and one-time payments",
+					"Side project to enterprise"
+				]
+			},
+			"kinesis-events": {
+				"title": "Event analytics at scale (kinesis)",
+				"summary": "Over 1,000,000 events processed per hour, from SDK event to dashboard in milliseconds.",
+				"detail": "kinesis takes events from a one-line SDK on web, mobile or backend, validates them against a typed, extensible schema so malformed events never pollute the data, and updates real-time dashboards (portals) within milliseconds. It can be self-hosted or managed, and supports event replay against new schemas, retention policies for raw events and threshold alerting.",
+				"highlights": [
+					"1,000,000+ events per hour",
+					"Typed, extensible schemas",
+					"Self-hosted or managed",
+					"Real-time dashboards, replay and alerting"
+				]
+			},
+			"archon-deploys": {
+				"title": "Bring-your-own-hardware deploys (archon)",
+				"summary": "Push to a repo and ship to your own hardware, with backups scheduled by default.",
+				"detail": "archon manages remote machines from one panel, wherever they live. Push to GitHub or GitLab, and archon builds and versions the container automatically and deploys it to your machine, with a backup scheduled by default. Backups can be taken and restored on demand, and access to machines and containers can be shared with a team, scoped to exactly what each person needs.",
+				"highlights": [
+					"Remote machine management from one panel",
+					"Git-driven container deploys",
+					"Backups on demand and by default",
+					"Granular team access"
+				]
+			},
+			"workhours-app": {
+				"title": "Offline-first time tracking (workhours)",
+				"summary": "Time tracking made in Spain, compliant with Spanish labor law, installable as a PWA on any device and working offline.",
+				"detail": "workhours is a cross-platform PWA for time tracking that complies with Spanish labor law. It works on iOS, Android, Windows, macOS and Linux, installs from the browser, records time even offline and syncs automatically, conflict-free and in real time, when connectivity returns. It adds precise geolocation of clock-ins and outs, an adjustment request system with a clear audit trail, vacation and sick leave management, and GDPR compliance with data kept in the EU and end-to-end encryption.",
+				"highlights": [
+					"Cross-platform PWA that works offline",
+					"Real-time, conflict-free sync",
+					"Legal compliance and GDPR",
+					"Vacation, sick leave and adjustment requests"
+				]
+			},
+			"verifactu": {
+				"title": "Verifactu invoicing compliance",
+				"summary": "Automated invoicing compliance with Spain's Verifactu regulation, across hermes and workhours.",
+				"detail": "Verifactu is Spain's new framework for invoicing and tax compliance, created by the AEAT to modernize invoicing and fight tax fraud. hermes ships Verifactu support built in, and workhours is being updated so that its invoicing meets AEAT requirements automatically.",
+				"highlights": [
+					"Automatic compliance with the AEAT",
+					"Verifactu support built into hermes",
+					"workhours is on the way"
+				]
+			},
+			"opencti-threat-intel": {
+				"title": "Threat intelligence analysis (OpenCTI)",
+				"summary": "Cybersecurity analysis software that spots trends and writes automated reports on the biggest threats in the world. The client cannot be disclosed.",
+				"detail": "Built cybersecurity analysis software with OpenCTI to understand threat trends and write automated reports about the biggest threats in the world. It processes millions of events every year and turns that raw threat data into reports people can actually read and act on. The client cannot be disclosed.",
+				"highlights": [
+					"Built with OpenCTI",
+					"Millions of events processed every year",
+					"Automated reports on the biggest global threats",
+					"Confidential client"
+				]
+			},
+			"hours-offers": {
+				"title": "Time tracking and offer management",
+				"summary": "Clock in / clock out software and an offer management system that controls human hours from beginning to end and tracks every offer from proposal to conclusion.",
+				"detail": "Created a clock in / clock out system and an offer management system that control human hours from beginning to end, and follow every offer from proposal to conclusion. It manages projects that bill millions of euros, so hours, offers and billing have to line up exactly.",
+				"highlights": [
+					"Clock in / clock out for human hours",
+					"Offer flow from proposal to conclusion",
+					"Projects billing millions of euros",
+					"Hours and offers tied to project billing"
+				]
+			},
+			"national-data": {
+				"title": "National data platform",
+				"summary": "A national project that brings data from all places together into a single site, so people can understand the country from many different perspectives.",
+				"detail": "Collaborated on the implementation and maintenance of a national project that brings data from all places together into a single site, made for nerds (and for nerds disguised as scientists and researchers) to understand the country from all sorts of different perspectives.",
+				"highlights": [
+					"Implementation and ongoing maintenance",
+					"Data from all places in a single site",
+					"Built for scientists, researchers and curious nerds"
+				]
+			},
+			"slate": {
+	"title": "Slate: a local classroom platform",
+	"summary": "A local 'Google Classroom' for school: a digital blackboard that syncs to students' notebooks, plus grade tracking, deliveries and school events. My Bachillerato final project (TFG), graded 10/10.",
+	"detail": "Slate was my final project (TFG) for the Bachillerato Tecnológico, and it was graded 10/10. It is a local Google Classroom experience for a school. The digital blackboard syncs automatically to students' notebooks, and the platform also tracks grades and deliveries and shows school events. It had a native Android app and a web version, both on a PHP backend. It now rests in the graveyard.",
+	"highlights": [
+		"Graded 10/10",
+		"Digital blackboard synced automatically to students' notebooks",
+		"Grades, deliveries and school events",
+		"Native Android app plus web version, PHP backend"
+	]
+},
+			"sodge": {
+				"title": "Sodge: interest-matching social network",
+				"summary": "A social network that automatically showed you people with similar interests, using word matching built on neural networks, around 2017.",
+				"detail": "Sodge was a personal experiment from around 2017, years before AI went mainstream: a social network that used word matching built upon neural networks to automatically show you people with similar interests. It ran on web and Android with a PHP backend. It now rests in the graveyard.",
+				"highlights": [
+					"Interest matching with neural-network-based word matching",
+					"Built around 2017, before AI went mainstream",
+					"Web and Android",
+					"PHP backend"
+				]
+			},
+			"vidfeed": {
+				"title": "thememepage: infinite video feed",
+				"summary": "A TikTok-style page for endlessly scrolling funny internet videos, built around 2014, long before vertical content was a thing.",
+				"detail": "Around 2014 I built a page much like today's TikTok: infinite scrolling through funny internet videos, years before vertical content was a thing. 'Infinite' is a generous word: the list was pretty short, and I was the only user. It was written in JavaScript and now rests in the graveyard.",
+				"highlights": [
+					"Infinite-scroll video feed",
+					"Built around 2014, ahead of vertical video",
+					"JavaScript",
+					"One very loyal user (me)"
+				]
+			},
+			"greenie": {
+				"title": "Greenie: plant health from a photo",
+				"summary": "An Android app with a Python backend that tells you how healthy a plant is from a single picture, using a model trained locally with PyTorch.",
+				"detail": "Greenie was an academic project: an Android-only app where you take a picture of any plant and see its health. The backend was written in Python, and the model was trained locally with PyTorch. It now rests in the graveyard.",
+				"highlights": [
+					"Plant health from a single photo",
+					"Model trained locally with PyTorch",
+					"Android app, Python backend",
+					"Academic project"
+				]
+			},
+			"openagv": {
+				"title": "OpenAGV: an omniwheel robot",
+				"summary": "An automated guided vehicle on omniwheels that navigates from A to B by itself, with a radar, a fully featured UI, and Bluetooth remote control with automated obstacle avoidance.",
+				"detail": "OpenAGV was an academic project from 2021: an AGV (automated guided vehicle) system that automatically navigated from A to B on omniwheels. It was written in C and incorporated a radar with a fully featured UI, plus Bluetooth for remote control with automated obstacle avoidance. It now rests in the graveyard.",
+				"highlights": [
+					"Automatic navigation from A to B on omniwheels",
+					"Radar with a fully featured UI",
+					"Bluetooth remote control with automated obstacle avoidance",
+					"Written in C"
+				]
+			}
 	},
 	"projects": {
 		"serverbench": {
-			"kind": "E-commerce, analytics and hosting",
-			"blurb": "A full platform for online communities, especially game servers: an e-commerce platform for digital goods, an analytics tool for communities, and a bring-your-own-device hosting orchestrator.",
-			"points": [
-				"Store: communities sell collectibles, badges and boosters, with a customizable webstore for each one",
-				"Hosting: a Docker-based orchestrator for resource-hungry game servers",
-				"Studios: creator, SEO and CMS tools that share data with one analytics core"
-			]
-		},
+	"kind": "E-commerce, analytics and hosting",
+	"blurb": "A full platform for online communities, especially game servers (formerly purecore): an e-commerce platform for digital goods, a privacy-first analytics tool and a bring-your-own-device hosting orchestrator. Several of its features now live on as nominal.es products.",
+	"points": [
+		"Store: communities sell collectibles, badges and boosters, with a customizable webstore for each one",
+		"Hosting: a Docker-based orchestrator for resource-hungry game servers",
+		"Analytics: socket-based, linking sessions from connection data alone, with no device fingerprinting",
+		"Studios: creator, SEO and CMS tools that share data with one analytics core"
+	]
+},
 		"grifpkg": {
 			"kind": "Package manager",
 			"blurb": "A package manager for Java plugins, server software and general-purpose code, used mostly by the SpigotMC community. It imports, updates and manages dependencies automatically.",
@@ -794,15 +1000,6 @@ export const en = {
 				"Custom caching and distribution layers for fast edge delivery",
 				"Indexes libraries automatically and builds from source when no .jar exists",
 				"Paid plugins, vulnerability detection and developer monetization built in"
-			]
-		},
-		"purecore": {
-			"kind": "Real-time analytics",
-			"blurb": "A socket-based analytics platform with high security standards. Sessions are linked from connection data alone, with no device fingerprinting.",
-			"points": [
-				"Session linking built on the connection itself",
-				"Privacy-first by design, with no fingerprinting shortcuts",
-				"Real-time ingestion over WebSockets"
 			]
 		},
 		"purevanilla": {
@@ -813,8 +1010,147 @@ export const en = {
 				"A living community that needs uptime",
 				"Where a lot of the hosting lessons started"
 			]
-		}
+		},
+			"workhours": {
+				"kind": "Time tracking made in Spain",
+				"blurb": "Effortless time tracking that complies with Spanish labor law. A cross-platform PWA for workers who deserve the best.",
+				"points": [
+					"Works on any device and offline, syncing automatically when you reconnect",
+					"Geolocated clock-ins, adjustment requests with a clear audit trail, vacation and sick leave management",
+					"GDPR compliant: data stays in the EU, end-to-end encrypted. Verifactu invoicing support on the way"
+				]
+			}
+	},
+			"notes": {
+				"docker-hosting": "It started inside serverbench and lives on today as archon at nominal.es.",
+				"byod": "Today it lives on as archon at nominal.es: push to a repo, ship to your own hardware.",
+				"permissions": "The same idea grew into obex at nominal.es: one identity, scoped permissions across every app.",
+				"realtime-ingest": "That analytics core now lives on as kinesis at nominal.es.",
+				"community-analytics": "Its analytics side now lives on as kinesis at nominal.es.",
+				"commerce-platform": "Its billing and tax side now lives on as hermes at nominal.es."
+			},
+			"nominal": {
+	"obex": {
+		"tagline": "One identity for every app you build.",
+		"summary": "A single obex session carries scoped permissions across every nominal app, plus linked third-party access like GitHub App installations.",
+		"stat": {
+			"value": "",
+			"label": ""
+		},
+		"points": [
+			"Session inspector",
+			"Full audit log",
+			"Org SSO",
+			"Scoped API keys"
+		]
+	},
+	"eris": {
+		"tagline": "Keep your users happy, automatically.",
+		"summary": "Drop a snippet into your product. Users get suggested answers before a ticket is even filed. AI drafts it, a human sends it.",
+		"stat": {
+			"value": "",
+			"label": ""
+		},
+		"points": [
+			"Smart suggestions, human in the loop",
+			"Knowledge that compounds",
+			"Widget, platform, or Discord",
+			"Consistent resolutions"
+		]
+	},
+	"hermes": {
+		"tagline": "Get paid from anywhere, compliantly.",
+		"summary": "The same billing setup handles recurring subscriptions or one-time charges, calculates tax per country, and reports it, including Verifactu, automatically.",
+		"stat": {
+			"value": "",
+			"label": ""
+		},
+		"points": [
+			"Hundreds of countries",
+			"EU tax compliance",
+			"From side project to enterprise",
+			"Flexible billing"
+		]
+	},
+	"kinesis": {
+		"tagline": "Understand your product at any scale.",
+		"summary": "Events from web, mobile or backend, validated against typed schemas and shown on real-time dashboards.",
+		"stat": {
+			"value": "1,000,000+",
+			"label": "events processed per hour"
+		},
+		"points": [
+			"Extreme ease of implementation",
+			"Self-hosted or managed",
+			"Typed, extensible schemas",
+			"Beautiful, reliable portals"
+		]
+	},
+	"archon": {
+		"tagline": "Bring your own hardware. We handle the rest.",
+		"summary": "Manage your own machines remotely and deploy containers straight from GitHub or GitLab, with backups included.",
+		"stat": {
+			"value": "",
+			"label": ""
+		},
+		"points": [
+			"Remote machine management",
+			"Git-driven containers",
+			"Backups, on demand",
+			"Granular team access"
+		]
 	}
+},
+			"graveyard": {
+				"slate": {
+	"name": "slate",
+	"tag": "Bachillerato TFG",
+	"year": "2019",
+	"epitaph": "It graded everyone's homework. The jury graded it 10/10.",
+	"cause": "Graduation (with a 10/10).",
+	"summary": "A local 'Google Classroom' for school: the digital blackboard synced automatically to students' notebooks, with grade tracking, deliveries and even school events. A native Android app and a web version, PHP backend. Graded 10/10."
+},
+				"sodge": {
+					"name": "sodge",
+					"tag": "Personal experiment",
+					"year": "c. 2017",
+					"epitaph": "Matched people by interests with neural networks before it was cool. Never matched itself with a single user.",
+					"cause": "Natural causes (no users).",
+					"summary": "A social network that automatically showed you people with similar interests, using word matching built on neural networks, long before AI went mainstream. Web and Android, PHP backend."
+				},
+				"feed": {
+					"name": "thememepage",
+					"tag": "Personal experiment",
+					"year": "c. 2014",
+					"epitaph": "Infinite scroll. Infinite is a generous word: the list had a dozen videos and exactly one user.",
+					"cause": "Ran out of videos.",
+					"summary": "A TikTok-style page for endlessly scrolling funny internet videos, years before vertical content was a thing. The list was short and I was the only user. JavaScript."
+				},
+				"greenie": {
+					"name": "greenie",
+					"tag": "Academic project",
+					"year": "2023",
+					"epitaph": "It could tell you your plant was dying. It could not stop it.",
+					"cause": "Graduated. The plants did not.",
+					"summary": "An Android-only app with a Python backend: take a picture of any plant and see how healthy it is, using a model trained locally with PyTorch."
+				},
+			"openagv": {
+				"name": "openagv",
+				"tag": "Academic project",
+				"year": "2021",
+				"epitaph": "It avoided every obstacle in the room. The deadline was not on the radar.",
+				"cause": "Deadline (not detected by radar).",
+				"summary": "An AGV that automatically navigated from A to B on omniwheels. Written in C, with a radar and a fully featured UI, plus Bluetooth remote control with automated obstacle avoidance."
+			}
+			},
+			"clickMore": [
+				"Again? I love it.",
+				"Still here? Respect.",
+				"My tail is going to fall off.",
+				"Is this a game? I like this game.",
+				"More boops. More boops.",
+				"Ten more clicks for another treat. I am keeping count."
+			]
 }
 };
 

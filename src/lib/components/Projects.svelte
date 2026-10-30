@@ -1,7 +1,26 @@
 <script lang="ts">
 	import { projects } from '#lib/data/projects.ts';
+	import { nominal } from '#lib/data/nominal.ts';
 	import { L } from '#lib/i18n/index.svelte.ts';
 	import Icon from './Icon.svelte';
+
+	// the nominal.es products are projects like any other, they just come from their own dictionary entries
+	const cards = $derived([
+		...nominal.map((n) => {
+			const t = L.content.nominal[n.id];
+			return {
+				id: n.id,
+				name: n.id,
+				color: n.color,
+				url: n.url,
+				kind: t.tagline,
+				blurb: t.summary,
+				points: t.points,
+				stack: ['nominal.es', ...(t.stat.value ? [`${t.stat.value} ${t.stat.label}`] : [])]
+			};
+		}),
+		...projects.map((p) => ({ ...p, ...L.content.projects[p.id as keyof typeof L.content.projects] }))
+	]);
 </script>
 
 <section id="projects" class="section">
@@ -12,16 +31,16 @@
 	</header>
 
 	<div class="grid">
-		{#each projects as p}
+		{#each cards as p}
 			<article style:--c="var(--{p.color})">
 				<div class="preview" aria-hidden="true">
 					<div class="panel">
 						<header>
 							<strong>{p.name}</strong>
-							<span class="kind">{L.content.projects[p.id as keyof typeof L.content.projects].kind}</span>
+							<span class="kind">{p.kind}</span>
 						</header>
 						<ul>
-							{#each L.content.projects[p.id as keyof typeof L.content.projects].points as pt}
+							{#each p.points as pt}
 								<li><Icon name="check" scale={1.5} />{pt}</li>
 							{/each}
 						</ul>
@@ -29,7 +48,7 @@
 				</div>
 				<div class="body pad">
 					<h3>{p.name}</h3>
-					<p class="blurb">{L.content.projects[p.id as keyof typeof L.content.projects].blurb}</p>
+					<p class="blurb">{p.blurb}</p>
 					<div class="stack">
 						{#each p.stack as t}<span>{t}</span>{/each}
 					</div>
@@ -64,7 +83,7 @@
 	article:nth-child(2n) {
 		border-right: 0;
 	}
-	article:nth-last-child(-n + 2) {
+	article:last-child {
 		border-bottom: 0;
 	}
 	.preview {
@@ -73,7 +92,7 @@
 		border: 1px solid var(--line);
 		border-radius: var(--radius);
 		overflow: hidden;
-		height: 240px;
+		height: 280px;
 		background:
 			linear-gradient(var(--line) 1px, transparent 1px) 0 0 / 12px 12px,
 			linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0 / 12px 12px,
@@ -109,6 +128,9 @@
 		font-size: 18px;
 	}
 	.kind {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 		font-family: var(--font-mono);
 		font-size: 11.5px;
 		color: var(--ink-3);
@@ -173,6 +195,15 @@
 		opacity: 0.55;
 		cursor: default;
 		pointer-events: none;
+	}
+	/* an odd number of cards: let the last one use the full row instead of leaving a hole */
+	@media (min-width: 901px) {
+		article:last-child:nth-child(odd) {
+			grid-column: 1 / -1;
+			display: grid;
+			grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+			border-right: 0;
+		}
 	}
 	@media (max-width: 900px) {
 		.grid {
