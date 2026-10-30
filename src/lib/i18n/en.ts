@@ -419,7 +419,8 @@ export const en = {
 			"soon": "Sailing soon",
 			"view": "Map view",
 			"viewWorld": "World",
-			"viewEurope": "Europe"
+			"viewEurope": "Europe",
+			"viewAtlantic": "Atlantic"
 			},
 			"pfooter": {
 				"text": "Thanks for stopping by.",
@@ -1607,6 +1608,22 @@ export const en = {
 			},
 			"orlando": {
 				"name": "Orlando",
+				"note": ""
+			},
+			"tenerife": {
+				"name": "Tenerife",
+				"note": ""
+			},
+			"lanzarote": {
+				"name": "Lanzarote",
+				"note": ""
+			},
+			"las-palmas": {
+				"name": "Las Palmas (Gran Canaria)",
+				"note": ""
+			},
+			"la-palma": {
+				"name": "La Palma",
 				"note": ""
 			}
 			}

@@ -421,7 +421,8 @@ export const de: Messages = {
 			"soon": "Bald unterwegs",
 			"view": "Kartenansicht",
 			"viewWorld": "Welt",
-			"viewEurope": "Europa"
+			"viewEurope": "Europa",
+			"viewAtlantic": "Atlantik"
 			},
 			"pfooter": {
 				"text": "Danke für deinen Besuch.",
@@ -1434,6 +1435,22 @@ export const de: Messages = {
 			},
 			"orlando": {
 				"name": "Orlando",
+				"note": ""
+			},
+			"tenerife": {
+				"name": "Teneriffa",
+				"note": ""
+			},
+			"lanzarote": {
+				"name": "Lanzarote",
+				"note": ""
+			},
+			"las-palmas": {
+				"name": "Las Palmas (Gran Canaria)",
+				"note": ""
+			},
+			"la-palma": {
+				"name": "La Palma",
 				"note": ""
 			}
 			}

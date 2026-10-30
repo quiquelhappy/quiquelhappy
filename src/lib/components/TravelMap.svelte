@@ -12,9 +12,10 @@
 	// a view is a window onto the land grid (column and row indices), so zooming redraws bigger cells instead of stretching pixels
 	const VIEWS = {
 		world: { c0: 0, c1: WORLD.cols, r0: 0, r1: WORLD.rows },
-		europe: { c0: 82, c1: 108, r0: 4, r1: 25 }
+		europe: { c0: 82, c1: 108, r0: 4, r1: 25 },
+		atlantic: { c0: 74, c1: 100, r0: 19, r1: 30 }
 	};
-	let viewId = $state<'world' | 'europe'>('world');
+	let viewId = $state<'world' | 'europe' | 'atlantic'>('world');
 	const view = $derived(VIEWS[viewId]);
 	const bounds = $derived({
 		lon0: -180 + view.c0 * WORLD.cell,
@@ -161,6 +162,7 @@
 			<div class="views" role="group" aria-label={L.ui.map.view}>
 				<button class="chip" aria-pressed={viewId === 'world'} onclick={() => (viewId = 'world')}>{L.ui.map.viewWorld}</button>
 				<button class="chip" aria-pressed={viewId === 'europe'} onclick={() => (viewId = 'europe')}>{L.ui.map.viewEurope}</button>
+				<button class="chip" aria-pressed={viewId === 'atlantic'} onclick={() => (viewId = 'atlantic')}>{L.ui.map.viewAtlantic}</button>
 			</div>
 
 			<ul class="legend" aria-label="Legend">

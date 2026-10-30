@@ -78,6 +78,10 @@ export const places: Place[] = [
 	{ id: 'san-juan', kind: 'cruise', lat: 18.4655, lon: -66.1057 },
 	{ id: 'port-canaveral', kind: 'cruise', lat: 28.4108, lon: -80.6188 },
 	{ id: 'orlando', kind: 'trip', lat: 28.5383, lon: -81.3792 },
+	{ id: 'tenerife', kind: 'cruise', lat: 28.4636, lon: -16.2518 },
+	{ id: 'lanzarote', kind: 'cruise', lat: 28.963, lon: -13.5477 },
+	{ id: 'las-palmas', kind: 'cruise', lat: 28.1235, lon: -15.4363 },
+	{ id: 'la-palma', kind: 'cruise', lat: 28.6835, lon: -17.7642 },
 ];
 
 export const routes: Route[] = [
@@ -93,5 +97,6 @@ export const routes: Route[] = [
 	{ id: 'lirica-2025', name: 'MSC Lírica', kind: 'cruise', year: 2025, stops: ['venice', 'ancona', 'mykonos', 'santorini', 'kotor', 'venice'] },
 	{ id: 'europa-2025', name: 'MSC World Europa', kind: 'cruise', year: 2025, stops: ['barcelona', 'marseille', 'genoa', 'rome', 'messina', 'valletta', 'barcelona'] },
 	{ id: 'grandiosa-2026', name: 'MSC Grandiosa', kind: 'cruise', year: 2026, stops: ['barcelona', 'funchal', 'san-juan', 'port-canaveral'], upcoming: true },
+	{ id: 'fantasia-2026', name: 'MSC Fantasia', kind: 'cruise', year: 2026, stops: ['tenerife', 'funchal', 'lanzarote', 'las-palmas', 'la-palma', 'tenerife'], upcoming: true },
 	{ id: 'orlando-2026', name: 'Orlando', kind: 'trip', year: 2026, stops: ['port-canaveral', 'orlando'], upcoming: true },
 ];
