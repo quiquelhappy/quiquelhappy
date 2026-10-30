@@ -9,13 +9,32 @@
 	let canvas: HTMLCanvasElement;
 	let selectedId = $state(places[0]?.id ?? '');
 
-	const pos = (p: { lat: number; lon: number }) => ({
-		x: ((p.lon + 180) / 360) * 100,
-		y: ((WORLD.top - p.lat) / (WORLD.top - WORLD.bottom)) * 100
+	// a view is a window onto the land grid (column and row indices), so zooming redraws bigger cells instead of stretching pixels
+	const VIEWS = {
+		world: { c0: 0, c1: WORLD.cols, r0: 0, r1: WORLD.rows },
+		europe: { c0: 82, c1: 108, r0: 4, r1: 25 }
+	};
+	let viewId = $state<'world' | 'europe'>('world');
+	const view = $derived(VIEWS[viewId]);
+	const bounds = $derived({
+		lon0: -180 + view.c0 * WORLD.cell,
+		lon1: -180 + view.c1 * WORLD.cell,
+		top: WORLD.top - view.r0 * WORLD.cell,
+		bottom: WORLD.top - view.r1 * WORLD.cell
 	});
+	const pos = (p: { lat: number; lon: number }) => ({
+		x: ((p.lon - bounds.lon0) / (bounds.lon1 - bounds.lon0)) * 100,
+		y: ((bounds.top - p.lat) / (bounds.top - bounds.bottom)) * 100
+	});
+	const inView = (p: { lat: number; lon: number }) => {
+		const { x, y } = pos(p);
+		return x >= 0 && x <= 100 && y >= 0 && y <= 100;
+	};
 	const byId = (id: string) => places.find((p) => p.id === id);
 	const text = (p: Place) => (L.content.places as Record<string, { name: string; note: string }>)[p.id] ?? { name: p.id, note: '' };
 	const selected = $derived(byId(selectedId));
+	const visits = $derived(routes.filter((r) => selected && r.stops.includes(selected.id)));
+	const soonOnly = (id: string) => routes.filter((r) => r.stops.includes(id)).every((r) => r.upcoming);
 	const cruises = $derived(routes.filter((r) => r.kind === 'cruise').length);
 	const trips = $derived(routes.filter((r) => r.kind === 'trip').length);
 	const onlyHome = $derived(places.length <= 1 && routes.length === 0);
@@ -29,9 +48,9 @@
 				if (!a || !b) return null;
 				const pa = pos(a), pb = pos(b);
 				const bow = Math.min(18, Math.hypot(pb.x - pa.x, (pb.y - pa.y) * 2.6) * 0.22);
-				return { key: `${r.id}-${i}`, kind: r.kind, d: `M ${pa.x} ${pa.y} Q ${(pa.x + pb.x) / 2} ${(pa.y + pb.y) / 2 - bow} ${pb.x} ${pb.y}` };
+				return { key: `${r.id}-${i}`, kind: r.kind, soon: !!r.upcoming, d: `M ${pa.x} ${pa.y} Q ${(pa.x + pb.x) / 2} ${(pa.y + pb.y) / 2 - bow} ${pb.x} ${pb.y}` };
 			})
-		).filter((a): a is { key: string; kind: 'cruise' | 'trip'; d: string } => a !== null)
+		).filter((a): a is { key: string; kind: 'cruise' | 'trip'; soon: boolean; d: string } => a !== null)
 	);
 
 	// ---- the pixel world, drawn once and again whenever the size or theme changes
@@ -46,8 +65,9 @@
 	function draw() {
 		if (!canvas || !wrap) return;
 		const w = wrap.clientWidth;
-		const cell = w / WORLD.cols;
-		const h = cell * WORLD.rows;
+		const cols = view.c1 - view.c0, rows = view.r1 - view.r0;
+		const cell = w / cols;
+		const h = cell * rows;
 		const dpr = Math.min(2, devicePixelRatio || 1);
 		canvas.width = Math.round(w * dpr);
 		canvas.height = Math.round(h * dpr);
@@ -55,11 +75,11 @@
 		const ctx = canvas.getContext('2d')!;
 		ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 		ctx.clearRect(0, 0, w, h);
-		for (let r = 0; r < WORLD.rows; r++) {
+		for (let r = view.r0; r < view.r1; r++) {
 			const row = WORLD_ROWS[r];
-			for (let c = 0; c < WORLD.cols; c++) {
-				const x = Math.round(c * cell), y = Math.round(r * cell);
-				const cw = Math.round((c + 1) * cell) - x, ch = Math.round((r + 1) * cell) - y;
+			for (let c = view.c0; c < view.c1; c++) {
+				const x = Math.round((c - view.c0) * cell), y = Math.round((r - view.r0) * cell);
+				const cw = Math.round((c - view.c0 + 1) * cell) - x, ch = Math.round((r - view.r0 + 1) * cell) - y;
 				if (row[c] === '1') {
 					// a little deterministic variation, like a contribution graph
 					const n = ((Math.imul(c + 1, 73856093) ^ Math.imul(r + 1, 19349663)) >>> 0) % 7;
@@ -88,6 +108,7 @@
 	$effect(() => {
 		ui.theme;
 		ui.y2k;
+		view;
 		requestAnimationFrame(() => {
 			if (!wrap) return;
 			readColors();
@@ -104,17 +125,18 @@
 	</header>
 
 	<div class="mapbox pad">
-		<div class="world" bind:this={wrap} role="group" aria-label={L.ui.map.aria}>
+		<div class="world" bind:this={wrap} style:aspect-ratio="{view.c1 - view.c0} / {view.r1 - view.r0}" role="group" aria-label={L.ui.map.aria}>
 			<canvas bind:this={canvas} aria-hidden="true"></canvas>
 
 			<svg class="routes" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-				{#each arcs as a (a.key)}<path d={a.d} class={a.kind} />{/each}
+				{#each arcs as a (a.key)}<path d={a.d} class="{a.kind}{a.soon ? ' soon' : ''}" />{/each}
 			</svg>
 
-			{#each places as p (p.id)}
+			{#each places.filter(inView) as p (p.id)}
 				{@const xy = pos(p)}
 				<button
 					class="pin {p.kind}"
+					class:soon={soonOnly(p.id)}
 					class:on={selectedId === p.id}
 					style:left="{xy.x}%"
 					style:top="{xy.y}%"
@@ -129,10 +151,16 @@
 		</div>
 
 		<div class="side">
+			<div class="meta">
 			<div class="stats">
 				<p><b>{places.length}</b><span>{L.ui.map.places}</span></p>
 				<p><b>{cruises}</b><span>{L.ui.map.cruises}</span></p>
 				<p><b>{trips}</b><span>{L.ui.map.trips}</span></p>
+			</div>
+
+			<div class="views" role="group" aria-label={L.ui.map.view}>
+				<button class="chip" aria-pressed={viewId === 'world'} onclick={() => (viewId = 'world')}>{L.ui.map.viewWorld}</button>
+				<button class="chip" aria-pressed={viewId === 'europe'} onclick={() => (viewId = 'europe')}>{L.ui.map.viewEurope}</button>
 			</div>
 
 			<ul class="legend" aria-label="Legend">
@@ -140,12 +168,19 @@
 				<li class="cruise"><i></i>{L.ui.map.legend.cruise}</li>
 				<li class="trip"><i></i>{L.ui.map.legend.trip}</li>
 			</ul>
+			</div>
 
 			<div class="card" aria-live="polite">
 				{#if selected}
 					<p class="kind {selected.kind}">{L.ui.map.legend[selected.kind]}{selected.year ? ` · ${selected.year}` : ''}</p>
 					<h3>{text(selected).name}</h3>
 					{#if text(selected).note}<p>{text(selected).note}</p>{/if}
+					{#if visits.length}
+						<p class="visits">{L.ui.map.visits}:</p>
+						<ul class="trips">
+							{#each visits as v (v.id)}<li>{v.name}{v.year ? ` · ${v.year}` : ''}{#if v.upcoming} <b class="soonb">{L.ui.map.soon}</b>{/if}</li>{/each}
+						</ul>
+					{/if}
 				{:else}
 					<p>{L.ui.map.pick}</p>
 				{/if}
@@ -186,8 +221,8 @@
 	}
 	.mapbox {
 		display: grid;
-		grid-template-columns: minmax(0, 1fr) 280px;
-		gap: 28px;
+		grid-template-columns: minmax(0, 1fr);
+		gap: 24px;
 		padding-block: 8px 56px;
 		align-items: start;
 	}
@@ -197,7 +232,6 @@
 		border-radius: var(--radius);
 		background: var(--bg-soft);
 		overflow: hidden;
-		aspect-ratio: 180 / 70;
 	}
 	canvas {
 		display: block;
@@ -220,6 +254,38 @@
 	.routes .cruise {
 		stroke: var(--pin-cruise);
 	}
+	.routes .soon {
+		opacity: 0.55;
+	}
+	.pin.on,
+	.pin:hover {
+		z-index: 3;
+	}
+	.pin.soon i {
+		opacity: 0.6;
+		border-style: dashed;
+	}
+	.trips {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: grid;
+		gap: 2px;
+		font: 13px var(--font-mono);
+	}
+	.visits {
+		margin: 8px 0 2px;
+		font: 11.5px var(--font-mono);
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--ink-3);
+	}
+	.soonb {
+		margin-left: 6px;
+		font-size: 11px;
+		color: var(--pink);
+		text-transform: uppercase;
+	}
 	.routes .trip {
 		stroke: var(--pin-trip);
 	}
@@ -231,19 +297,19 @@
 	.pin {
 		all: unset;
 		position: absolute;
-		width: 26px;
-		height: 26px;
-		margin: -13px 0 0 -13px;
+		width: 20px;
+		height: 20px;
+		margin: -10px 0 0 -10px;
 		cursor: pointer;
 		display: grid;
 		place-items: center;
 		z-index: 1;
 	}
 	.pin i {
-		width: 12px;
-		height: 12px;
+		width: 8px;
+		height: 8px;
 		background: var(--pin);
-		border: 2px solid var(--ink);
+		border: 1.5px solid var(--ink);
 		box-shadow: 2px 2px 0 rgb(0 0 0 / 0.25);
 		transition: transform 0.12s steps(2);
 	}
@@ -302,7 +368,16 @@
 
 	.side {
 		display: grid;
+		grid-template-columns: 280px minmax(0, 1fr);
+		gap: 18px 28px;
+		align-items: start;
+	}
+	.meta {
+		display: grid;
 		gap: 18px;
+	}
+	.list {
+		grid-column: 1 / -1;
 	}
 	.stats {
 		display: grid;
@@ -393,6 +468,10 @@
 		font: 12.5px var(--font-mono);
 		color: var(--ink-3);
 	}
+	.views {
+		display: flex;
+		gap: 6px;
+	}
 	.list {
 		list-style: none;
 		margin: 0;
@@ -402,7 +481,7 @@
 		gap: 6px;
 	}
 	@media (max-width: 1000px) {
-		.mapbox {
+		.side {
 			grid-template-columns: minmax(0, 1fr);
 		}
 	}

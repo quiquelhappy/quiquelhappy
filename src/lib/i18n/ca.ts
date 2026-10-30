@@ -415,7 +415,12 @@ export const ca: Messages = {
 				"empty": "De moment, només la base. La resta de xinxetes estan en camí.",
 				"pick": "Selecciona una xinxeta per llegir la història.",
 				"aria": "Mapa del món amb els llocs que he visitat",
-				"list": "Llocs"
+				"list": "Llocs",
+			"visits": "Visitat a",
+			"soon": "Properament",
+			"view": "Vista del mapa",
+			"viewWorld": "Món",
+			"viewEurope": "Europa"
 			},
 			"pfooter": {
 				"text": "Gràcies per passar-hi.",
@@ -1166,7 +1171,227 @@ export const ca: Messages = {
 				"barcelona": {
 					"name": "Barcelona",
 					"note": "La base. On comença i acaba cada viatge."
-				}
+				},
+			"stockholm": {
+				"name": "Estocolm",
+				"note": ""
+			},
+			"lisbon": {
+				"name": "Lisboa",
+				"note": ""
+			},
+			"vigo": {
+				"name": "Vigo",
+				"note": ""
+			},
+			"valencia": {
+				"name": "València",
+				"note": ""
+			},
+			"harwich": {
+				"name": "Harwich",
+				"note": ""
+			},
+			"copenhagen": {
+				"name": "Copenhaguen",
+				"note": ""
+			},
+			"warnemunde": {
+				"name": "Warnemünde",
+				"note": ""
+			},
+			"paris": {
+				"name": "París",
+				"note": ""
+			},
+			"bergen": {
+				"name": "Bergen",
+				"note": ""
+			},
+			"amsterdam": {
+				"name": "Amsterdam",
+				"note": ""
+			},
+			"bremerhaven": {
+				"name": "Bremerhaven",
+				"note": ""
+			},
+			"stavanger": {
+				"name": "Stavanger",
+				"note": ""
+			},
+			"olden": {
+				"name": "Olden",
+				"note": ""
+			},
+			"andalsnes": {
+				"name": "Åndalsnes",
+				"note": ""
+			},
+			"geiranger": {
+				"name": "Geiranger",
+				"note": ""
+			},
+			"kiel": {
+				"name": "Kiel",
+				"note": ""
+			},
+			"trondheim": {
+				"name": "Trondheim",
+				"note": ""
+			},
+			"leknes": {
+				"name": "Leknes",
+				"note": ""
+			},
+			"tromso": {
+				"name": "Tromsø",
+				"note": ""
+			},
+			"honningsvag": {
+				"name": "Honningsvåg",
+				"note": ""
+			},
+			"alesund": {
+				"name": "Ålesund",
+				"note": ""
+			},
+			"hamburg": {
+				"name": "Hamburg",
+				"note": ""
+			},
+			"ancona": {
+				"name": "Ancona",
+				"note": ""
+			},
+			"santorini": {
+				"name": "Santorini (Fira)",
+				"note": ""
+			},
+			"kotor": {
+				"name": "Kotor",
+				"note": ""
+			},
+			"mykonos": {
+				"name": "Míkonos",
+				"note": ""
+			},
+			"venice": {
+				"name": "Venècia",
+				"note": ""
+			},
+			"piraeus": {
+				"name": "El Pireu (Atenes)",
+				"note": ""
+			},
+			"ephesus": {
+				"name": "Efes",
+				"note": ""
+			},
+			"dubrovnik": {
+				"name": "Dubrovnik",
+				"note": ""
+			},
+			"split": {
+				"name": "Split",
+				"note": ""
+			},
+			"tunis": {
+				"name": "Tunis",
+				"note": ""
+			},
+			"rome": {
+				"name": "Roma",
+				"note": ""
+			},
+			"izmir": {
+				"name": "Esmirna",
+				"note": ""
+			},
+			"istanbul": {
+				"name": "Istanbul",
+				"note": ""
+			},
+			"naples": {
+				"name": "Nàpols",
+				"note": ""
+			},
+			"livorno": {
+				"name": "Livorn (Florència)",
+				"note": ""
+			},
+			"toulon": {
+				"name": "Tolon",
+				"note": ""
+			},
+			"monaco": {
+				"name": "Mònaco",
+				"note": ""
+			},
+			"ajaccio": {
+				"name": "Ajaccio",
+				"note": ""
+			},
+			"bari": {
+				"name": "Bari",
+				"note": ""
+			},
+			"corfu": {
+				"name": "Corfú",
+				"note": ""
+			},
+			"palermo": {
+				"name": "Palerm",
+				"note": ""
+			},
+			"marseille": {
+				"name": "Marsella",
+				"note": ""
+			},
+			"genoa": {
+				"name": "Gènova",
+				"note": ""
+			},
+			"messina": {
+				"name": "Messina",
+				"note": ""
+			},
+			"valletta": {
+				"name": "La Valletta",
+				"note": ""
+			},
+			"granada": {
+				"name": "Granada",
+				"note": ""
+			},
+			"cadiz": {
+				"name": "Cadis",
+				"note": ""
+			},
+			"fuengirola": {
+				"name": "Fuengirola",
+				"note": ""
+			},
+			"cartagena": {
+				"name": "Cartagena",
+				"note": ""
+			},
+			"funchal": {
+				"name": "Funchal (Madeira)",
+				"note": ""
+			},
+			"san-juan": {
+				"name": "San Juan",
+				"note": ""
+			},
+			"port-canaveral": {
+				"name": "Port Canaveral",
+				"note": ""
+			},
+			"orlando": {
+				"name": "Orlàndo",
+				"note": ""
+			}
 			}
 	}
 };

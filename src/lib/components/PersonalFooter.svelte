@@ -55,6 +55,14 @@
 		color: var(--ink-2);
 		text-underline-offset: 3px;
 	}
+	.btn {
+		max-width: 100%;
+		height: auto;
+		min-height: 40px;
+		padding-block: 8px;
+		white-space: normal;
+		text-align: left;
+	}
 	.btn b {
 		font-weight: 700;
 	}
