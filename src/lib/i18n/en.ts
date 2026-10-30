@@ -212,7 +212,7 @@ export const en = {
 			toastDial: 'Dialing... *screeeeeeee-kshhhhh*'
 		},
 		footer: {
-			made: 'Made near Barcelona with Svelte 5, an unreasonable amount of coffee and a blue merle Aussie called Gandalf.',
+			made: 'Made near Barcelona with an unreasonable amount of coffee and a blue merle Aussie called Gandalf.',
 			elsewhere: 'Elsewhere',
 			coffee: 'Buy me a coffee'
 		},

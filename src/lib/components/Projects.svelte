@@ -103,7 +103,9 @@
 		background-position: 12px 12px;
 	}
 	.panel {
-		height: 100%;
+		/* runs 12px past the right and bottom edges (the preview clips it), so the hover slide never uncovers the grid behind */
+		height: calc(100% + 12px);
+		margin-right: -12px;
 		background: var(--bg);
 		border: 1px solid var(--line);
 		border-right: 0;

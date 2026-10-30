@@ -214,7 +214,7 @@ export const fr: Messages = {
 			toastDial: 'Connexion... *screeeeeeee-kshhhhh*'
 		},
 		footer: {
-			made: "Fait près de Barcelone avec Svelte 5, une quantité déraisonnable de café et un berger australien blue merle nommé Gandalf.",
+			made: "Fait près de Barcelone avec une quantité déraisonnable de café et un berger australien blue merle nommé Gandalf.",
 			elsewhere: 'Ailleurs',
 			coffee: 'Offrez-moi un café'
 		},

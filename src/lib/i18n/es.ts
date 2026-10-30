@@ -214,7 +214,7 @@ export const es: Messages = {
 			toastDial: 'Marcando... *screeeeeeee-kshhhhh*'
 		},
 		footer: {
-			made: 'Hecho cerca de Barcelona con Svelte 5, una cantidad irrazonable de café y un pastor australiano blue merle llamado Gandalf.',
+			made: 'Hecho cerca de Barcelona con una cantidad irrazonable de café y un pastor australiano blue merle llamado Gandalf.',
 			elsewhere: 'En otros sitios',
 			coffee: 'Invítame a un café'
 		},

@@ -214,7 +214,7 @@ export const de: Messages = {
 			toastDial: 'Wähle... *screeeeeeee-kshhhhh*'
 		},
 		footer: {
-			made: 'Gebaut in der Nähe von Barcelona mit Svelte 5, einer unvernünftigen Menge Kaffee und einem Blue-Merle-Australian-Shepherd namens Gandalf.',
+			made: 'Gebaut in der Nähe von Barcelona mit einer unvernünftigen Menge Kaffee und einem Blue-Merle-Australian-Shepherd namens Gandalf.',
 			elsewhere: 'Anderswo',
 			coffee: 'Spendier mir einen Kaffee'
 		},
