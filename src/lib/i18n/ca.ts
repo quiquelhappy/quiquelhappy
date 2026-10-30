@@ -333,7 +333,8 @@ export const ca: Messages = {
 				"me": "Jo",
 				"loves": "M’agrada",
 				"skin": "Skin",
-				"map": "Mapa"
+				"map": "Mapa",
+			"space": "Espai"
 			},
 			"personal": {
 				"meta": {
@@ -427,6 +428,49 @@ export const ca: Messages = {
 				"hire": "Vols contractar-me?",
 				"hireCta": "Visita la pàgina pro",
 				"home": "Tornar a l’inici"
+			},
+			"space": {
+				"eyebrow": "Espai",
+				"h2a": "Miro cap amunt",
+				"h2b": "moltíssim.",
+				"lede": "Astronomia, exploració espacial i l'escala que ens fa sentir petits. Si hi ha un llançament, un eclipsi o un cel net, probablement ho estic mirant.",
+				"sceneAria": "El Pàl·lid Punt Blau: la Terra com un diminut punt en un raig de sol",
+				"dotAria": "La Terra, el pàl·lid punt blau",
+				"here": "Ets aquí",
+				"hint": "Troba el punt",
+				"found": "Aquest som nosaltres",
+				"paleEyebrow": "Pàl·lid Punt Blau",
+				"quote": "Mira de nou aquest punt. És aquí. És casa nostra. Som nosaltres.",
+				"by": "Carl Sagan",
+				"caption": "El 14 de febrer de 1990, la Voyager 1 va girar la càmera des d'uns 6.000 milions de quilòmetres. La Terra ocupa menys d'un píxel, atrapada en un raig de llum solar dispersa. És la meva foto preferida de la història.",
+				"voyager": "La Voyager 1 és ara a",
+				"voyagerSub": "del Sol, i continua a uns 17 km/s. És una estimació, però ajustada.",
+				"light": "La llum triga",
+				"lightSub": "a viatjar del Sol a la Voyager 1. Superarà el dia llum el novembre de 2026.",
+				"moon": "La Lluna aquesta nit",
+				"lit": "il·luminada",
+				"phases": [
+					"Lluna nova",
+					"Creixent",
+					"Quart creixent",
+					"Gibosa creixent",
+					"Lluna plena",
+					"Gibosa minvant",
+					"Quart minvant",
+					"Minvant"
+				],
+				"tagsAria": "El que m'agrada de l'espai",
+				"tags": [
+					"Cosmos",
+					"Apol·lo",
+					"Voyager",
+					"Hubble i JWST",
+					"Rovers de Mart",
+					"Eclipsis",
+					"Pluges d'estels",
+					"Cels foscos",
+					"Dies de llançament"
+				]
 			}
 	},
 	content: {

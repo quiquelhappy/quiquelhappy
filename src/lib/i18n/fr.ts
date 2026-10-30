@@ -333,7 +333,8 @@ export const fr: Messages = {
 				"me": "Moi",
 				"loves": "J'aime",
 				"skin": "Skin",
-				"map": "Carte"
+				"map": "Carte",
+			"space": "Espace"
 			},
 			"personal": {
 				"meta": {
@@ -427,6 +428,49 @@ export const fr: Messages = {
 				"hire": "Vous voulez m’embaucher ?",
 				"hireCta": "Visiter la page pro",
 				"home": "Retour à l'accueil"
+			},
+			"space": {
+				"eyebrow": "Espace",
+				"h2a": "Je regarde en l'air",
+				"h2b": "beaucoup.",
+				"lede": "Astronomie, conquête spatiale et cette échelle qui rend humble. S'il y a un lancement, une éclipse ou un ciel dégagé, je suis probablement en train de regarder.",
+				"sceneAria": "Le Pale Blue Dot : la Terre, minuscule point dans un rayon de soleil",
+				"dotAria": "La Terre, le pâle point bleu",
+				"here": "Vous êtes ici",
+				"hint": "Trouve le point",
+				"found": "C'est nous",
+				"paleEyebrow": "Pâle point bleu",
+				"quote": "Regardez encore ce point. C'est ici. C'est chez nous. C'est nous.",
+				"by": "Carl Sagan",
+				"caption": "Le 14 février 1990, Voyager 1 a retourné sa caméra depuis environ 6 milliards de kilomètres. La Terre fait moins d'un pixel, prise dans un rayon de lumière solaire diffusée. C'est ma photo préférée de tous les temps.",
+				"voyager": "Voyager 1 est maintenant à",
+				"voyagerSub": "du Soleil, et file toujours à environ 17 km/s. Une estimation, mais proche.",
+				"light": "La lumière met",
+				"lightSub": "pour aller du Soleil à Voyager 1. Elle passera le jour-lumière en novembre 2026.",
+				"moon": "La Lune ce soir",
+				"lit": "éclairée",
+				"phases": [
+					"Nouvelle lune",
+					"Premier croissant",
+					"Premier quartier",
+					"Gibbeuse croissante",
+					"Pleine lune",
+					"Gibbeuse décroissante",
+					"Dernier quartier",
+					"Dernier croissant"
+				],
+				"tagsAria": "Ce que j'aime dans l'espace",
+				"tags": [
+					"Cosmos",
+					"Apollo",
+					"Voyager",
+					"Hubble et JWST",
+					"Rovers martiens",
+					"Éclipses",
+					"Pluies d'étoiles",
+					"Ciels noirs",
+					"Jours de lancement"
+				]
 			}
 	},
 	content: {

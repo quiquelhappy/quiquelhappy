@@ -3,6 +3,7 @@
 	import PersonalHero from '#lib/components/PersonalHero.svelte';
 	import Photos from '#lib/components/Photos.svelte';
 	import Loves from '#lib/components/Loves.svelte';
+	import Space from '#lib/components/Space.svelte';
 	import SkinViewer from '#lib/components/SkinViewer.svelte';
 	import TravelMap from '#lib/components/TravelMap.svelte';
 	import PersonalFooter from '#lib/components/PersonalFooter.svelte';
@@ -21,6 +22,7 @@
 	<PersonalHero />
 	<Photos />
 	<Loves />
+	<Space />
 	<SkinViewer />
 	<TravelMap />
 	<PersonalFooter />

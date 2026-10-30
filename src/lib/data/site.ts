@@ -6,7 +6,7 @@ export const COFFEE = 'https://www.buymeacoffee.com/happy';
 export const nav = [{ id: 'top' }, { id: 'about' }, { id: 'experience' }, { id: 'projects' }, { id: 'hire' }] as const;
 
 /** Sections of the personal page. Labels come from the dictionary (ui.pnav). */
-export const pnav = [{ id: 'top' }, { id: 'me' }, { id: 'loves' }, { id: 'skin' }, { id: 'map' }] as const;
+export const pnav = [{ id: 'top' }, { id: 'me' }, { id: 'loves' }, { id: 'space' }, { id: 'skin' }, { id: 'map' }] as const;
 
 /** Coding since April 26th, 2010. ChatGPT launched on November 30th, 2022. */
 export const CODING_SINCE = new Date(2010, 3, 26);

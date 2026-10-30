@@ -333,7 +333,8 @@ export const de: Messages = {
 				"me": "Ich",
 				"loves": "Mag ich",
 				"skin": "Skin",
-				"map": "Karte"
+				"map": "Karte",
+			"space": "Weltraum"
 			},
 			"personal": {
 				"meta": {
@@ -427,6 +428,49 @@ export const de: Messages = {
 				"hire": "Willst du mich engagieren?",
 				"hireCta": "Zur Pro-Seite",
 				"home": "Zurück zum Start"
+			},
+			"space": {
+				"eyebrow": "Weltraum",
+				"h2a": "Ich schaue",
+				"h2b": "oft nach oben.",
+				"lede": "Astronomie, Raumfahrt und diese demütig machende Größenordnung. Bei einem Raketenstart, einer Finsternis oder klarem Nachthimmel schaue ich wahrscheinlich zu.",
+				"sceneAria": "Der Blassblaue Punkt: die Erde als winziger Fleck in einem Sonnenstrahl",
+				"dotAria": "Die Erde, der blassblaue Punkt",
+				"here": "Du bist hier",
+				"hint": "Finde den Punkt",
+				"found": "Das sind wir",
+				"paleEyebrow": "Blassblauer Punkt",
+				"quote": "Schau noch einmal auf diesen Punkt. Das ist hier. Das ist unser Zuhause. Das sind wir.",
+				"by": "Carl Sagan",
+				"caption": "Am 14. Februar 1990 drehte Voyager 1 ihre Kamera um, aus rund 6 Milliarden Kilometern Entfernung. Die Erde ist kleiner als ein Pixel, gefangen in einem Strahl gestreuten Sonnenlichts. Mein liebstes Foto aller Zeiten.",
+				"voyager": "Voyager 1 ist jetzt",
+				"voyagerSub": "von der Sonne entfernt und fliegt mit etwa 17 km/s weiter. Eine Schätzung, aber nah dran.",
+				"light": "Das Licht braucht",
+				"lightSub": "von der Sonne bis Voyager 1. Im November 2026 überschreitet sie einen Lichttag.",
+				"moon": "Der Mond heute Nacht",
+				"lit": "beleuchtet",
+				"phases": [
+					"Neumond",
+					"Zunehmende Sichel",
+					"Erstes Viertel",
+					"Zunehmender Mond",
+					"Vollmond",
+					"Abnehmender Mond",
+					"Letztes Viertel",
+					"Abnehmende Sichel"
+				],
+				"tagsAria": "Was ich am Weltraum liebe",
+				"tags": [
+					"Cosmos",
+					"Apollo",
+					"Voyager",
+					"Hubble und JWST",
+					"Mars-Rover",
+					"Finsternisse",
+					"Sternschnuppen",
+					"Dunkle Himmel",
+					"Starttage"
+				]
 			}
 	},
 	content: {

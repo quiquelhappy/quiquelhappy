@@ -333,7 +333,8 @@ export const es: Messages = {
 				"me": "Yo",
 				"loves": "Me gusta",
 				"skin": "Skin",
-				"map": "Mapa"
+				"map": "Mapa",
+			"space": "Espacio"
 			},
 			"personal": {
 				"meta": {
@@ -427,6 +428,49 @@ export const es: Messages = {
 				"hire": "¿Quieres contratarme?",
 				"hireCta": "Visita la página pro",
 				"home": "Volver al inicio"
+			},
+			"space": {
+				"eyebrow": "Espacio",
+				"h2a": "Miro hacia arriba",
+				"h2b": "muchísimo.",
+				"lede": "Astronomía, exploración espacial y la escala que nos deja pequeños. Si hay un lanzamiento, un eclipse o un cielo despejado, probablemente lo estoy mirando.",
+				"sceneAria": "El Pálido Punto Azul: la Tierra como un diminuto punto en un rayo de sol",
+				"dotAria": "La Tierra, el pálido punto azul",
+				"here": "Estás aquí",
+				"hint": "Encuentra el punto",
+				"found": "Ese somos nosotros",
+				"paleEyebrow": "Pálido Punto Azul",
+				"quote": "Mira de nuevo ese punto. Es aquí. Es nuestro hogar. Somos nosotros.",
+				"by": "Carl Sagan",
+				"caption": "El 14 de febrero de 1990, la Voyager 1 giró su cámara desde unos 6.000 millones de kilómetros. La Tierra ocupa menos de un píxel, atrapada en un rayo de luz solar dispersa. Es mi foto favorita de la historia.",
+				"voyager": "La Voyager 1 está ahora a",
+				"voyagerSub": "del Sol, y sigue a unos 17 km/s. Es una estimación, pero cercana.",
+				"light": "La luz tarda",
+				"lightSub": "en viajar del Sol a la Voyager 1. Superará el día luz en noviembre de 2026.",
+				"moon": "La Luna esta noche",
+				"lit": "iluminada",
+				"phases": [
+					"Luna nueva",
+					"Creciente",
+					"Cuarto creciente",
+					"Gibosa creciente",
+					"Luna llena",
+					"Gibosa menguante",
+					"Cuarto menguante",
+					"Menguante"
+				],
+				"tagsAria": "Lo que me gusta del espacio",
+				"tags": [
+					"Cosmos",
+					"Apolo",
+					"Voyager",
+					"Hubble y JWST",
+					"Rovers de Marte",
+					"Eclipses",
+					"Lluvias de estrellas",
+					"Cielos oscuros",
+					"Días de lanzamiento"
+				]
 			}
 	},
 	content: {

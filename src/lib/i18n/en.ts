@@ -331,7 +331,8 @@ export const en = {
 				"me": "Me",
 				"loves": "Loves",
 				"skin": "Skin",
-				"map": "Map"
+				"map": "Map",
+			"space": "Space"
 			},
 			"personal": {
 				"meta": {
@@ -425,6 +426,49 @@ export const en = {
 				"hire": "Looking to hire me?",
 				"hireCta": "Visit the pro page",
 				"home": "Back to the launcher"
+			},
+			"space": {
+				"eyebrow": "Space",
+				"h2a": "I look up",
+				"h2b": "a lot.",
+				"lede": "Astronomy, spaceflight and the humbling scale of everything. If there is a launch, an eclipse or a clear night sky, I am probably watching.",
+				"sceneAria": "The Pale Blue Dot: Earth as a tiny speck in a ray of sunlight",
+				"dotAria": "Earth, the pale blue dot",
+				"here": "You are here",
+				"hint": "Find the dot",
+				"found": "That is us",
+				"paleEyebrow": "Pale Blue Dot",
+				"quote": "Look again at that dot. That's here. That's home. That's us.",
+				"by": "Carl Sagan",
+				"caption": "Voyager 1 turned its camera around on 14 February 1990, from about 6 billion kilometres away. Earth is less than one pixel, caught in a ray of scattered sunlight. It is my favourite picture ever taken.",
+				"voyager": "Voyager 1 is now",
+				"voyagerSub": "from the Sun, still going at about 17 km/s. An estimate, but close.",
+				"light": "Light needs",
+				"lightSub": "to travel from the Sun to Voyager 1. It will pass one light-day in November 2026.",
+				"moon": "The Moon tonight",
+				"lit": "lit",
+				"phases": [
+					"New moon",
+					"Waxing crescent",
+					"First quarter",
+					"Waxing gibbous",
+					"Full moon",
+					"Waning gibbous",
+					"Last quarter",
+					"Waning crescent"
+				],
+				"tagsAria": "Things I love about space",
+				"tags": [
+					"Cosmos",
+					"Apollo",
+					"Voyager",
+					"Hubble and JWST",
+					"Mars rovers",
+					"Eclipses",
+					"Meteor showers",
+					"Dark skies",
+					"Launch days"
+				]
 			}
 	},
 	content: {
