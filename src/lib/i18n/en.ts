@@ -242,7 +242,10 @@ export const en = {
 			sudo1: '[sudo] password for recruiter: ********',
 			sudo2: 'Access granted. Opening the hire section...',
 			language: 'Switch language',
-			"graveyard": "The graveyard"
+			"graveyard": "The graveyard",
+			"goPersonal": "Go to the personal side",
+			"goPro": "Go to the pro side",
+			"goHome": "Back to the launcher"
 		},
 		mosaic: {
 			t12: '12 blocks pinned. Is that a contribution graph or a Picasso?',
@@ -296,6 +299,127 @@ export const en = {
 				"noYear": "year lost to history",
 				"hint": "Click a tombstone to dig up the details.",
 				"aria": "Abandoned projects"
+			},
+			"modes": {
+				"personal": "Personal",
+				"pro": "Pro",
+				"home": "Home",
+				"switch": "Switch version"
+			},
+			"launcher": {
+				"meta": {
+					"title": "Quique Osuna",
+					"description": "Pick a door: the personal side (games, travel, a very good dog) or the pro side (experience, projects, hiring).",
+					"og": "Two versions of one site: the personal side and the pro side."
+				},
+				"eyebrow": "Welcome",
+				"h1a": "Hi, I'm Quique.",
+				"h1b": "Pick a door.",
+				"lede": "This site comes in two versions, depending on why you came.",
+				"personalTitle": "Personal",
+				"personalText": "Games, trips, a very good dog and the occasional bee. The human behind the code.",
+				"personalCta": "Come hang out",
+				"proTitle": "Pro",
+				"proText": "Experience, projects and a hire button. The engineer, and what I can build for you.",
+				"proCta": "Let's talk work",
+				"last": "last time",
+				"hint": "press 1 or 2, or use the arrow keys",
+				"switchHint": "You can switch any time."
+			},
+			"pnav": {
+				"top": "Hello",
+				"me": "Me",
+				"loves": "Loves",
+				"skin": "Skin",
+				"map": "Map"
+			},
+			"personal": {
+				"meta": {
+					"title": "Quique Osuna | The personal side",
+					"description": "Games, travel, cruises, bricks and a blue merle Aussie. The human behind the code, near Barcelona.",
+					"og": "The personal side of Quique: games, travel and a very good dog."
+				},
+				"eyebrow": "Personal",
+				"h1a": "Hey, I'm Quique.",
+				"h1b": "The human behind the code.",
+				"lede": "Off the clock I'm Happy: I play too many games, collect cruises and countries, build things out of bricks and share the couch with a blue merle Aussie called Gandalf. I live near Barcelona, and I started coding at nine and never really stopped.",
+				"facts": [
+					"Near Barcelona",
+					"Gamer",
+					"Cruise lover",
+					"Brick builder",
+					"Dog person"
+				],
+				"ctaPics": "See the pics",
+				"ctaMap": "Jump to the map",
+				"proLinkA": "Looking for the professional side?",
+				"proLink": "Visit the pro page",
+				"heroAlt": "Quique on a cruise ship at sunset"
+			},
+			"me": {
+				"eyebrow": "Pics of me",
+				"h2a": "The person",
+				"h2b": "behind the keyboard.",
+				"lede": "A few photos, mostly on holiday, because that is when I leave the keyboard.",
+				"open": "Open photo",
+				"close": "Close"
+			},
+			"loves": {
+				"eyebrow": "Things I love",
+				"h2a": "Games and gadgets",
+				"h2b": "that shaped me.",
+				"lede": "The things I would take to a desert island, if the island had a power socket."
+			},
+			"skin": {
+				"eyebrow": "Minecraft",
+				"h2a": "This is my skin.",
+				"h2b": "Go on, poke it.",
+				"lede": "I have spent more hours in Minecraft than I would like to admit, and I even ran a vanilla server for a community. Here is my skin in 3D: drag to rotate, or make it walk.",
+				"anims": {
+					"idle": "Idle",
+					"walk": "Walk",
+					"run": "Run",
+					"fly": "Fly",
+					"wave": "Wave",
+					"crouch": "Crouch",
+					"hit": "Hit",
+					"swim": "Swim"
+				},
+				"animLabel": "Animation",
+				"speed": "Speed",
+				"rotate": "Auto-rotate",
+				"pause": "Pause",
+				"play": "Play",
+				"reset": "Reset view",
+				"download": "Steal my skin",
+				"hint": "drag to rotate",
+				"loading": "Loading the 3D viewer...",
+				"fail": "The 3D viewer could not start on this device.",
+				"aria": "3D viewer of my Minecraft skin"
+			},
+			"map": {
+				"eyebrow": "Travel",
+				"h2a": "Places I have been",
+				"h2b": "and places I am going.",
+				"lede": "Cruises, trips and everywhere in between. This map fills up as I do.",
+				"legend": {
+					"home": "Home",
+					"cruise": "Cruise",
+					"trip": "Trip"
+				},
+				"places": "places",
+				"cruises": "cruises",
+				"trips": "trips",
+				"empty": "Home base for now. The rest of the pins are on their way.",
+				"pick": "Select a pin to read the story.",
+				"aria": "World map with the places I have visited",
+				"list": "Places"
+			},
+			"pfooter": {
+				"text": "Thanks for stopping by.",
+				"hire": "Looking to hire me?",
+				"hireCta": "Visit the pro page",
+				"home": "Back to the launcher"
 			}
 	},
 	content: {
@@ -423,6 +547,26 @@ export const en = {
 				"I buried a bone here once. Do not tell the projects.",
 				"Every good developer has a graveyard. Quique's has a very good boy guarding it.",
 				"Do not wake them. The last one is still compiling."
+			],
+			"launcher": [
+				"Two doors. Door number one has the dog. Door number two has the CV.",
+				"Pick wisely. Or pick both. Doors are free."
+			],
+			"me": [
+				"That is Quique on a boat. I do not do boats. Too much sea, not enough couch.",
+				"Look at him smiling. I took none of these photos. I was napping."
+			],
+			"loves": [
+				"Sackboy and I have the same energy: soft, knitted, unstoppable.",
+				"I would be great at Crash. A spin attack is just zoomies with a license."
+			],
+			"skin": [
+				"Make the skin run. That is how I run when I hear the word walk.",
+				"Everything in Minecraft is made of squares. Same as me, if you squint."
+			],
+			"map": [
+				"Cruises have buffets. Do I get a plate? Asking for a friend.",
+				"Quique travels a lot. I wait by the door. It is a whole thing."
 			]
 },
 	"clickLines": [
@@ -1150,7 +1294,53 @@ export const en = {
 				"Is this a game? I like this game.",
 				"More boops. More boops.",
 				"Ten more clicks for another treat. I am keeping count."
-			]
+			],
+			"photos": {
+				"cruise": {
+					"caption": "Golden hour, on a cruise",
+					"alt": "Quique standing on a cruise ship deck at sunset"
+				},
+				"sister": {
+					"caption": "With my sister, caught in a mirror",
+					"alt": "Quique and his sister reflected in a round mirror in a sunny courtyard"
+				},
+				"gf": {
+					"caption": "A walk with my girlfriend, chasing the sunset",
+					"alt": "Quique and his girlfriend smiling on a hillside walk at sunset"
+				},
+				"bee": {
+					"caption": "Not me: a bee on my lavender",
+					"alt": "A bumblebee on lavender flowers in the garden"
+				}
+			},
+			"loves": {
+				"sackboy": {
+					"name": "LittleBigPlanet",
+					"tag": "Play. Create. Share.",
+					"text": "Sackboy proved that a game can be a toolbox. Building levels and sharing them was half the fun, and probably where my \"I will just build it myself\" habit started."
+				},
+				"tomb": {
+					"name": "Tomb Raider",
+					"tag": "Lara, in glorious low-poly",
+					"text": "Ruins, puzzles and an astonishing amount of patience. The original Lara still looks like a handful of triangles and still feels like an adventure."
+				},
+				"mindstorms": {
+					"name": "LEGO Mindstorms",
+					"tag": "Where the robots started",
+					"text": "A brick that could drive and a sensor that could see. Long before the robotics degree, and before an AGV with its own radar, there was a LEGO robot on my floor."
+				},
+				"crash": {
+					"name": "Crash Bandicoot",
+					"tag": "Spin, jump, repeat",
+					"text": "Pure 90s joy and rage in equal parts. Still the best argument that a spin attack solves most problems."
+				}
+			},
+			"places": {
+				"barcelona": {
+					"name": "Barcelona",
+					"note": "Home base. Where every trip starts and ends."
+				}
+			}
 }
 };
 

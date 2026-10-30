@@ -4,8 +4,8 @@
 	import { onMount, untrack } from 'svelte';
 	import { goto } from '$app/navigation';
 	import { ui } from '#lib/state/ui.svelte.ts';
-	import { DEFAULT_LANG, detectLang, isLang, langPath } from '#lib/i18n/locales.ts';
-	import { L } from '#lib/i18n/index.svelte.ts';
+	import { page } from '$app/state';
+	import { DEFAULT_LANG, detectLang, isLang, langPath, splitPath } from '#lib/i18n/locales.ts';
 	import Mascot from '#lib/components/Mascot.svelte';
 	import Toasts from '#lib/components/Toasts.svelte';
 	import Confetti from '#lib/components/Confetti.svelte';
@@ -26,10 +26,10 @@
 		if (data.explicit) {
 			ui.rememberLang(data.lang);
 		} else {
-			// plain "/": follow the saved choice, else the browser language
+			// no language in the URL: follow the saved choice, else the browser language, and keep the page (/pro, /personal)
 			const saved = ui.savedLang();
 			const pref = isLang(saved) ? saved : detectLang(navigator.languages ?? [navigator.language]);
-			if (pref !== DEFAULT_LANG) goto(langPath(pref) + location.hash, { replace: true, reset: false });
+			if (pref !== DEFAULT_LANG) goto(langPath(pref, splitPath(page.url.pathname).rest) + location.hash, { replace: true, reset: false });
 		}
 	});
 	$effect(() => {
@@ -42,10 +42,6 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<title>{L.ui.meta.title}</title>
-	<meta name="description" content={L.ui.meta.description} />
-	<meta property="og:title" content={L.ui.meta.title} />
-	<meta property="og:description" content={L.ui.meta.og} />
 	<meta property="og:locale" content={ui.lang} />
 	<meta property="og:type" content="website" />
 	<meta name="twitter:card" content="summary" />

@@ -3,6 +3,7 @@
 	import { ui } from '#lib/state/ui.svelte.ts';
 	import { L } from '#lib/i18n/index.svelte.ts';
 	import { toRects, type Rect } from '#lib/pixel.ts';
+	import { GANDALF_ART, GANDALF_COLORS, GANDALF_EYE, GANDALF_TONGUE, GANDALF_SPARK } from '#lib/gandalf.ts';
 	import PixelSprite from './PixelSprite.svelte';
 
 	type Corner = 'bl' | 'br' | 'tr' | 'tl';
@@ -12,41 +13,11 @@
 	const RING: Corner[] = ['bl', 'br', 'tr', 'tl'];
 	const XY: Record<Corner, [number, number]> = { bl: [0, 1], br: [1, 1], tr: [1, 0], tl: [0, 0] };
 
-	// 24x24 blue merle Australian Shepherd, adult proportions, sitting.
-	// o outline, B merle, M darker merle patch, D speckle, W white, S paw shade, T tan, N nose.
-	// Eyes, mouth and tail are drawn dynamically.
-	const ART = [
-		'........................',
-		'....oo............oo....',
-		'...oMMo..........oMMo...',
-		'..oMMMMooooooooooMMMMo..',
-		'..oMMMMBBBBBBBBBBMMMMo..',
-		'...oMMBBBDBWWBDBBBMMo...',
-		'...oBBBBTBBWWBBTBBMBo...',
-		'...oBMBBBBBWWBBDBBMBo...',
-		'...oBMMBBBBWWBBBBMBBo...',
-		'...oBBBBBBWWWWBBMBBBo...',
-		'....oBBBBWWWWWWBBBBo....',
-		'.....oBBWWWNNWWWBBo.....',
-		'......oBWWWWWWWWBo......',
-		'.......oWWWWWWWWo.......',
-		'......oSMWWWWWWMSo......',
-		'.....oMMMWWWWWWMMMo.....',
-		'.....oMMBWWWWWWBMMo.....',
-		'....oMDMBWWWWWWBMMMo....',
-		'....oMMBBWWWWWWBBMMo....',
-		'....oMBBTWWWWWWTBBMo....',
-		'....oBBBTWWooWWTBBBo....',
-		'....oDBBTWWooWWTBBBo....',
-		'....oBSSSSSooSSSSSBo....',
-		'.....oooooooooooooo.....'
-	];
-
-	const C = { o: '#262c40', B: '#9aaabf', M: '#6f7d95', D: '#4a5368', W: '#fbfaf6', S: '#dfe3ec', T: '#d9a066', N: '#232838' };
-	const EYE = '#10131c';
-	const TONGUE = '#ff7aa2';
-	const SPARK = '#ffffff';
-	const base = toRects(ART, C);
+	const C = GANDALF_COLORS;
+	const EYE = GANDALF_EYE;
+	const TONGUE = GANDALF_TONGUE;
+	const SPARK = GANDALF_SPARK;
+	const base = toRects(GANDALF_ART, C);
 	const rect = (x: number, y: number, w: number, h: number, c: string): Rect => ({ x, y, w, h, c });
 
 	// tail, two wag frames, drawn behind the body on the right hand side

@@ -244,7 +244,10 @@ export const es: Messages = {
 			sudo1: '[sudo] contraseña para el reclutador: ********',
 			sudo2: 'Acceso concedido. Abriendo la sección de contratar...',
 			language: 'Cambiar idioma',
-			"graveyard": "El cementerio"
+			"graveyard": "El cementerio",
+			"goPersonal": "Ir al lado personal",
+			"goPro": "Ir al lado profesional",
+			"goHome": "Volver al inicio"
 		},
 		mosaic: {
 			t12: '12 bloques fijados. ¿Esto es un gráfico de contribuciones o un Picasso?',
@@ -298,6 +301,127 @@ export const es: Messages = {
 				"noYear": "año perdido en la historia",
 				"hint": "Haz clic en una lápida para desenterrar los detalles.",
 				"aria": "Proyectos abandonados"
+			},
+			"modes": {
+				"personal": "Personal",
+				"pro": "Pro",
+				"home": "Inicio",
+				"switch": "Cambiar de versión"
+			},
+			"launcher": {
+				"meta": {
+					"title": "Quique Osuna",
+					"description": "Elige una puerta: el lado personal (juegos, viajes, un perro muy bueno) o el lado profesional (experiencia, proyectos, contratación).",
+					"og": "Dos versiones de una misma web: el lado personal y el profesional."
+				},
+				"eyebrow": "Bienvenido",
+				"h1a": "Hola, soy Quique.",
+				"h1b": "Elige una puerta.",
+				"lede": "Esta web tiene dos versiones, según para qué hayas venido.",
+				"personalTitle": "Personal",
+				"personalText": "Juegos, viajes, un perro muy bueno y alguna abeja. La persona detrás del código.",
+				"personalCta": "Ven a pasar el rato",
+				"proTitle": "Pro",
+				"proText": "Experiencia, proyectos y un botón de contratar. El ingeniero y lo que puedo construir para ti.",
+				"proCta": "Hablemos de trabajo",
+				"last": "la última vez",
+				"hint": "pulsa 1 o 2, o usa las flechas",
+				"switchHint": "Puedes cambiar cuando quieras."
+			},
+			"pnav": {
+				"top": "Hola",
+				"me": "Yo",
+				"loves": "Me gusta",
+				"skin": "Skin",
+				"map": "Mapa"
+			},
+			"personal": {
+				"meta": {
+					"title": "Quique Osuna | El lado personal",
+					"description": "Juegos, viajes, cruceros, ladrillos y un pastor australiano blue merle. La persona detrás del código, cerca de Barcelona.",
+					"og": "El lado personal de Quique: juegos, viajes y un perro muy bueno."
+				},
+				"eyebrow": "Personal",
+				"h1a": "Hola, soy Quique.",
+				"h1b": "La persona detrás del código.",
+				"lede": "Fuera del trabajo soy Happy: juego a demasiados videojuegos, colecciono cruceros y países, construyo cosas con ladrillos y comparto el sofá con un pastor australiano blue merle llamado Gandalf. Vivo cerca de Barcelona, empecé a programar a los nueve años y nunca he parado del todo.",
+				"facts": [
+					"Cerca de Barcelona",
+					"Jugador",
+					"Fan de los cruceros",
+					"Constructor de ladrillos",
+					"Amante de los perros"
+				],
+				"ctaPics": "Ver las fotos",
+				"ctaMap": "Ir al mapa",
+				"proLinkA": "¿Buscas el lado profesional?",
+				"proLink": "Visita la página pro",
+				"heroAlt": "Quique en un crucero al atardecer"
+			},
+			"me": {
+				"eyebrow": "Fotos mías",
+				"h2a": "La persona",
+				"h2b": "detrás del teclado.",
+				"lede": "Unas cuantas fotos, casi todas de vacaciones, porque es cuando suelto el teclado.",
+				"open": "Abrir foto",
+				"close": "Cerrar"
+			},
+			"loves": {
+				"eyebrow": "Cosas que me encantan",
+				"h2a": "Juegos y cacharros",
+				"h2b": "que me marcaron.",
+				"lede": "Lo que me llevaría a una isla desierta, si la isla tuviera enchufe."
+			},
+			"skin": {
+				"eyebrow": "Minecraft",
+				"h2a": "Esta es mi skin.",
+				"h2b": "Venga, tócala.",
+				"lede": "He pasado más horas en Minecraft de las que me gustaría admitir, e incluso llevé un servidor vanilla para una comunidad. Aquí está mi skin en 3D: arrastra para girarla, o haz que ande.",
+				"anims": {
+					"idle": "Quieto",
+					"walk": "Andar",
+					"run": "Correr",
+					"fly": "Volar",
+					"wave": "Saludar",
+					"crouch": "Agacharse",
+					"hit": "Golpear",
+					"swim": "Nadar"
+				},
+				"animLabel": "Animación",
+				"speed": "Velocidad",
+				"rotate": "Giro automático",
+				"pause": "Pausa",
+				"play": "Reanudar",
+				"reset": "Restablecer vista",
+				"download": "Róbame la skin",
+				"hint": "arrastra para girar",
+				"loading": "Cargando el visor 3D...",
+				"fail": "El visor 3D no pudo arrancar en este dispositivo.",
+				"aria": "Visor 3D de mi skin de Minecraft"
+			},
+			"map": {
+				"eyebrow": "Viajes",
+				"h2a": "Lugares donde he estado",
+				"h2b": "y adonde voy.",
+				"lede": "Cruceros, viajes y todo lo de en medio. Este mapa se llena a medida que me lleno yo.",
+				"legend": {
+					"home": "Casa",
+					"cruise": "Crucero",
+					"trip": "Viaje"
+				},
+				"places": "lugares",
+				"cruises": "cruceros",
+				"trips": "viajes",
+				"empty": "Por ahora, solo la base. El resto de chinchetas están en camino.",
+				"pick": "Selecciona una chincheta para leer la historia.",
+				"aria": "Mapa del mundo con los lugares que he visitado",
+				"list": "Lugares"
+			},
+			"pfooter": {
+				"text": "Gracias por pasarte.",
+				"hire": "¿Quieres contratarme?",
+				"hireCta": "Visita la página pro",
+				"home": "Volver al inicio"
 			}
 	},
 	content: {
@@ -382,6 +506,26 @@ export const es: Messages = {
 				"Enterré un hueso por aquí una vez. No se lo digas a los proyectos.",
 				"Todo buen desarrollador tiene un cementerio. El de Quique tiene a un buen chico vigilando.",
 				"No los despiertes. El último todavía se está compilando."
+			],
+			"launcher": [
+				"Dos puertas. La número uno tiene al perro. La número dos tiene el CV.",
+				"Elige bien. O elige las dos. Las puertas son gratis."
+			],
+			"me": [
+				"Ese es Quique en un barco. Yo no hago barcos. Mucho mar y poco sofá.",
+				"Míralo sonriendo. Yo no hice ninguna de estas fotos. Estaba durmiendo."
+			],
+			"loves": [
+				"Sackboy y yo tenemos la misma energía: suaves, de punto e imparables.",
+				"Yo sería genial en Crash. Un giro es solo un ataque de zoomies con licencia."
+			],
+			"skin": [
+				"Haz correr a la skin. Así corro yo cuando oigo la palabra paseo.",
+				"Todo en Minecraft está hecho de cuadrados. Igual que yo, si entrecierras los ojos."
+			],
+			"map": [
+				"Los cruceros tienen buffet. ¿Me toca plato? Lo pregunto por un amigo.",
+				"Quique viaja mucho. Yo espero en la puerta. Es todo un tema."
 			]
 },
 		clickLines: [
@@ -977,6 +1121,52 @@ export const es: Messages = {
 				"¿Esto es un juego? Me gusta este juego.",
 				"Más boops. Más boops.",
 				"Diez clics más para otro premio. Llevo la cuenta."
-			]
+			],
+			"photos": {
+				"cruise": {
+					"caption": "La hora dorada, en un crucero",
+					"alt": "Quique de pie en la cubierta de un crucero al atardecer"
+				},
+				"sister": {
+					"caption": "Con mi hermana, atrapados en un espejo",
+					"alt": "Quique y su hermana reflejados en un espejo redondo en un patio soleado"
+				},
+				"gf": {
+					"caption": "Un paseo con mi novia, persiguiendo el atardecer",
+					"alt": "Quique y su novia sonriendo en un paseo por una colina al atardecer"
+				},
+				"bee": {
+					"caption": "No soy yo: una abeja en mi lavanda",
+					"alt": "Un abejorro sobre flores de lavanda en el jardín"
+				}
+			},
+			"loves": {
+				"sackboy": {
+					"name": "LittleBigPlanet",
+					"tag": "Juega. Crea. Comparte.",
+					"text": "Sackboy demostró que un juego puede ser una caja de herramientas. Construir niveles y compartirlos era la mitad de la diversión, y probablemente de ahí viene mi manía de «ya lo construyo yo»."
+				},
+				"tomb": {
+					"name": "Tomb Raider",
+					"tag": "Lara, en glorioso low-poly",
+					"text": "Ruinas, puzles y una paciencia asombrosa. La Lara original sigue pareciendo un puñado de triángulos y sigue sintiéndose como una aventura."
+				},
+				"mindstorms": {
+					"name": "LEGO Mindstorms",
+					"tag": "Donde empezaron los robots",
+					"text": "Un ladrillo que conducía y un sensor que veía. Mucho antes del grado de robótica, y antes de un AGV con su propio radar, hubo un robot de LEGO por el suelo de mi casa."
+				},
+				"crash": {
+					"name": "Crash Bandicoot",
+					"tag": "Gira, salta, repite",
+					"text": "Alegría y rabia noventeras a partes iguales. Sigue siendo el mejor argumento de que un giro resuelve casi todos los problemas."
+				}
+			},
+			"places": {
+				"barcelona": {
+					"name": "Barcelona",
+					"note": "La base. Donde empieza y acaba cada viaje."
+				}
+			}
 	}
 };

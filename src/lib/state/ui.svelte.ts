@@ -55,6 +55,14 @@ class UI {
 		write('lang', code);
 	}
 
+	rememberMode(mode: string) {
+		if (mode) write('mode', mode);
+	}
+
+	savedMode() {
+		return read('mode');
+	}
+
 	savedLang() {
 		return read('lang');
 	}

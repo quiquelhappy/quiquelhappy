@@ -1,7 +1,10 @@
 <script lang="ts">
 	import { ui } from '#lib/state/ui.svelte.ts';
 	import { L } from '#lib/i18n/index.svelte.ts';
-	import { LANGS, langPath, type LangCode } from '#lib/i18n/locales.ts';
+	import { page } from '$app/state';
+	import { LANGS, langPath, splitPath, type LangCode } from '#lib/i18n/locales.ts';
+
+	const rest = $derived(splitPath(page.url.pathname).rest);
 
 	let open = $state(false);
 	let root: HTMLDivElement;
@@ -26,7 +29,7 @@
 		<ul role="listbox" aria-label={L.ui.nav.language}>
 			{#each LANGS as l}
 				<li role="option" aria-selected={l.code === ui.lang}>
-					<a href={langPath(l.code)} hreflang={l.code} lang={l.code} data-sveltekit-reset="false" onclick={() => pick(l.code)} class:on={l.code === ui.lang}>
+					<a href={langPath(l.code, rest)} hreflang={l.code} lang={l.code} data-sveltekit-reset="false" onclick={() => pick(l.code)} class:on={l.code === ui.lang}>
 						<b>{l.code.toUpperCase()}</b>{l.native}
 					</a>
 				</li>

@@ -110,7 +110,7 @@
 						<span class="langs">
 							{#each LANGS as l}
 								<a
-									href={langPath(l.code)}
+									href={langPath(l.code, '/pro')}
 									hreflang={l.code}
 									lang={l.code}
 									data-sveltekit-reset="false"

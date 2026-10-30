@@ -244,7 +244,10 @@ export const ca: Messages = {
 			sudo1: '[sudo] contrasenya per al reclutador: ********',
 			sudo2: 'Accés concedit. Obrint la secció de contractar...',
 			language: 'Canvia de llengua',
-			"graveyard": "El cementiri"
+			"graveyard": "El cementiri",
+			"goPersonal": "Anar al costat personal",
+			"goPro": "Anar al costat professional",
+			"goHome": "Tornar a l’inici"
 		},
 		mosaic: {
 			t12: '12 blocs fixats. Això és un gràfic de contribucions o un Picasso?',
@@ -298,6 +301,127 @@ export const ca: Messages = {
 				"noYear": "any perdut en la història",
 				"hint": "Fes clic en una làpida per desenterrar els detalls.",
 				"aria": "Projectes abandonats"
+			},
+			"modes": {
+				"personal": "Personal",
+				"pro": "Pro",
+				"home": "Inici",
+				"switch": "Canvia de versió"
+			},
+			"launcher": {
+				"meta": {
+					"title": "Quique Osuna",
+					"description": "Tria una porta: el costat personal (jocs, viatges, un gos molt bo) o el costat professional (experiència, projectes, contractació).",
+					"og": "Dues versions d’un mateix web: el costat personal i el professional."
+				},
+				"eyebrow": "Benvingut",
+				"h1a": "Hola, sóc el Quique.",
+				"h1b": "Tria una porta.",
+				"lede": "Aquest web té dues versions, segons per a què hi hagis vingut.",
+				"personalTitle": "Personal",
+				"personalText": "Jocs, viatges, un gos molt bo i alguna abella. La persona darrere del codi.",
+				"personalCta": "Vine a passar l’estona",
+				"proTitle": "Pro",
+				"proText": "Experiència, projectes i un botó de contractar. L’enginyer i el que puc construir per a tu.",
+				"proCta": "Parlem de feina",
+				"last": "l’última vegada",
+				"hint": "prem 1 o 2, o fes servir les fletxes",
+				"switchHint": "Pots canviar quan vulguis."
+			},
+			"pnav": {
+				"top": "Hola",
+				"me": "Jo",
+				"loves": "M’agrada",
+				"skin": "Skin",
+				"map": "Mapa"
+			},
+			"personal": {
+				"meta": {
+					"title": "Quique Osuna | El costat personal",
+					"description": "Jocs, viatges, creuers, maons i un pastor australià blue merle. La persona darrere del codi, a prop de Barcelona.",
+					"og": "El costat personal del Quique: jocs, viatges i un gos molt bo."
+				},
+				"eyebrow": "Personal",
+				"h1a": "Hola, sóc el Quique.",
+				"h1b": "La persona darrere del codi.",
+				"lede": "Fora de la feina sóc Happy: jugo a massa videojocs, col·lecciono creuers i països, construeixo coses amb maons i comparteixo el sofà amb un pastor australià blue merle anomenat Gandalf. Visc a prop de Barcelona, vaig començar a programar als nou anys i no he parat mai del tot.",
+				"facts": [
+					"A prop de Barcelona",
+					"Jugador",
+					"Fan dels creuers",
+					"Constructor de maons",
+					"Amant dels gossos"
+				],
+				"ctaPics": "Veure les fotos",
+				"ctaMap": "Anar al mapa",
+				"proLinkA": "Busques el costat professional?",
+				"proLink": "Visita la pàgina pro",
+				"heroAlt": "El Quique en un creuer en una posta de sol"
+			},
+			"me": {
+				"eyebrow": "Fotos meves",
+				"h2a": "La persona",
+				"h2b": "darrere del teclat.",
+				"lede": "Unes quantes fotos, gairebé totes de vacances, perquè és quan deixo el teclat.",
+				"open": "Obrir foto",
+				"close": "Tancar"
+			},
+			"loves": {
+				"eyebrow": "Coses que m’encanten",
+				"h2a": "Jocs i trastos",
+				"h2b": "que em van marcar.",
+				"lede": "El que m’enduria a una illa deserta, si l’illa tingués endoll."
+			},
+			"skin": {
+				"eyebrow": "Minecraft",
+				"h2a": "Aquesta és la meva skin.",
+				"h2b": "Au, toca-la.",
+				"lede": "He passat més hores a Minecraft de les que m’agradaria admetre, i fins i tot vaig portar un servidor vanilla per a una comunitat. Aquí tens la meva skin en 3D: arrossega per girar-la, o fes-la caminar.",
+				"anims": {
+					"idle": "Quiet",
+					"walk": "Caminar",
+					"run": "Córrer",
+					"fly": "Volar",
+					"wave": "Saludar",
+					"crouch": "Ajupir-se",
+					"hit": "Colpejar",
+					"swim": "Nedar"
+				},
+				"animLabel": "Animació",
+				"speed": "Velocitat",
+				"rotate": "Gir automàtic",
+				"pause": "Pausa",
+				"play": "Represa",
+				"reset": "Restableix la vista",
+				"download": "Roba’m la skin",
+				"hint": "arrossega per girar",
+				"loading": "Carregant el visor 3D...",
+				"fail": "El visor 3D no ha pogut arrencar en aquest dispositiu.",
+				"aria": "Visor 3D de la meva skin de Minecraft"
+			},
+			"map": {
+				"eyebrow": "Viatges",
+				"h2a": "Llocs on he estat",
+				"h2b": "i on vaig.",
+				"lede": "Creuers, viatges i tot el que hi ha pel mig. Aquest mapa s’omple a mesura que m’omplo jo.",
+				"legend": {
+					"home": "Casa",
+					"cruise": "Creuer",
+					"trip": "Viatge"
+				},
+				"places": "llocs",
+				"cruises": "creuers",
+				"trips": "viatges",
+				"empty": "De moment, només la base. La resta de xinxetes estan en camí.",
+				"pick": "Selecciona una xinxeta per llegir la història.",
+				"aria": "Mapa del món amb els llocs que he visitat",
+				"list": "Llocs"
+			},
+			"pfooter": {
+				"text": "Gràcies per passar-hi.",
+				"hire": "Vols contractar-me?",
+				"hireCta": "Visita la pàgina pro",
+				"home": "Tornar a l’inici"
 			}
 	},
 	content: {
@@ -382,6 +506,26 @@ export const ca: Messages = {
 				"Vaig enterrar un os per aquí una vegada. No ho diguis als projectes.",
 				"Tot bon desenvolupador té un cementiri. El del Quique té un bon noi vigilant.",
 				"No els despertis. L’últim encara s’està compilant."
+			],
+			"launcher": [
+				"Dues portes. La número u té el gos. La número dos té el CV.",
+				"Tria bé. O tria-les totes dues. Les portes són gratis."
+			],
+			"me": [
+				"Aquest és el Quique en un vaixell. Jo no faig vaixells. Molt mar i poc sofà.",
+				"Mira’l somrient. Jo no vaig fer cap d’aquestes fotos. Estava dormint."
+			],
+			"loves": [
+				"Sackboy i jo tenim la mateixa energia: suaus, de punt i imparables.",
+				"Jo seria genial a Crash. Un gir és només un atac de zoomies amb llicència."
+			],
+			"skin": [
+				"Fes córrer la skin. Així corro jo quan sento la paraula passejada.",
+				"Tot a Minecraft està fet de quadrats. Igual que jo, si entretanques els ulls."
+			],
+			"map": [
+				"Els creuers tenen bufet. Me’n toca un plat? Ho pregunto per un amic.",
+				"El Quique viatja molt. Jo espero a la porta. És tot un tema."
 			]
 },
 		clickLines: [
@@ -977,6 +1121,52 @@ export const ca: Messages = {
 				"Això és un joc? M’agrada aquest joc.",
 				"Més bups. Més bups.",
 				"Deu clics més per a un altre premi. Porto el compte."
-			]
+			],
+			"photos": {
+				"cruise": {
+					"caption": "L’hora daurada, en un creuer",
+					"alt": "El Quique dempeus a la coberta d’un creuer en una posta de sol"
+				},
+				"sister": {
+					"caption": "Amb la meva germana, atrapats en un mirall",
+					"alt": "El Quique i la seva germana reflectits en un mirall rodó en un pati assolellat"
+				},
+				"gf": {
+					"caption": "Una passejada amb la meva xicota, perseguint la posta de sol",
+					"alt": "El Quique i la seva xicota somrient en una passejada per un turó a la posta de sol"
+				},
+				"bee": {
+					"caption": "No sóc jo: una abella a la meva lavanda",
+					"alt": "Un borinot sobre flors de lavanda al jardí"
+				}
+			},
+			"loves": {
+				"sackboy": {
+					"name": "LittleBigPlanet",
+					"tag": "Juga. Crea. Comparteix.",
+					"text": "Sackboy va demostrar que un joc pot ser una caixa d’eines. Construir nivells i compartir-los era la meitat de la gràcia, i probablement d’aquí ve la meva manía del «ja ho construeixo jo»."
+				},
+				"tomb": {
+					"name": "Tomb Raider",
+					"tag": "Lara, en gloriós low-poly",
+					"text": "Ruïnes, trencaclosques i una paciència sorprenent. La Lara original encara sembla un grapat de triangles i encara se sent com una aventura."
+				},
+				"mindstorms": {
+					"name": "LEGO Mindstorms",
+					"tag": "On van començar els robots",
+					"text": "Un maó que conduïa i un sensor que hi veia. Molt abans del grau de robòtica, i abans d’un AGV amb el seu propi radar, hi va haver un robot de LEGO pel terra de casa."
+				},
+				"crash": {
+					"name": "Crash Bandicoot",
+					"tag": "Gira, salta, repeteix",
+					"text": "Alegria i ràbia dels noranta a parts iguals. Encara el millor argument que un gir resol gairebé tots els problemes."
+				}
+			},
+			"places": {
+				"barcelona": {
+					"name": "Barcelona",
+					"note": "La base. On comença i acaba cada viatge."
+				}
+			}
 	}
 };

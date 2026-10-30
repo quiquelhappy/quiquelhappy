@@ -244,7 +244,10 @@ export const de: Messages = {
 			sudo1: '[sudo] Passwort für Recruiter: ********',
 			sudo2: 'Zugriff gewährt. Öffne den Bereich zum Engagieren...',
 			language: 'Sprache wechseln',
-			"graveyard": "Der Friedhof"
+			"graveyard": "Der Friedhof",
+			"goPersonal": "Zur persönlichen Seite",
+			"goPro": "Zur beruflichen Seite",
+			"goHome": "Zurück zum Start"
 		},
 		mosaic: {
 			t12: '12 Blöcke fixiert. Ist das ein Contribution-Graph oder ein Picasso?',
@@ -298,6 +301,127 @@ export const de: Messages = {
 				"noYear": "Jahr in der Geschichte verloren",
 				"hint": "Klick auf einen Grabstein, um die Details auszugraben.",
 				"aria": "Aufgegebene Projekte"
+			},
+			"modes": {
+				"personal": "Persönlich",
+				"pro": "Pro",
+				"home": "Start",
+				"switch": "Version wechseln"
+			},
+			"launcher": {
+				"meta": {
+					"title": "Quique Osuna",
+					"description": "Wähle eine Tür: die persönliche Seite (Spiele, Reisen, ein sehr guter Hund) oder die berufliche Seite (Erfahrung, Projekte, Engagement).",
+					"og": "Zwei Versionen einer Website: die persönliche und die berufliche Seite."
+				},
+				"eyebrow": "Willkommen",
+				"h1a": "Hallo, ich bin Quique.",
+				"h1b": "Wähle eine Tür.",
+				"lede": "Diese Website gibt es in zwei Versionen, je nachdem, weshalb du gekommen bist.",
+				"personalTitle": "Persönlich",
+				"personalText": "Spiele, Reisen, ein sehr guter Hund und gelegentlich eine Biene. Der Mensch hinter dem Code.",
+				"personalCta": "Komm vorbei",
+				"proTitle": "Pro",
+				"proText": "Erfahrung, Projekte und ein Engagieren-Button. Der Entwickler und was ich für dich bauen kann.",
+				"proCta": "Reden wir über Arbeit",
+				"last": "letztes Mal",
+				"hint": "drück 1 oder 2, oder nimm die Pfeiltasten",
+				"switchHint": "Du kannst jederzeit wechseln."
+			},
+			"pnav": {
+				"top": "Hallo",
+				"me": "Ich",
+				"loves": "Mag ich",
+				"skin": "Skin",
+				"map": "Karte"
+			},
+			"personal": {
+				"meta": {
+					"title": "Quique Osuna | Die persönliche Seite",
+					"description": "Spiele, Reisen, Kreuzfahrten, Klemmbausteine und ein Blue-Merle-Aussie. Der Mensch hinter dem Code, nahe Barcelona.",
+					"og": "Die persönliche Seite von Quique: Spiele, Reisen und ein sehr guter Hund."
+				},
+				"eyebrow": "Persönlich",
+				"h1a": "Hey, ich bin Quique.",
+				"h1b": "Der Mensch hinter dem Code.",
+				"lede": "Nach Feierabend bin ich Happy: Ich spiele zu viele Spiele, sammle Kreuzfahrten und Länder, baue Dinge aus Klemmbausteinen und teile das Sofa mit einem Blue-Merle-Aussie namens Gandalf. Ich lebe nahe Barcelona, habe mit neun angefangen zu programmieren und nie wirklich aufgehört.",
+				"facts": [
+					"Nahe Barcelona",
+					"Gamer",
+					"Kreuzfahrt-Fan",
+					"Klemmbaustein-Bauer",
+					"Hundemensch"
+				],
+				"ctaPics": "Fotos ansehen",
+				"ctaMap": "Zur Karte",
+				"proLinkA": "Suchst du die berufliche Seite?",
+				"proLink": "Zur Pro-Seite",
+				"heroAlt": "Quique auf einem Kreuzfahrtschiff bei Sonnenuntergang"
+			},
+			"me": {
+				"eyebrow": "Fotos von mir",
+				"h2a": "Der Mensch",
+				"h2b": "hinter der Tastatur.",
+				"lede": "Ein paar Fotos, meistens aus dem Urlaub, denn dann lasse ich die Tastatur los.",
+				"open": "Foto öffnen",
+				"close": "Schließen"
+			},
+			"loves": {
+				"eyebrow": "Was ich liebe",
+				"h2a": "Spiele und Gadgets,",
+				"h2b": "die mich geprägt haben.",
+				"lede": "Was ich auf eine einsame Insel mitnehmen würde, wenn es dort eine Steckdose gäbe."
+			},
+			"skin": {
+				"eyebrow": "Minecraft",
+				"h2a": "Das ist mein Skin.",
+				"h2b": "Los, stups ihn an.",
+				"lede": "Ich habe mehr Stunden in Minecraft verbracht, als ich zugeben möchte, und sogar einen Vanilla-Server für eine Community betrieben. Hier ist mein Skin in 3D: ziehen zum Drehen, oder lass ihn laufen.",
+				"anims": {
+					"idle": "Stehen",
+					"walk": "Gehen",
+					"run": "Rennen",
+					"fly": "Fliegen",
+					"wave": "Winken",
+					"crouch": "Ducken",
+					"hit": "Schlagen",
+					"swim": "Schwimmen"
+				},
+				"animLabel": "Animation",
+				"speed": "Tempo",
+				"rotate": "Automatisch drehen",
+				"pause": "Pause",
+				"play": "Abspielen",
+				"reset": "Ansicht zurücksetzen",
+				"download": "Klau meinen Skin",
+				"hint": "ziehen zum Drehen",
+				"loading": "Der 3D-Viewer lädt...",
+				"fail": "Der 3D-Viewer konnte auf diesem Gerät nicht starten.",
+				"aria": "3D-Viewer für meinen Minecraft-Skin"
+			},
+			"map": {
+				"eyebrow": "Reisen",
+				"h2a": "Orte, an denen ich war,",
+				"h2b": "und Orte, an die ich reise.",
+				"lede": "Kreuzfahrten, Reisen und alles dazwischen. Diese Karte füllt sich, so wie ich mich fülle.",
+				"legend": {
+					"home": "Zuhause",
+					"cruise": "Kreuzfahrt",
+					"trip": "Reise"
+				},
+				"places": "Orte",
+				"cruises": "Kreuzfahrten",
+				"trips": "Reisen",
+				"empty": "Vorerst nur die Basis. Die restlichen Pins sind unterwegs.",
+				"pick": "Wähle einen Pin, um die Geschichte zu lesen.",
+				"aria": "Weltkarte mit den Orten, die ich besucht habe",
+				"list": "Orte"
+			},
+			"pfooter": {
+				"text": "Danke für deinen Besuch.",
+				"hire": "Willst du mich engagieren?",
+				"hireCta": "Zur Pro-Seite",
+				"home": "Zurück zum Start"
 			}
 	},
 	content: {
@@ -382,6 +506,26 @@ export const de: Messages = {
 				"Ich habe hier mal einen Knochen vergraben. Sag es den Projekten nicht.",
 				"Jeder gute Entwickler hat einen Friedhof. Quiques wird von einem sehr guten Jungen bewacht.",
 				"Weck sie nicht auf. Das letzte kompiliert noch."
+			],
+			"launcher": [
+				"Zwei Türen. Tür Nummer eins hat den Hund. Tür Nummer zwei hat den Lebenslauf.",
+				"Wähle klug. Oder wähle beide. Türen sind kostenlos."
+			],
+			"me": [
+				"Das ist Quique auf einem Boot. Ich mache keine Boote. Zu viel Meer, zu wenig Sofa.",
+				"Schau, wie er lächelt. Keins dieser Fotos stammt von mir. Ich habe geschlafen."
+			],
+			"loves": [
+				"Sackboy und ich haben dieselbe Energie: weich, gestrickt, unaufhaltsam.",
+				"Ich wäre großartig in Crash. Ein Wirbelangriff ist nur Zoomies mit Lizenz."
+			],
+			"skin": [
+				"Lass den Skin rennen. So renne ich, wenn ich das Wort Gassi höre.",
+				"In Minecraft besteht alles aus Quadraten. Wie ich, wenn du blinzelst."
+			],
+			"map": [
+				"Kreuzfahrten haben Buffets. Bekomme ich einen Teller? Ich frage für einen Freund.",
+				"Quique reist viel. Ich warte an der Tür. Das ist eine ganze Sache."
 			]
 },
 		clickLines: [
@@ -977,6 +1121,52 @@ export const de: Messages = {
 				"Ist das ein Spiel? Ich mag dieses Spiel.",
 				"Mehr Boops. Mehr Boops.",
 				"Zehn weitere Klicks für ein Leckerli. Ich zähle mit."
-			]
+			],
+			"photos": {
+				"cruise": {
+					"caption": "Goldene Stunde, auf einer Kreuzfahrt",
+					"alt": "Quique steht bei Sonnenuntergang auf dem Deck eines Kreuzfahrtschiffs"
+				},
+				"sister": {
+					"caption": "Mit meiner Schwester, im Spiegel erwischt",
+					"alt": "Quique und seine Schwester spiegeln sich in einem runden Spiegel in einem sonnigen Innenhof"
+				},
+				"gf": {
+					"caption": "Ein Spaziergang mit meiner Freundin, dem Sonnenuntergang hinterher",
+					"alt": "Quique und seine Freundin lächeln bei einem Spaziergang am Hang im Sonnenuntergang"
+				},
+				"bee": {
+					"caption": "Nicht ich: eine Biene auf meinem Lavendel",
+					"alt": "Eine Hummel auf Lavendelblüten im Garten"
+				}
+			},
+			"loves": {
+				"sackboy": {
+					"name": "LittleBigPlanet",
+					"tag": "Spielen. Erschaffen. Teilen.",
+					"text": "Sackboy hat bewiesen, dass ein Spiel ein Werkzeugkasten sein kann. Level bauen und teilen war der halbe Spaß, und wahrscheinlich begann hier meine Angewohnheit „ich bau das einfach selbst“."
+				},
+				"tomb": {
+					"name": "Tomb Raider",
+					"tag": "Lara, in glorreichem Low-Poly",
+					"text": "Ruinen, Rätsel und erstaunlich viel Geduld. Die originale Lara sieht noch immer aus wie eine Handvoll Dreiecke und fühlt sich noch immer wie ein Abenteuer an."
+				},
+				"mindstorms": {
+					"name": "LEGO Mindstorms",
+					"tag": "Wo die Roboter anfingen",
+					"text": "Ein Baustein, der fahren konnte, und ein Sensor, der sehen konnte. Lange vor dem Robotik-Abschluss und vor einem AGV mit eigenem Radar lag ein LEGO-Roboter auf meinem Boden."
+				},
+				"crash": {
+					"name": "Crash Bandicoot",
+					"tag": "Drehen, springen, wiederholen",
+					"text": "Pure 90er-Freude und Wut zu gleichen Teilen. Immer noch das beste Argument dafür, dass ein Wirbelangriff die meisten Probleme löst."
+				}
+			},
+			"places": {
+				"barcelona": {
+					"name": "Barcelona",
+					"note": "Die Basis. Wo jede Reise beginnt und endet."
+				}
+			}
 	}
 };

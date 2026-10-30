@@ -1,10 +1,22 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { nav } from '#lib/data/site.ts';
+	import { nav, pnav } from '#lib/data/site.ts';
+	import { goto } from '$app/navigation';
+	import { langPath } from '#lib/i18n/locales.ts';
 	import { ui } from '#lib/state/ui.svelte.ts';
 	import { L } from '#lib/i18n/index.svelte.ts';
 	import Icon from './Icon.svelte';
 	import LangSwitch from './LangSwitch.svelte';
+	import ModeSwitch from './ModeSwitch.svelte';
+
+	let { mode = 'pro' }: { mode?: 'pro' | 'personal' | 'launcher' } = $props();
+	const links = $derived(
+		mode === 'pro'
+			? nav.filter((n) => n.id !== 'hire').map((n) => ({ id: n.id as string, label: L.ui.nav[n.id] }))
+			: mode === 'personal'
+				? pnav.map((n) => ({ id: n.id as string, label: L.ui.pnav[n.id] }))
+				: []
+	);
 
 	let clicks = 0;
 	let timer: ReturnType<typeof setTimeout>;
@@ -12,7 +24,14 @@
 	const isMac = $derived(typeof navigator !== 'undefined' && /Mac|iPhone|iPad/.test(navigator.platform));
 
 	function logo(e: MouseEvent) {
+		if (e.metaKey || e.ctrlKey || e.shiftKey) return;
 		e.preventDefault();
+		// on the pro and personal pages the logo goes back to the launcher
+		if (mode !== 'launcher') {
+			ui.rememberMode('');
+			goto(langPath(ui.lang));
+			return;
+		}
 		ui.go('top');
 		clicks++;
 		clearTimeout(timer);
@@ -31,7 +50,7 @@
 			},
 			{ rootMargin: '-45% 0px -50% 0px' }
 		);
-		for (const id of [...nav.map((n) => n.id), 'graveyard', 'retro']) {
+		for (const id of mode === 'pro' ? [...nav.map((n) => n.id), 'graveyard', 'retro'] : mode === 'personal' ? pnav.map((n) => n.id) : []) {
 			const el = document.getElementById(id);
 			if (el) io.observe(el);
 		}
@@ -47,14 +66,14 @@
 
 <header class="nav" class:scrolled>
 	<div class="bar">
-		<a class="logo" href="#top" onclick={logo} aria-label={L.ui.nav.home}>
+		<a class="logo" href={mode === 'launcher' ? '#top' : langPath(ui.lang)} onclick={logo} aria-label={L.ui.nav.home}>
 			<span class="mark" aria-hidden="true"></span>
 			<span class="word">quique</span><span class="dot">.</span>
 		</a>
 
-		<nav aria-label={L.ui.nav.sections}>
-			{#each nav.filter((n) => n.id !== 'hire') as n}
-				<a href="#{n.id}" class:active={ui.section === n.id} onclick={(e) => (e.preventDefault(), ui.go(n.id))}>{L.ui.nav[n.id]}</a>
+		<nav aria-label={L.ui.nav.sections} class:empty={links.length === 0}>
+			{#each links as n}
+				<a href="#{n.id}" class:active={ui.section === n.id} onclick={(e) => (e.preventDefault(), ui.go(n.id))}>{n.label}</a>
 			{/each}
 		</nav>
 
@@ -66,11 +85,14 @@
 			<button class="tool" onclick={() => ui.toggleTheme()} aria-label={L.ui.nav.dark} title={L.ui.nav.darkTitle}>
 				<Icon name={ui.theme === 'dark' ? 'sun' : 'moon'} scale={2} />
 			</button>
+			{#if mode !== 'launcher'}<ModeSwitch />{/if}
 			<LangSwitch />
 			<button class="tool y2k" aria-pressed={ui.y2k} onclick={() => ui.toggleY2k()} title={L.ui.nav.y2kTitle}>
 				<span class="sw" aria-hidden="true"></span>Y2K
 			</button>
-			<a class="btn btn-primary hire" href="#hire" onclick={(e) => (e.preventDefault(), ui.go('hire'))}>{L.ui.nav.hire}</a>
+			{#if mode === 'pro'}
+				<a class="btn btn-primary hire" href="#hire" onclick={(e) => (e.preventDefault(), ui.go('hire'))}>{L.ui.nav.hire}</a>
+			{/if}
 		</div>
 	</div>
 </header>
@@ -120,6 +142,9 @@
 	}
 	.dot {
 		color: var(--green-bright);
+	}
+	nav.empty {
+		display: none;
 	}
 	nav {
 		display: flex;

@@ -3,7 +3,9 @@
 	import { EMAIL, GITHUB } from '#lib/data/site.ts';
 	import { ui } from '#lib/state/ui.svelte.ts';
 	import { L } from '#lib/i18n/index.svelte.ts';
-	import { LANGS, langPath } from '#lib/i18n/locales.ts';
+	import { page } from '$app/state';
+	import { LANGS, langPath, splitPath } from '#lib/i18n/locales.ts';
+	import { pnav } from '#lib/data/site.ts';
 	import { goto } from '$app/navigation';
 	import Icon from './Icon.svelte';
 
@@ -30,14 +32,30 @@
 	const cmds: Cmd[] = $derived.by(() => {
 		const P = L.ui.palette;
 		const go = P.go, act = P.actions, fun = P.fun;
+		const at = splitPath(page.url.pathname);
+		const toPage = (rest: string, mode: string) => () => (close(), ui.rememberMode(mode), goto(langPath(ui.lang, rest)));
+		const sections =
+			at.mode === 'pro'
+				? [
+						{ group: go, label: L.ui.nav.top, run: jump('top'), words: 'home top hero' },
+						{ group: go, label: L.ui.nav.about, run: jump('about'), words: 'story achievements about' },
+						{ group: go, label: L.ui.nav.experience, run: jump('experience'), words: 'skills filters work experience' },
+						{ group: go, label: L.ui.nav.projects, run: jump('projects'), words: 'serverbench grifpkg projects' },
+						{ group: go, label: P.graveyard, run: jump('graveyard'), words: 'graveyard cementerio cementiri friedhof cimetiere dead abandoned rip' },
+						{ group: go, label: P.retro, run: jump('retro'), words: 'retro y2k webmaster' },
+						{ group: go, label: L.ui.nav.hire, run: jump('hire'), words: 'contact email job hire' }
+					]
+				: at.mode === 'personal'
+					? pnav.map((n) => ({ group: go, label: L.ui.pnav[n.id], run: jump(n.id), words: `personal ${n.id}` }))
+					: [];
+		const sides = [
+			...(at.mode !== 'personal' ? [{ group: go, label: P.goPersonal, run: toPage('/personal', 'personal'), words: 'personal side fun games travel' }] : []),
+			...(at.mode !== 'pro' ? [{ group: go, label: P.goPro, run: toPage('/pro', 'pro'), words: 'pro side work hire experience projects' }] : []),
+			...(at.mode !== 'launcher' ? [{ group: go, label: P.goHome, run: toPage('', ''), words: 'home start launcher menu' }] : [])
+		];
 		return [
-			{ group: go, label: L.ui.nav.top, run: jump('top'), words: 'home top hero' },
-			{ group: go, label: L.ui.nav.about, run: jump('about'), words: 'story achievements about' },
-			{ group: go, label: L.ui.nav.experience, run: jump('experience'), words: 'skills filters work experience' },
-			{ group: go, label: L.ui.nav.projects, run: jump('projects'), words: 'serverbench grifpkg projects' },
-			{ group: go, label: P.graveyard, run: jump('graveyard'), words: 'graveyard cementerio cementiri friedhof cimetiere dead abandoned rip' },
-			{ group: go, label: P.retro, run: jump('retro'), words: 'retro y2k webmaster' },
-			{ group: go, label: L.ui.nav.hire, run: jump('hire'), words: 'contact email job hire' },
+			...sections,
+			...sides,
 			{ group: act, label: P.email, hint: EMAIL, run: () => (close(), (location.href = `mailto:${EMAIL}`)), words: 'contact mail hire email' },
 			{ group: act, label: P.copy, hint: EMAIL, run: copyEmail, words: 'copy email' },
 			{ group: act, label: P.github, run: () => (close(), window.open(GITHUB, '_blank', 'noopener')), words: 'github code' },
@@ -49,7 +67,7 @@
 				run: () => {
 					close();
 					ui.rememberLang(l.code);
-					goto(langPath(l.code) + location.hash, { reset: false });
+					goto(langPath(l.code, at.rest) + location.hash, { reset: false });
 				}
 			})),
 			{ group: fun, label: P.dark, run: () => (close(), ui.toggleTheme()), words: 'light theme dark' },

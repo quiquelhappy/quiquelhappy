@@ -27,6 +27,7 @@ const art = {
 	mail: ['XXXXXXXXX', 'XX.....XX', 'X.X...X.X', 'X..X.X..X', 'X...X...X', 'X.......X', 'XXXXXXXXX'],
 	bolt: ['....XX.', '...XX..', '..XX...', '.XXXXX.', '...XX..', '..XX...', '.XX....'],
 	pause: ['XX..XX', 'XX..XX', 'XX..XX', 'XX..XX', 'XX..XX', 'XX..XX', 'XX..XX'],
+	home: ['....X....', '...XXX...', '..XXXXX..', '.XXXXXXX.', 'XXXXXXXXX', '.XX...XX.', '.XX.a.XX.', '.XX.a.XX.'],
 	play: ['X.....', 'XX....', 'XXX...', 'XXXX..', 'XXXXX.', 'XXXX..', 'XXX...', 'XX....', 'X.....']
 } satisfies Record<string, string[]>;
 
